@@ -6,14 +6,14 @@ public class CaseCheck {
     public static void main(String[] args) {
 
 
-        Scanner scanner= new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        char value=scanner.next().charAt(0);
+        char value = scanner.next().charAt(0);
 
 
-        if(value>='a' && value<='z'){
+        if (value >= 'a' && value <= 'z') {
             System.out.println("LOWER");
-        }else{
+        } else {
             System.out.println("UPPER");
         }
     }
