@@ -1,0 +1,49 @@
+package linearSeach;
+
+public class LinearSearchCode {
+
+    public static void main(String[] args) {
+        int[] array = {0, 1, 2, 3, 4, 5, 6, 7};
+
+        int ans = linearSearch1(array, 6);
+        System.out.println(ans);
+    }
+
+    // to get the index
+    static int linearSearch1(int[] array, int target) {
+
+        if (array.length == 0) {
+            return -1;
+        }
+
+        for (int index = 0; index <= array.length; index++) {
+            int element = array[index];
+            if (element == target) {
+                return index;
+            }
+        }
+
+
+        return -1;
+    }
+
+
+    // to get the element
+    static int linearSearch2(int[] array, int target) {
+
+        if (array.length == 0) {
+            return -1;
+        }
+
+        for (int index = 0; index <= array.length; index++) {
+            int element = array[index];
+            if (element == target) {
+                return index;
+            }
+        }
+
+
+        return -1;
+    }
+
+}
