@@ -1,6 +1,4 @@
-package linearSeach.leetcode;
-
-import java.util.Arrays;
+package searching.linearSeachAlgo.leetcode;
 
 //https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
 public class FindNumbersWithEvenNumberOfDigits {

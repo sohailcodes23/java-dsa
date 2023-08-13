@@ -1,6 +1,4 @@
-package linearSeach;
-
-import java.util.Arrays;
+package searching.linearSeachAlgo;
 
 public class FindMaxAndMinIn2DArray {
 

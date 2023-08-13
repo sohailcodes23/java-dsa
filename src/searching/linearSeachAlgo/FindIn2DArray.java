@@ -1,4 +1,4 @@
-package linearSeach;
+package searching.linearSeachAlgo;
 
 import java.util.Arrays;
 
