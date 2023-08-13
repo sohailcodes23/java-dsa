@@ -16,6 +16,7 @@ public class FindNumbersWithEvenNumberOfDigits {
     public static int findNumbersWithEvenNumberOfDigits(int[] nums) {
         int ans = 0;
         for (int value : nums) {
+            // NOTE Using String.valueOf to get the length of number
             int valueLength = String.valueOf(value).length();
             if (valueLength % 2 == 0) {
                 ans++;
@@ -28,6 +29,8 @@ public class FindNumbersWithEvenNumberOfDigits {
     public static int findNumbersWithODDNumberOfDigits(int[] nums) {
         int ans = 0;
         for (int value : nums) {
+
+            // NOTE Using String.valueOf to get the length of number
             int valueLength = String.valueOf(value).length();
             if (valueLength % 2 != 0) {
                 ans++;
