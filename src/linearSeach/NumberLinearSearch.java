@@ -1,6 +1,6 @@
 package linearSeach;
 
-public class LinearSearchCode {
+public class NumberLinearSearch {
 
     public static void main(String[] args) {
 
