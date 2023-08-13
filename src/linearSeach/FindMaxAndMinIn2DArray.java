@@ -8,7 +8,7 @@ public class FindMaxAndMinIn2DArray {
         int[][] sourceArray = {
                 {1, 342, 6, 677},
                 {1, 3, 5, 7, 4},
-                {876, 4,-9987}
+                {876, 4, -9987}
         };
         // Note to print the array we are using  Arrays.toString
         System.out.println("MIN ANS " + searchMinIn2DArray(sourceArray));
@@ -17,13 +17,13 @@ public class FindMaxAndMinIn2DArray {
 
     static int searchMaxIn2DArray(int[][] sourceArray) {
         int max = Integer.MIN_VALUE;
-        for (int row = 0; row < sourceArray.length; row++) {
+        for (int[] rowArrays : sourceArray) {
             // Nested Array to get the columns
-            for (int column = 0; column < sourceArray[row].length; column++) {
+            for (int rowValue : rowArrays) {
 
-                if (sourceArray[row][column] > max) {
+                if (rowValue > max) {
                     // Note the way int[] is returned
-                    max = sourceArray[row][column];
+                    max = rowValue;
                 }
             }
 
@@ -36,13 +36,13 @@ public class FindMaxAndMinIn2DArray {
 
     static int searchMinIn2DArray(int[][] sourceArray) {
         int max = Integer.MAX_VALUE;
-        for (int row = 0; row < sourceArray.length; row++) {
+        for (int[] rowArrays : sourceArray) {
             // Nested Array to get the columns
-            for (int column = 0; column < sourceArray[row].length; column++) {
+            for (int rowValue : rowArrays) {
 
-                if (sourceArray[row][column] < max) {
+                if (rowValue < max) {
                     // Note the way int[] is returned
-                    max = sourceArray[row][column];
+                    max = rowValue;
                 }
             }
 
