@@ -16,6 +16,7 @@ public class FindMaxAndMinIn2DArray {
     }
 
     static int searchMaxIn2DArray(int[][] sourceArray) {
+        // max can be the first element of the array as well
         int max = Integer.MIN_VALUE;
         for (int[] rowArrays : sourceArray) {
             // Nested Array to get the columns
@@ -35,21 +36,22 @@ public class FindMaxAndMinIn2DArray {
 
 
     static int searchMinIn2DArray(int[][] sourceArray) {
-        int max = Integer.MAX_VALUE;
+        // min can be the first element of the array as well
+        int min = Integer.MAX_VALUE;
         for (int[] rowArrays : sourceArray) {
             // Nested Array to get the columns
             for (int rowValue : rowArrays) {
 
-                if (rowValue < max) {
+                if (rowValue < min) {
                     // Note the way int[] is returned
-                    max = rowValue;
+                    min = rowValue;
                 }
             }
 
         }
 
 
-        return max;
+        return min;
     }
 
 }
