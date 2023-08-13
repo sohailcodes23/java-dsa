@@ -3,9 +3,10 @@ package linearSeach;
 public class LinearSearchCode {
 
     public static void main(String[] args) {
-        int[] array = {0, 1, 2, 3, 4, 5, 6, 7};
 
-        int ans = linearSearch1(array, 6);
+//        int[] array = {0, 1, 2, 3, 4, 5, 6, 7};
+        int[] array = {};
+        int ans = linearSearch1(array, 9);
         System.out.println(ans);
     }
 
@@ -16,15 +17,16 @@ public class LinearSearchCode {
             return -1;
         }
 
-        for (int index = 0; index <= array.length; index++) {
+        for (int index = 0; index < array.length; index++) {
             int element = array[index];
             if (element == target) {
                 return index;
             }
         }
 
+// bcz the target is not found
+        return Integer.MAX_VALUE;
 
-        return -1;
     }
 
 
@@ -35,7 +37,7 @@ public class LinearSearchCode {
             return -1;
         }
 
-        for (int index = 0; index <= array.length; index++) {
+        for (int index = 0; index < array.length; index++) {
             int element = array[index];
             if (element == target) {
                 return index;
@@ -43,7 +45,9 @@ public class LinearSearchCode {
         }
 
 
-        return -1;
+// bcz the target is not found
+        return Integer.MAX_VALUE;
+
     }
 
 }
