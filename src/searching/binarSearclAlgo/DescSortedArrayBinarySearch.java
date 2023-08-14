@@ -1,10 +1,10 @@
 package searching.binarSearclAlgo;
 
-public class SortedArrayBinarySearch {
+public class DescSortedArrayBinarySearch {
 
     public static void main(String[] args) {
-        int[] sortedArray = {1, 2, 3, 4, 5, 7, 9, 32, 45, 65, 87, 98};
-        System.out.println("ANS " + binarySearch(sortedArray, 98));
+        int[] sortedArray = {98,76,54,43,33,22,11,9,8,7,3,2,1};
+        System.out.println("ANS " + binarySearch(sortedArray, 3));
     }
 
     // this is only for sorted array
@@ -44,9 +44,9 @@ public class SortedArrayBinarySearch {
             int middleIndex = start + (end - start) / 2;
             int middleElement = array[middleIndex];
             System.out.println("MIDDLE " + middleIndex + " " + middleElement);
-            if (middleElement > target) {
+            if (middleElement < target) {
                 end = middleIndex - 1;
-            } else if (middleElement < target) {
+            } else if (middleElement > target) {
                 start = middleIndex + 1;
             } else {
                 return middleIndex;
