@@ -20,6 +20,11 @@ public class FloorOfANumber {
 
         int start = 0;
         int end = array.length - 1;
+
+        // but what if the target is greater than the greatest number in the array
+        if (target > array[end]) {
+            return -1;
+        }
         int middleIndex = 0;
         while (start <= end) {
 
