@@ -34,6 +34,9 @@ public class CeilingOfANumber {
             }
         }
 
+        // since the start is greater than the end, the while loop is broken, and start= end + 1
+        // when next big number is not found, the ceiling is = start
+
 // here we are returning the start index element, bcz this covers the edge case if there are multiple numbers greater than target and the middle is after a greater number
 //        int[] sortedArray = {1, 2, 3, 4, 5, 7, 9, 32, 45, 65,86, 87, 98}; Here if target is 85, and the middle comes at 87, it will miss the 85 bcz it will only check the right side for greater number.
 //        By returning start it gives proper ceiling and covers the edge case as well
