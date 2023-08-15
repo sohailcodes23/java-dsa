@@ -8,8 +8,10 @@ public class CeilingOfANumber {
 
 
     public static void main(String[] args) {
-        int[] sortedArray = {1, 2, 3, 4, 5, 7, 9, 32, 45, 65, 87, 98};
-        System.out.println("ANS " + binarySearch(sortedArray, 86));
+
+        int[] sortedArray = {1, 2, 3, 4, 5, 7, 9, 32, 45, 65, 86, 87, 98};
+//        int[] sortedArray = {1, 2, 3, 4, 5, 7,8, 9,10, 32, 45, 65, 86, 87,90,92,94, 98};
+        System.out.println("ANS " + binarySearch(sortedArray, 85));
     }
 
     /// OWN CODE
@@ -32,10 +34,9 @@ public class CeilingOfANumber {
             }
         }
 
-        int ceilingIndex = middleIndex + 1;
-        if (ceilingIndex >= array.length) {
-            return -1;
-        }
-        return array[ceilingIndex];
+// here we are returning the start index element, bcz this covers the edge case if there are multiple numbers greater than target and the middle is after a greater number
+//        int[] sortedArray = {1, 2, 3, 4, 5, 7, 9, 32, 45, 65,86, 87, 98}; Here if target is 85, and the middle comes at 87, it will miss the 85 bcz it will only check the right side for greater number.
+//        By returning start it gives proper ceiling and covers the edge case as well
+        return array[start];
     }
 }
