@@ -8,9 +8,9 @@ public class SmallestLetter_Ceiling {
     public static void main(String[] args) {
 
 //        char[] sortedArray = {'a', 'b', 'd', 'g', 'i'};
-        char[] sortedArray = {'c','f','j'};
-//        char[] sortedArray = {'x','x','y','y'};
-        System.out.println("ANS " + binarySearch(sortedArray, 'j'));
+        char[] sortedArray = {'c', 'f', 'j'};
+//        char[] sortedArray = {'x', 'x', 'y', 'y'};
+        System.out.println("ANS " + binarySearch(sortedArray, 'k'));
     }
 
     /// OWN CODE
@@ -30,16 +30,15 @@ public class SmallestLetter_Ceiling {
             } else if (middleElement < target) {
                 start = middleIndex + 1;
             } else {
-//                break;
-                if(letters[middleIndex]==target){
-                    return letters[1];
-                }
-                return letters[0];
-
+                break;
             }
         }
 
-        if (start >= letters.length) {
+        if (start == letters.length) {
+            return letters[0];
+        }
+
+        if (letters[middleIndex] == target) {
             return letters[0];
         }
 
