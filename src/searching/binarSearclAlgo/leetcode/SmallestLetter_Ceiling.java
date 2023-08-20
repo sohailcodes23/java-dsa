@@ -10,7 +10,7 @@ public class SmallestLetter_Ceiling {
 //        char[] sortedArray = {'a', 'b', 'd', 'g', 'i'};
         char[] sortedArray = {'c', 'f', 'j'};
 //        char[] sortedArray = {'x', 'x', 'y', 'y'};
-        System.out.println("ANS " + binarySearch(sortedArray, 'k'));
+        System.out.println("ANS " + binarySearch(sortedArray, 'z'));
     }
 
     /// OWN CODE
@@ -27,21 +27,16 @@ public class SmallestLetter_Ceiling {
 
             if (middleElement > target) {
                 end = middleIndex - 1;
-            } else if (middleElement < target) {
-                start = middleIndex + 1;
             } else {
-                break;
+                // Note keep this as else, bcz if you add the 'else if (middleElement < target) {' it will go to infinite loop
+                start = middleIndex + 1;
             }
         }
 
-        if (start == letters.length) {
-            return letters[0];
-        }
+        // Note
+        // Optimised solution by kunal
+        int finalIndexOfTarget = start % letters.length;
 
-        if (letters[middleIndex] == target) {
-            return letters[0];
-        }
-
-        return letters[start];
+        return letters[finalIndexOfTarget];
     }
 }
