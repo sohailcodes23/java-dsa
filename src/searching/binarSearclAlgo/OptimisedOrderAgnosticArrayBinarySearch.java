@@ -12,10 +12,10 @@ public class OptimisedOrderAgnosticArrayBinarySearch {
 
         // same value array
 //        int[] sortedArray = {3,3,3,3,3,3,3,3};
-        System.out.println("ANS " + getTheIndexOfElement(sortedArray, 3));
+        System.out.println("ANS " + orderAgnosticArrayBinarySearch(sortedArray, 3));
     }
 
-    static int getTheIndexOfElement(int[] array, int target) {
+    static int orderAgnosticArrayBinarySearch(int[] array, int target) {
         int start = 0;
         int end = array.length - 1;
         int ans = -1;
