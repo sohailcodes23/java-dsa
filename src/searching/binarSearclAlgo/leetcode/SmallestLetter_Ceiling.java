@@ -34,7 +34,7 @@ public class SmallestLetter_Ceiling {
         }
 
         // Note
-        // Optimised solution by kunal
+        // Optimised solution
         int finalIndexOfTarget = start % letters.length;
 
         return letters[finalIndexOfTarget];
