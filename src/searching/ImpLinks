@@ -5,3 +5,7 @@ for characters non-decreasing order = ascending
 for characters decreasing order = descending
 
 BitonicArray = Mountain array
+
+
+Relook:
+SearchInRotatedArray
