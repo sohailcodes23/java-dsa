@@ -1,17 +1,17 @@
 package searching.binarSearclAlgo.leetcode;
 
-//https://leetcode.com/problems/search-in-rotated-sorted-array/
-public class SearchInRotatedArray {
+//https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
+public class SearchInRotatedDuplicateValuesArray {
 
     public static void main(String[] args) {
-        int[] sortedArray = {3, 4, 5, 6, 7, 0, 1, 2};
-        System.out.println("ANS " + searchInRotatedUniqueSortedArray(sortedArray, 4));
+        int[] sortedArray = {2, 2, 2, 2, 2, 2, 5, 6, 0, 0, 1, 2};
+        System.out.println("ANS " + searchInRotatedUniqueSortedArray(sortedArray, 0));
     }
 
 
     // Own Code
     // Just follow sorted property of Binary Search
-    static int searchInRotatedUniqueSortedArray(int[] nums, int target) {
+    static boolean searchInRotatedUniqueSortedArray(int[] nums, int target) {
 
         int start = 0;
         int end = nums.length - 1;
@@ -21,16 +21,20 @@ public class SearchInRotatedArray {
             int startElement = nums[start];
             int endElement = nums[end];
             if (middleElement == target) {
-                return middleIndex;
-            } else if (startElement <= middleElement) { // if this is true than target is on left side of middle
-                System.out.println("LEFT");
+                return true;
+            } else if (middleElement == startElement && middleElement == endElement) {
+                start++; // start = start +1
+                end--; // end = end-1
+                continue; // continue, so the array is shrinked
+            }
+
+            if (startElement <= middleElement) { // if this is true than target is on left side of middle
                 if (startElement <= target && target <= middleElement) {
                     end = middleIndex - 1;
                 } else {
                     start = middleIndex + 1;
                 }
             } else {
-                System.out.println("RR");
                 if (endElement >= target && middleElement <= target) {  // if this is true than target is on right side of middle
                     start = middleIndex + 1;
                 } else {
@@ -40,6 +44,6 @@ public class SearchInRotatedArray {
 
         }
 
-        return -1;
+        return false;
     }
 }
