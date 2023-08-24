@@ -2,16 +2,17 @@ package searching.binarSearclAlgo.leetcode;
 
 //https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 public class SearchInRotatedDuplicateValuesArray {
-
+// TS : O(n/2)
     public static void main(String[] args) {
         int[] sortedArray = {2, 2, 2, 2, 2, 2, 5, 6, 0, 0, 1, 2};
-        System.out.println("ANS " + searchInRotatedUniqueSortedArray(sortedArray, 0));
+//        int[] sortedArray = {3, 3, 1, 3, 3, 3, 3};
+        System.out.println("ANS " + searchInRotatedDuplicateValuesArray(sortedArray, 1));
     }
 
 
     // Own Code
     // Just follow sorted property of Binary Search
-    static boolean searchInRotatedUniqueSortedArray(int[] nums, int target) {
+    static boolean searchInRotatedDuplicateValuesArray(int[] nums, int target) {
 
         int start = 0;
         int end = nums.length - 1;
