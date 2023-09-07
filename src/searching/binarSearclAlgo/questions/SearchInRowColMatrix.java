@@ -2,6 +2,7 @@ package searching.binarSearclAlgo.questions;
 
 import java.util.Arrays;
 
+// Unique elements and sorted by row and columns
 public class SearchInRowColMatrix {
 
     public static void main(String[] args) {
