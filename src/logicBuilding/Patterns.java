@@ -3,13 +3,45 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p10(5);
+        p10Optimised(4);
 
     }
 
+    static void p10Optimised(int n) {
+//*
+//**
+//***
+//****
+//***
+//**
+//*
+        // Here the number of rows are 2n-1
+        for (int i = 1; i <= 2 * n - 1; i++) {
+            int stars = i;
+
+            // for lower
+            if (i > n) {
+                stars = 2 * n - i;
+            }
+            // both based on stars
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+
+    //brute force
     static void p10(int n) {
 
-
+        //*
+        //**
+        //***
+        //****
+        //***
+        //**
+        //*
         // upper
         for (int i = 0; i < n; i++) {
 
