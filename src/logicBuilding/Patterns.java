@@ -3,15 +3,14 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p12(5);
+        p12(4);
     }
 
     static void p12(int n) {
-//1        1
-//12      21
-//123    321
-//1234  4321
-//1234554321
+//1      1
+//12    21
+//123  321
+//12344321
 
         for (int i = 1; i <= n; i++) {
             int space = 2 * (n - i);
