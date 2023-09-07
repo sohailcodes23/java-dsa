@@ -3,9 +3,36 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p10Optimised(4);
+        p11(4);
+    }
+
+
+    static void p11(int n) {
+//1
+//01
+//101
+//0101
+        int start = 1;
+        for (int i = 0; i < n; i++) {
+
+            if (i % 2 == 0) {
+                start = 1;
+            } else {
+                start = 0;
+            }
+
+            for (int j = 0; j <= i; j++) {
+                System.out.print(start);
+
+                // to flip the values of start to 0 and 1
+                start = 1 - start;
+            }
+
+            System.out.println();
+        }
 
     }
+
 
     static void p10Optimised(int n) {
 //*
