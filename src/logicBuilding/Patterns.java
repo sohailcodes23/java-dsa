@@ -18,44 +18,9 @@ public class Patterns {
 //  *
 
         //UpperPattern
-        for (int i = 0; i < n; i++) {
-            // space
-            for (int j = 0; j < n - i - 1; j++) {
-                System.out.print(" ");
-            }
-
-            // star
-            for (int j = 0; j < 2 * i + 1; j++) {
-                System.out.print("*");
-            }
-
-            // space
-            for (int j = 0; j < n - i - 1; j++) {
-                System.out.print(" ");
-            }
-            System.out.println();
-        }
-
+        p7(n);
         // Lower Pattern
-        // using formula for stars : 2n - (2i-1), Here (2i-1) gives us the odd, that required in stars. Since it was in decreasing order, we created the 2n - (2i+1)
-        for (int i = 0; i < n; i++) {
-            // space
-            for (int j = 0; j < i; j++) {
-                System.out.print(" ");
-            }
-
-            // star
-            for (int j = 0; j < (2 * n - (2 * i + 1)); j++) {
-                System.out.print("*");
-            }
-
-            // space
-            for (int j = 0; j < i; j++) {
-                System.out.print(" ");
-            }
-            System.out.println();
-
-        }
+        p8(n);
     }
 
 
