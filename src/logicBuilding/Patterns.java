@@ -3,8 +3,46 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p12(4);
+        rightAngleTriangleP14Optimised(5);
     }
+
+    static void rightAngleTriangleP14Optimised(int n) {
+
+        for (int r = 0; r < n; r++) {
+            //Here char value is incremented
+            for (char c = 'A'; c <= 'A' + r; c++) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+    }
+
+    //OWN
+    static void rightAngleTriangleP14() {
+        char[] array = {'A', 'B', 'C', 'D'};
+        for (int r = 0; r < array.length; r++) {
+            for (int c = 0; c < r; c++) {
+                System.out.print(array[c]);
+            }
+            System.out.println();
+        }
+    }
+
+    //Own
+    static void p13(int n) {
+        int tempNo = 1;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(tempNo + " ");
+                tempNo++;
+            }
+            System.out.println();
+
+        }
+
+    }
+
 
     static void p12(int n) {
 //1      1
@@ -244,7 +282,7 @@ public class Patterns {
     }
 
     // P2
-    static void triangle(int input) {
+    static void rightAngleTriangle(int input) {
         for (int r = 0; r < input; r++) {
             for (int c = 0; c <= r; c++) {
                 System.out.print("*");
