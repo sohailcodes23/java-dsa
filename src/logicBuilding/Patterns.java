@@ -3,10 +3,46 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p9(3);
+        p10(5);
 
     }
 
+    static void p10(int n) {
+
+
+        // upper
+        for (int i = 0; i < n; i++) {
+
+            //star
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print("*");
+            }
+
+            //space
+            for (int j = 0; j < n - 1; j++) {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+//
+
+        //lower
+        // in reverse for loop i >= 1
+        int lowerIndex = n - 1;
+        for (int i = lowerIndex; i >= 1; i--) {
+
+            // star
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+
+            // space
+            for (int j = 0; j < lowerIndex - i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
 
 
     static void p9(int n) {
@@ -22,7 +58,6 @@ public class Patterns {
         // Lower Pattern
         p8(n);
     }
-
 
 
     static void p8(int n) {
