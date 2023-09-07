@@ -3,9 +3,36 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p11(4);
+        p12(5);
     }
 
+    static void p12(int n) {
+//1        1
+//12      21
+//123    321
+//1234  4321
+//1234554321
+
+        for (int i = 1; i <= n; i++) {
+            int space = 2 * (n - i);
+            // first half of number
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+
+            //space : we create a formula based on patter
+            for (int j = 1; j <= space; j++) {
+                System.out.print(" ");
+            }
+
+            // second half of number
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j);
+            }
+
+            System.out.println();
+        }
+    }
 
     static void p11(int n) {
 //1
@@ -14,7 +41,6 @@ public class Patterns {
 //0101
         int start = 1;
         for (int i = 0; i < n; i++) {
-
             if (i % 2 == 0) {
                 start = 1;
             } else {
@@ -27,10 +53,8 @@ public class Patterns {
                 // to flip the values of start to 0 and 1
                 start = 1 - start;
             }
-
             System.out.println();
         }
-
     }
 
 
