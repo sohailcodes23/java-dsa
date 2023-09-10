@@ -3,11 +3,43 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        rightAngleTriangleP14Optimised(5);
+        p15Optimised(5);
+    }
+
+
+    static void p15Optimised(int n) {
+//ABCDE
+//ABCD
+//ABC
+//AB
+//A
+        for (int r = 0; r < n; r++) {
+            char start = 'A';
+            // Here (n - r - 1) is used because 'A' is already the start, now in ABCDE, It will be A+4(characters) that's y n-1, to decrease we are using r as well so it is (n-1-r)
+            for (char j = start; j <= (start + (n - r - 1)); j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
+    static void p15(int n) {
+
+        for (int r = 0; r < n; r++) {
+            char start = 'A';
+            for (char j = start; j < (start + (n - r)); j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
     }
 
     static void rightAngleTriangleP14Optimised(int n) {
-
+//A
+//AB
+//ABC
+//ABCD
+//ABCDE
         for (int r = 0; r < n; r++) {
             //Here char value is incremented
             for (char c = 'A'; c <= 'A' + r; c++) {
