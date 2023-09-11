@@ -3,8 +3,34 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p17(5);
+        p18(10);
     }
+
+    static void p19(int n){
+
+
+    }
+
+
+    //OWN
+    static void p18(int n) {
+//E
+//DE
+//CDE
+//BCDE
+//ABCDE
+        for (int i = 0; i < n; i++) {
+
+            char start = (char) ('A' + (n - 1));
+            char value = (char) (start - i); // Imp
+            for (int j = 0; j <= i; j++) {
+                System.out.print((char) (value + j));
+            }
+            System.out.println();
+        }
+
+    }
+
 
     static void p17(int n) {
 
