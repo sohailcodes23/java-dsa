@@ -3,9 +3,76 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p15Optimised(5);
+        p17(5);
     }
 
+    static void p17(int n) {
+
+        for (int i = 0; i < n; i++) {
+            //space
+            for (int j = 0; j < (n - i - 1); j++) {
+                System.out.print(" ");
+            }
+
+
+            char ch = 'A';
+            int breakPoint = (2 * i + 1) / 2; // this is only to reverse the character values
+            for (int j = 0; j < 2 * i + 1; j++) { // 2 * i + 1 to create the triangle pattern.
+                System.out.print(ch);
+
+                //IMP to reverse the characters
+                if (j < breakPoint) {
+                    ch++;
+                } else {
+                    ch--;
+                }
+            }
+
+            //space
+            for (int j = 0; j < (n - i - 1); j++) {
+                System.out.print(" ");
+            }
+
+            System.out.println();
+        }
+
+//        for (int r = 0; r < n; r++) {
+//            // space
+//            for (int j = 0; j < n - r - 1; j++) {
+//                System.out.print(" ");
+//            }
+//
+//            // star
+//            for (int j = 0; j < 2 * r + 1; j++) {
+//                System.out.print("A");
+//            }
+//
+//            // space
+//            for (int j = 0; j < n - r - 1; j++) {
+//                System.out.print(" ");
+//            }
+//            System.out.println();
+//        }
+    }
+
+
+    static void p16(int n) {
+        //A
+        //BB
+        //CCC
+        //DDDD
+        //EEEEE
+
+        for (int r = 0; r < n; r++) {
+
+            char ch = (char) ('A' + r);
+            for (char c = 0; c <= r; c++) {
+                System.out.print(ch);
+            }
+            System.out.println();
+        }
+
+    }
 
     static void p15Optimised(int n) {
 //ABCDE
