@@ -3,9 +3,70 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p19(10);
+        p19Optimised(10);
     }
 
+    static void p19Optimised(int n) {
+//**********
+//****__****
+//***____***
+//**______**
+//*________*
+//*________*
+//**______**
+//***____***
+//****__****
+//**********
+
+        int halfPartN = n / 2;
+        int initialUperHalfSpace = 0;
+        // UPPER half of the pattern
+        for (int i = 0; i < halfPartN; i++) {
+            //  left half of the upper pattern
+            // star
+            for (int j = 1; j <= halfPartN - i; j++) {
+                System.out.print("*");
+            }
+
+            //space
+            for (int j = 0; j < initialUperHalfSpace; j++) {
+                System.out.print("_");
+            }
+
+            //  right half of the upper pattern
+            // star
+            for (int j = 1; j <= halfPartN - i; j++) {
+                System.out.print("*");
+            }
+            initialUperHalfSpace += 2;
+            System.out.println();
+        }
+
+        int initialLowerHalfSpace = n - 2;
+        // LOWER half of the pattern
+        for (int i = 1; i <= halfPartN; i++) {
+            //star //  left half of the lower pattern
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+
+            // space
+            for (int j = 0; j < initialLowerHalfSpace; j++) {
+                System.out.print("_");
+            }
+
+            //star //  right half of the lower pattern
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            initialLowerHalfSpace -= 2;
+            System.out.println();
+        }
+
+    }
+
+
+    //OWN
     static void p19(int n) {
 //**********
 //****__****
