@@ -3,11 +3,62 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p18(10);
+        p19(10);
     }
 
-    static void p19(int n){
+    static void p19(int n) {
+//**********
+//****__****
+//***____***
+//**______**
+//*________*
+//*________*
+//**______**
+//***____***
+//****__****
+//**********
 
+        int halfPartN = n / 2;
+        // UPPER half of the pattern
+        for (int i = halfPartN; i >= 1; i--) {
+            //  left half of the upper pattern
+            // star
+            for (int j = i; j >= 1; j--) {
+                System.out.print("*");
+            }
+
+            //space
+            for (int j = 0; j < 2 * (halfPartN - i); j++) {
+                System.out.print("_");
+            }
+
+            //  right half of the upper pattern
+            // star
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // LOWER half of the pattern
+        for (int i = 1; i <= halfPartN; i++) {
+            //star //  left half of the lower pattern
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+
+            // space
+            for (int j = 0; j < n - (2 * i); j++) {
+                System.out.print("_");
+            }
+
+            //star //  right half of the lower pattern
+            for (int j = i; j >= 1; j--) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
 
     }
 
