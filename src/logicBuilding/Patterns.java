@@ -3,8 +3,55 @@ package logicBuilding;
 public class Patterns {
 
     public static void main(String[] args) {
-        p19Optimised(10);
+        p20(5);
     }
+
+    //IMP
+    static void p20(int n) {
+//       n=5
+
+//*        *
+//**      **
+//***    ***
+//****  ****
+//**********
+//****  ****
+//***    ***
+//**      **
+//*        *
+
+//        the outer loop will be 2n-1
+        int initialSpace = 2 * n - 2;
+        for (int i = 1; i <= (2 * n - 1); i++) {
+            int stars = i; // bcz the number of stars is same as i
+            // to handle reverse of stars
+            if (i > n) {
+                stars = 2 * n - i;
+            }
+            // star
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+
+            // spaces
+            for (int j = 1; j <= initialSpace; j++) {
+                System.out.print(" ");
+            }
+
+            // star
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+            if (i < n) {
+                initialSpace -= 2;
+            } else {
+                initialSpace += 2;
+            }
+        }
+    }
+
 
     static void p19Optimised(int n) {
 //**********
