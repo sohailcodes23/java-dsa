@@ -1,9 +1,100 @@
 package logicBuilding;
 
+// P: 22,20,7
 public class Patterns {
 
     public static void main(String[] args) {
-        p20(5);
+        p22(4);
+    }
+
+
+    // IMP // Recheck
+    //https://www.youtube.com/watch?v=tNm_NNSB3_w  1:15:00
+    static void p22(int n) {
+//n= 4 || 6
+
+        //4444444
+        //4333334
+        //4322234
+        //4321234
+        //4322234
+        //4333334
+        //4444444
+
+        int loopRun = 2 * n - 1;
+        for (int i = 0; i < loopRun; i++) {
+
+            for (int j = 0; j < loopRun; j++) {
+                int top = i;
+                int left = j;
+                int right = (2 * n - 2) - j;
+                int down = (2 * n - 2) - i;
+
+                int value = Math.min(Math.min(top, down), Math.min(left, right));
+                int finalValue = n - value;
+                System.out.print(finalValue);
+            }
+            System.out.println();
+
+        }
+    }
+
+    static void p21Optimised(int n) {
+//n= 4 || 6
+
+        //******
+        //*    *
+        //*    *
+        //*    *
+        //*    *
+        //******
+        for (int i = 0; i < n; i++) {
+
+            for (int j = 0; j < n; j++) {
+                // n-1 bcz index starts from 0
+
+                if (i == 0 || j == 0 || i == (n - 1) || j == (n - 1)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+
+            }
+            System.out.println();
+
+        }
+    }
+
+    // OWN working for 4 // not working for all n value like 6,8
+    static void p21(int n) {
+        // n=4
+
+        //****
+        //*__*
+        //*__*
+        //****
+
+        for (int i = 1; i <= n; i++) {
+            int initialStar = n / 2;
+            if (i == n) {
+                initialStar = n / 2;
+            } else if (i >= initialStar) {
+                initialStar = 1;
+            }
+            // star
+            for (int j = 1; j <= initialStar; j++) {
+                System.out.print("*");
+            }
+            // space
+            for (int j = 1; j <= n - (2 * initialStar); j++) {
+                System.out.print("_");
+            }
+            // star
+            for (int j = 1; j <= initialStar; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     //IMP
