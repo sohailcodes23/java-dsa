@@ -1,21 +1,47 @@
 package maths.basic;
 
+//https://leetcode.com/problems/reverse-integer/description/
 public class ReverseInteger {
-
+    //9646324351
     public static void main(String[] args) {
-        System.out.println(reverse(123));
+        System.out.println(reverse(-123));
 
     }
 
-    public static int reverse(int x) {
+    // Not working for 1534236469, working for rest of the test cases
+    public static int reverse1(int x) {
         int finalNumber = 0;
-        while (x > 0) {
+        // Replacing  while (x > 0) { with  while (x != 0) {, so that you can directly use the x variable rather than converting it to a positive number
+        while (x != 0) {
             int lastDigit = x % 10;
-            x = x / 10;
-
             finalNumber = (finalNumber * 10) + lastDigit;
+            x = x / 10;
+        }
+        if (finalNumber < Integer.MIN_VALUE || finalNumber > Integer.MAX_VALUE) {
+            return 0;
         }
 
+//        if (x < 0) {
+//            return -1 * finalNumber;
+//        }
+
         return finalNumber;
+    }
+
+    public static int reverse(int x) {
+        long finalNum = 0;
+        while (x != 0) {
+            int lastDig = x % 10;
+            finalNum = finalNum * 10 + lastDig;
+            x = x / 10;
+        }
+        System.out.println("FF " + finalNum);
+        if (finalNum > Integer.MAX_VALUE || finalNum < Integer.MIN_VALUE) {
+            return 0;
+        }
+        if (x < 0) {
+            return (int) (-1 * finalNum);
+        }
+        return (int) finalNum;
     }
 }
