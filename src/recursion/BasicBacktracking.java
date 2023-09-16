@@ -26,6 +26,6 @@ public class BasicBacktracking {
             return;
         }
         basicBacktrackingV2(i + 1, n);
-        System.out.println("V " + i);
+        System.out.println("V " + i); // Difference from recursion, where the print is written after the recursion.
     }
 }
