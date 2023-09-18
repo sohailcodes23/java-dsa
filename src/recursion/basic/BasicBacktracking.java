@@ -1,4 +1,4 @@
-package recursion;
+package recursion.basic;
 
 
 // Print value from opposite function

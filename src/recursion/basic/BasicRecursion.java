@@ -1,4 +1,4 @@
-package recursion;
+package recursion.basic;
 
 public class BasicRecursion {
     static int count = 1;

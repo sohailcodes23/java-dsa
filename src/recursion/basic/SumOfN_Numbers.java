@@ -1,4 +1,4 @@
-package recursion;
+package recursion.basic;
 
 //https://www.youtube.com/watch?v=69ZCDFy-OUo
 // EX=> n= 3, than sum wil be 6 bcz 1+2+3 = 6
