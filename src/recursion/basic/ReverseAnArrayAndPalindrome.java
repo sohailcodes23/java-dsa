@@ -1,16 +1,44 @@
 package recursion.basic;
 
+import java.util.Arrays;
+
 //https://www.youtube.com/watch?v=twuC1F6gLI8
 public class ReverseAnArrayAndPalindrome {
 
     public static void main(String[] args) {
 //        int[] arr = {1, 2, 3, 4, 5, 6};
-        int[] arr = {1, 3, 5, 7, 9};
-//        System.out.println("ARR " + Arrays.toString(reverseAnArrayOptimised(arr, 0)));
+        int[] arr = {3, 1, 1, 7, 4, 2, 6, 11};
+//        8
+//        3 1 1 7 4 2 6 11
+
+
+        System.out.println("ARR " + Arrays.toString(reverseArray(8, arr)));
         String value = "MADSM";
         char[] charArray = value.toCharArray();
 //        checkStringIsPalindrome(charArray, value, 0);
         System.out.println("CC " + checkStringIsPalindromeOptimised(charArray, 0));
+    }
+
+    //1. https://www.codingninjas.com/studio/problems/reverse-an-array_8365444?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTab=0
+    public static int[] reverseArray(int n, int[] nums) {
+        return recursion(nums, 0, n - 1);
+    }
+
+    public static int[] recursion(int[] nums, int left, int right) {
+        if (left >= right) return nums;
+
+        nums[left] = nums[left] ^ nums[right];
+        nums[right] = nums[left] ^ nums[right];
+        nums[left] = nums[left] ^ nums[right];
+        return recursion(nums, left + 1, right - 1);
+    }
+
+    // 2. https://www.codingninjas.com/studio/problems/check-palindrome-recursive_624386?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTab=0
+    public static boolean isPalindrome(String str) {
+//        String str = "MADSM";
+        char[] charArray = str.toCharArray();
+//        checkStringIsPalindrome(charArray, str, 0);
+        return checkStringIsPalindromeOptimised(charArray, 0);
     }
 
     // Without swap, if it will be palindrome than both the sides will be identical. So the recursion will go till n/2. But if any values are not same on both side than it should not go till n/2.
@@ -55,18 +83,18 @@ public class ReverseAnArrayAndPalindrome {
     }
 
 
-    // with single variables like i and (n-i-1)
-    static int[] reverseAnArrayOptimised(int[] originalArray, int i) {
-        int n = originalArray.length;
-//        if (i >= (n - i - 1)) {
-        if (i >= (n / 2)) { // bcz during swapping the functions complete st the middle of the array
-            return originalArray;
+    // with single variables like n and (n-n-1)
+    static int[] reverseAnArrayOptimised(int[] nums, int n) {
+        int lengthOfArray = nums.length;
+//        if (n >= (length - n - 1)) {
+        if (n >= (lengthOfArray / 2)) { // bcz during swapping the functions complete st the middle of the array
+            return nums;
         }
 
-        swapNo(originalArray, i, (n - i - 1));
-        reverseAnArrayOptimised(originalArray, i + 1);
+        swapNo(nums, n, (lengthOfArray - n - 1));
+        reverseAnArrayOptimised(nums, n + 1);
 
-        return originalArray;
+        return nums;
     }
 
 
