@@ -1,7 +1,6 @@
 package hashing.basic;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 // READ : https://takeuforward.org/hashing/hashing-maps-time-complexity-collisions-division-rule-of-hashing-strivers-a2z-dsa-course/
@@ -29,7 +28,7 @@ import java.util.Scanner;
 // Collisions: if multiple(Or all)  values are stored at a single key than collisions happens and then TS is worst case i.e. O(N)
 //        2. Folding method
 //        3. Mid-Square method
-public class BasicHashing {
+public class BasicHashingTheoryAndCountFrequencies {
 
     public static void main(String[] args) {
 //        integerHashing();
