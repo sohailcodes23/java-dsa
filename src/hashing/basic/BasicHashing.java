@@ -10,6 +10,9 @@ import java.util.Scanner;
 
 // For Boolean : Max Size in side main function can be 10 power of 7
 // For Boolean : Max Size globally can be 10 power of 8
+
+
+// No limitation for hash size for characters, bcz max it can go if you add lower and upper case is 256
 public class BasicHashing {
 
     public static void main(String[] args) {
@@ -25,7 +28,8 @@ public class BasicHashing {
         String value = scanner.next();
 
         //precompute
-//        Since the assumption is for all case, There are total 255 alphabets. So maxSize+1= 256
+//        Since the assumption is for all case, There are total 256 alphabets.
+        // No limitation for hash size for characters, bcz max it can go if you add lower and upper case is 256
         int[] hash = new int[256];
         for (int i = 0; i < value.length(); i++) {
             // Note : This is case sensitive
