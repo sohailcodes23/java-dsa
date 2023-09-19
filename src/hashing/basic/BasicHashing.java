@@ -13,8 +13,64 @@ import java.util.Scanner;
 public class BasicHashing {
 
     public static void main(String[] args) {
-        integerHashing();
+//        integerHashing();
+//        charHashingForLowerOrUpperCase();
+        charHashingForAllCase();
     }
+
+    // For all lower and upper alphabets
+    static void charHashingForAllCase() {
+        //input
+        Scanner scanner = new Scanner(System.in);
+        String value = scanner.next();
+
+        //precompute
+//        Since the assumption is for all case, There are total 255 alphabets. So maxSize+1= 256
+        int[] hash = new int[256];
+        for (int i = 0; i < value.length(); i++) {
+            // Note : This is case sensitive
+            hash[value.charAt(i)]++; // EX => if i = 'A', it will be incremented +1 at index 65, if again 'A' than again increment.
+        }
+
+        // queries
+        int q = scanner.nextInt();
+        while (q-- != 0) {
+            char checkValue = scanner.next().charAt(0);
+
+            //fetch
+            System.out.println("Value of " + checkValue + " " + hash[checkValue]);
+        }
+
+    }
+
+
+    // Assumed all the values are lower case, so minus 'a'
+    // If all are upper case than minus 'A'
+    static void charHashingForLowerOrUpperCase() {
+//        String value = "valuee";
+
+        //input
+        Scanner scanner = new Scanner(System.in);
+        String value = scanner.next();    // We are assuming all the characters are lower case
+
+        //precompute
+//        Since the assumption is for all lower case, There are total 25 lower case alphabets. So maxSize+1
+        int[] hash = new int[26];
+        for (int i = 0; i < value.length(); i++) {
+            hash[value.charAt(i) - 'a']++; // EX => a = 97 and f=102, if i=f, than f-1 i.e. 102-93=5. So at 5th index it will store the value and increment it if again f is found.
+        }
+
+        // queries
+        int q = scanner.nextInt();
+        while (q-- != 0) {
+            char checkValue = scanner.next().charAt(0);
+
+            //fetch
+            System.out.println("Value of " + checkValue + " " + hash[checkValue - 'a']);
+        }
+
+    }
+
 
     static void integerHashing() {
 
@@ -28,7 +84,7 @@ public class BasicHashing {
         }
         //precompute
         // maxSize+1 //
-        int[] hash = new int[(int) Math.pow(10, 9)]; // Here whatever problem states the maximum size of array are allowed add one, like if max size of array can be 12 than write 13, if 20 than 21, maxSize+1
+        int[] hash = new int[13]; // Here whatever problem states the maximum size of array are allowed add one, like if max size of array can be 12 than write 13, if 20 than 21, maxSize+1
         for (int i = 0; i < n; i++) {
             // assigning the value of hash
             // so if array[1] is 3, than in hash at the 3rd index it will add one, same goes for other values as well.
