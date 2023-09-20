@@ -2,7 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
-// Select minimum value from array and swap with the starting index of sorting
+// SelectionSort: Select minimum value from array and swap with the starting index of sorting
 //TS => O(n^2) (n square) // Best, Worst, Average
 // TS explanation => Loop ran: (n-1) + (n-2) + (n-3) + ..... + 1 = n(n -1)/ 2 // Here + 1 bcz in the last pass, there's only one comparison left to be made between the last two elements of the array
 
