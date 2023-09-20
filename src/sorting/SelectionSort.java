@@ -3,7 +3,7 @@ package sorting;
 import java.util.Arrays;
 
 // Select minimum value from array and swap with the starting index of sorting
-//TS => O(n raise to 2) (n square) // Best, worst,Average
+//TS => O(n^2) (n square) // Best, worst,Average
 public class SelectionSort {
     public static void main(String[] args) {
         int[] array = {9, 1, 8, 2, 6, 3};
