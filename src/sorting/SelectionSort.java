@@ -3,7 +3,21 @@ package sorting;
 import java.util.Arrays;
 
 // Select minimum value from array and swap with the starting index of sorting
-//TS => O(n^2) (n square) // Best, worst,Average
+//TS => O(n^2) (n square) // Best, Worst, Average
+// TS explanation => Loop ran: (n-1) + (n-2) + (n-3) + ..... + 1 = n(n -1)/ 2 // Here + 1 bcz in the last pass, there's only one comparison left to be made between the last two elements of the array
+
+// #Generated : Let's break down the expression step by step:
+//Start with n(n-1)/2.
+//Multiply n by (n-1), which gives you n^2 - n.
+//Divide the result by 2.
+//So, we have: n(n-1)/2 = (n^2 - n)/2 =  (n^2)/2 - (n)/2
+//
+//Now, let's analyze this expression as 'n' approaches infinity:
+//
+//The dominant term here is n^2 because it grows much faster than the '-n' term as 'n' becomes very large.
+//The constant factor 1/2 does not affect the overall growth rate; it remains the same.
+//Therefore, as 'n' approaches infinity, the dominant term n^2 dominates the expression, and we can ignore the constant factor. In big O notation, we express this as: O(n^2)
+
 public class SelectionSort {
     public static void main(String[] args) {
         int[] array = {9, 1, 8, 2, 6, 3};
