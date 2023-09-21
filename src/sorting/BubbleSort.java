@@ -10,11 +10,52 @@ public class BubbleSort {
 
     public static void main(String[] args) {
 //        int[] array = {9, 1, 8, 2, 6, 3};
-        int[] array = {13, 46, 24, 52, 20, 9};
-        System.out.println("ANS " + Arrays.toString(bubbleSort(array)));
+//        int[] array = {13, 46, 24, 52, 20, 9};
+        int[] array = {1, 2, 4, 6, 7, 9};
+        System.out.println("ANS " + Arrays.toString(bubbleSortOptimised(array)));
+    }
+
+    static int[] bubbleSortOptimised(int[] array) {
+        // TS => O(N) // Best Case // check 'bubbleSort()' to know worst and average case
+        // SO if the array is already in ascending order, than we will check in the first run is there any swaps, if in the first lop there are no swaps, than we don't need to run other loops
+        //  int[] array = {1,2,4,6,7,9};
+        int n = array.length;
+
+//        Since every call is from 0th index to n-1, 0 to n-2...... till 1;
+        for (int i = n - 1; i >= 1; i--) {
+
+            boolean didSwap = false; // the optimisation
+            for (int j = 0; j <= i - 1; j++) { // j=i - 1 bcz if you directly assigning till 'i' it will throw Runtime exception. So to check till end in the loop it is checking 'j+1'
+                if (array[j] > array[j + 1]) {
+                    swapBasedOnIndex(j, j + 1, array);
+                    didSwap = true;
+                }
+            }
+            if (!didSwap) {
+                break;
+            }
+        }
+
+
+//
+//        // Tried but didn't worked properly
+//        for (int i = 0; i < n; i++) { // looping whole loop till end
+//            System.out.println("I " + i + ":" + array[i]);
+//            for (int j = i; j < n - i - 1; j++) { // looping till the value is not sorted
+//                System.out.println("J " + j + ":" + array[j]);
+//
+//                if (array[j] > array[j + 1]) {
+//                    swapBasedOnIndex(j, j + 1, array);
+//                }
+//            }
+//        }
+
+
+        return array;
     }
 
     static int[] bubbleSort(int[] array) {
+        // TS => O(N^2) // Worst or Average Case
         int n = array.length;
 
 //        Since every call is from 0th index to n-1, 0 to n-2...... till 1;
