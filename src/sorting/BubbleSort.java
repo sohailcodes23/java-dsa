@@ -6,6 +6,10 @@ import java.util.Arrays;
 //adjacent swapping means if index i is at 0 than check elements at 0th and 1st index, if 0th element is greater than 1st, then swap the values.
 // Next time check 1st and 2nd element, if 1st element is greater than 2nd, then swap the values.
 // THis goes on till the last values of array is highest value. Once highest values is set at the end of array, don't check the last sorted elements
+
+//TS :
+// Best : O(N) --> Linear TS
+//Worst and Average = O(N^2)
 public class BubbleSort {
 
     public static void main(String[] args) {
