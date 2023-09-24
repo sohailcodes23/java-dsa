@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// MergeSort =>Divide , Sort and Merge the array
+// TS => O(N x log base of 2 N)
+// TS Explanation : since the array is continuos divided, like n/2, n/4, n/6.... So whenever it is in division use log. so  log base of 2 N
+//                  Now the sortAndMerge function may end up check all the elements in the array so O(N)
+//                  Hence worst case TS =>     O(N x log base of 2 N)
+// SC => O(N)   Explanation : In sortAndMerge a temporary array is always created so at the worst case might take 0(N). So SC is near about O(N)
 public class MergeSort {
 
     public static void main(String[] args) {
