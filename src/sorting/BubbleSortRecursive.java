@@ -2,6 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
+
 public class BubbleSortRecursive {
 
     public static void main(String[] args) {
@@ -12,7 +13,34 @@ public class BubbleSortRecursive {
         System.out.println("ANS " + Arrays.toString(array));
     }
 
+    static void BubbleSortRecursiveOptimised(int[] array, int n) {
+
+        //Time Complexity: O(N2) for the worst and average cases and O(N) for the best case. Here, N = size of the array.
+        //
+        //Space Complexity: O(N) auxiliary stack space.
+        if (n == 1) {
+            return;
+        }
+        boolean didSwap = false;
+//        int n = array.length;
+        // for (int i = n - 1; i >= 1; i--) { // Reference to send the nth input as parameter
+        for (int j = 0; j <= n - 1; j++) { // j=n - 1 bcz if you directly assigning till 'i' it will throw Runtime exception. So to check till end in the loop it is checking 'j+1'
+
+            if (array[j] > array[j + 1]) {
+                swapBasedOnIndex(j, j + 1, array);
+                didSwap = true;
+            }
+        }
+        // if no swapping happens.
+        if (!didSwap) return;
+        BubbleSortRecursive(array, n - 1);
+    }
+
+
     static void BubbleSortRecursive(int[] array, int n) {
+
+        //Time Complexity: O(N2), (where N = size of the array), for the worst, and average cases.
+//Space Complexity: O(N) auxiliary stack space.
         if (n == 1) {
             return;
         }
