@@ -40,21 +40,6 @@ public class BubbleSort {
             }
         }
 
-
-//
-//        // Tried but didn't worked properly
-//        for (int i = 0; i < n; i++) { // looping whole loop till end
-//            System.out.println("I " + i + ":" + array[i]);
-//            for (int j = i; j < n - i - 1; j++) { // looping till the value is not sorted
-//                System.out.println("J " + j + ":" + array[j]);
-//
-//                if (array[j] > array[j + 1]) {
-//                    swapBasedOnIndex(j, j + 1, array);
-//                }
-//            }
-//        }
-
-
         return array;
     }
 
