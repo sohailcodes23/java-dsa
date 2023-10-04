@@ -5,10 +5,27 @@ import java.util.Arrays;
 public class Common {
 
     public static void main(String[] args) {
-        int a[] = {2, 5, 8, 1, 4, 6};
+//        int a[] = {2, 5, 8, 1, 4, 6};
+//        int a[] = {3, 4, 5, 6, 7, 8};
+        int a[] = {3, 4, 5, 5, 5, 6, 7, 8};
 //        int a[] = {2, 5, 8,8,1, 1, 4, 6};
 
-        System.out.println("ANS " + Arrays.toString(getSecondOrderElements(a.length, a)));
+//        System.out.println("ANS " + Arrays.toString(isSorted(a.length, a)));
+        System.out.println("ANS " + isSorted(a.length, a));
+    }
+
+    public static int isSorted(int n, int[] a) {
+//        TS=> O(N)
+        int firstElement = a[0];
+        for (int value : a) {
+            if (value < firstElement) {
+                return 0;
+            } else if (firstElement != value) { // checking this bcz if same values, than no need of reassigning of the value
+                firstElement = value;
+            }
+        }
+
+        return 1;
     }
 
     public static int[] getSecondOrderElements(int n, int[] a) {
