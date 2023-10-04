@@ -1,17 +1,50 @@
 package array.easy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Common {
 
     public static void main(String[] args) {
 //        int a[] = {2, 5, 8, 1, 4, 6};
 //        int a[] = {3, 4, 5, 6, 7, 8};
-        int a[] = {3, 4, 5, 5, 5, 6, 7, 8};
+        int a[] = {3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8};
 //        int a[] = {2, 5, 8,8,1, 1, 4, 6};
 
 //        System.out.println("ANS " + Arrays.toString(isSorted(a.length, a)));
-        System.out.println("ANS " + isSorted(a.length, a));
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.addAll(Arrays.asList(3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8));
+        System.out.println("ANS " + removeDuplicates(arr, 0));
+    }
+
+    //removeDuplicates and give unique elements count
+    public static int removeDuplicates(ArrayList<Integer> arr, int n) {
+        // 2 pointer approach
+//        TS=> O(N)
+//        SC=> O(1) // 1 bcz we are not taking any other space, updating the same array
+        int i = 0;
+        for (int j = 1; j < arr.size(); j++) {
+            if (arr.get(i) != arr.get(j)) { // to avoid same values
+                i++; // to increment i position, so during add the data is added to next position
+                arr.set(i, arr.get(j)); // setting the data on next position
+            }
+        }
+        System.out.println("ARRAY " + arr);
+        return i + 1;
+    }
+
+
+    public static int removeDuplicates(int[] nums, int n) {
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[i] != nums[j]) {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+        System.out.println("ARRAY " + Arrays.toString(nums));
+        return i + 1;
     }
 
     public static int isSorted(int n, int[] a) {
