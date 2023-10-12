@@ -9,17 +9,84 @@ public class Common {
     public static void main(String[] args) {
 //        int a[] = {2, 5, 8, 1, 4, 6};
 //        int a[] = {3, 4, 5, 6, 7, 8};
-        int a[] = {3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8};
-//        int a[] = {2, 5, 8,8,1, 1, 4, 6};
+//        int a[] = {3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8};
+//        int a[] = {2, 5, 8, 8, 1, 1, 4, 6};
+        int a[] = {1, 2, 3, 4, 5};
+//        int a[] = {3, 1, 6, 5, 10, 7, 6, 6, 1, 7};
 
 //        System.out.println("ANS " + Arrays.toString(isSorted(a.length, a)));
         ArrayList<Integer> arr = new ArrayList<>();
-        arr.addAll(Arrays.asList(3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8));
-        System.out.println("ANS " + removeDuplicates(arr, 0));
+//        arr.addAll(Arrays.asList(3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8));
+        arr.addAll(Arrays.asList(1, 2, 3, 4, 5));
+//        arr.addAll(Arrays.asList(3, 5, 22, 54, 12, 32, 76, 44, 43, 21, 65, 33, 211, 65, 23, 98, 23, 43, 11, 1, 10));
+        // Q
+        //65 33 211 65 23 98 23 43 11 1 3 5 22 54 12 32 76 44 43 21
+
+//        System.out.println("ANS " + removeDuplicatesAndCountUniqueElements(arr, 0));
+//        System.out.println("ANS " + leftRotateElementsByN(a, 0));
+//        System.out.println(Arrays.toString(leftRotateElementsByK(a, 3)));
+        System.out.println(leftRotateElementsByKv2(arr, 21));
     }
 
+    // OWN
+    public static ArrayList<Integer> leftRotateElementsByKv2(ArrayList<Integer> arr, int k) {
+
+        k = k % arr.size(); // adding this so that if k rotations is more than length of the array it only needs to do the extra rotation. So if arr length is5 and k is 5, than after rotation the array will be same. If k is 7 than we can divide like 5 + 2 = 7 rotation, so we don't need to do all 7 rotation only 2 rotation and ignore the 5
+
+        if (k > 0) {
+            ArrayList<Integer> tempArr = new ArrayList<>();
+            int n = arr.size();
+            for (int i = 0; i < n; i++) {
+                if (i < k) {
+                    tempArr.add(i, arr.get(i));
+                } else {
+                    arr.set(i - k, arr.get(i));
+                }
+            }
+
+            for (int j = 0; j < tempArr.size(); j++) {
+                arr.set(n - tempArr.size() + j, tempArr.get(j));
+            }
+        }
+        return arr;
+    }
+
+
+    public static int[] leftRotateElementsByK(int arr[], int k) {
+
+        // by 1
+        int tempArr[] = new int[k];
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            if (i < k) {
+                tempArr[i] = arr[i];
+            } else {
+                arr[i - k] = arr[i]; // i-k bcz moving the value to front
+            }
+        }
+
+        for (int j = 0; j < tempArr.length; j++) {
+            arr[n - tempArr.length + j] = tempArr[j];
+        }
+
+        return arr;
+    }
+
+    public static int[] leftRotateElements(int nums[], int n) {
+        System.out.println("BB " + Arrays.toString(nums));
+        // by 1
+        int temp = nums[0];
+        for (int i = 1; i <= n - 1; i++) {
+            nums[i - 1] = nums[i]; // i-1 bcz moving the value to front
+        }
+        nums[n - 1] = temp; //rotating the first element by 1
+        System.out.println("AA " + Arrays.toString(nums));
+        return nums;
+    }
+
+
     //removeDuplicates and give unique elements count
-    public static int removeDuplicates(ArrayList<Integer> arr, int n) {
+    public static int removeDuplicatesAndCountUniqueElements(ArrayList<Integer> arr, int n) {
         // 2 pointer approach
 //        TS=> O(N)
 //        SC=> O(1) // 1 bcz we are not taking any other space, updating the same array
