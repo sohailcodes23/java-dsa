@@ -11,13 +11,13 @@ public class Common {
 //        int a[] = {3, 4, 5, 6, 7, 8};
 //        int a[] = {3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8};
 //        int a[] = {2, 5, 8, 8, 1, 1, 4, 6};
-        int a[] = {1, 2, 3, 4, 5};
+        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 //        int a[] = {3, 1, 6, 5, 10, 7, 6, 6, 1, 7};
 
 //        System.out.println("ANS " + Arrays.toString(isSorted(a.length, a)));
         ArrayList<Integer> arr = new ArrayList<>();
 //        arr.addAll(Arrays.asList(3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8));
-        arr.addAll(Arrays.asList(1, 2, 3, 4, 5));
+        arr.addAll(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
 //        arr.addAll(Arrays.asList(3, 5, 22, 54, 12, 32, 76, 44, 43, 21, 65, 33, 211, 65, 23, 98, 23, 43, 11, 1, 10));
         // Q
         //65 33 211 65 23 98 23 43 11 1 3 5 22 54 12 32 76 44 43 21
@@ -25,10 +25,36 @@ public class Common {
 //        System.out.println("ANS " + removeDuplicatesAndCountUniqueElements(arr, 0));
 //        System.out.println("ANS " + leftRotateElementsByN(a, 0));
 //        System.out.println(Arrays.toString(leftRotateElementsByK(a, 3)));
-        System.out.println(leftRotateElementsByKv2(arr, 21));
+//        System.out.println(leftRotateElementsByKv2(arr, 21));
+        leftRotateElementsByK_Optimal(a, 10);
     }
 
-    // OWN
+    public static void leftRotateElementsByK_Optimal(int nums[], int k) {
+
+        k = k % nums.length; // adding this so that if k rotations is more than length of the array it only needs to do the extra rotation. So if nums length is5 and k is 5, than after rotation the array will be same. If k is 7 than we can divide like 5 + 2 = 7 rotation, so we don't need to do all 7 rotation only 2 rotation and ignore the 5
+
+        if (k > 0) {
+            System.out.println("K " + k);
+            reverseArray(nums, 0, k - 1);
+            reverseArray(nums, k, nums.length - 1);
+            reverseArray(nums, 0, nums.length - 1);
+        }
+        System.out.println("AA " + Arrays.toString(nums));
+    }
+
+    public static void reverseArray(int arr[], int start, int end) {
+        while (start <= end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            start++;
+            end--;
+        }
+    }
+
+
+    // OWN // brute
     public static ArrayList<Integer> leftRotateElementsByKv2(ArrayList<Integer> arr, int k) {
 
         k = k % arr.size(); // adding this so that if k rotations is more than length of the array it only needs to do the extra rotation. So if arr length is5 and k is 5, than after rotation the array will be same. If k is 7 than we can divide like 5 + 2 = 7 rotation, so we don't need to do all 7 rotation only 2 rotation and ignore the 5
