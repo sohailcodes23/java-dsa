@@ -11,7 +11,8 @@ public class Common {
 //        int a[] = {3, 4, 5, 6, 7, 8};
 //        int a[] = {3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8};
 //        int a[] = {2, 5, 8, 8, 1, 1, 4, 6};
-        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+//        int a[] = {1, 2, 3, 4, 0, 0, 5, 6, 7, 8, 9, 0};
+        int a[] = {8, 6, 9};
 //        int a[] = {3, 1, 6, 5, 10, 7, 6, 6, 1, 7};
 
 //        System.out.println("ANS " + Arrays.toString(isSorted(a.length, a)));
@@ -26,8 +27,62 @@ public class Common {
 //        System.out.println("ANS " + leftRotateElementsByN(a, 0));
 //        System.out.println(Arrays.toString(leftRotateElementsByK(a, 3)));
 //        System.out.println(leftRotateElementsByKv2(arr, 21));
-        leftRotateElementsByK_Optimal(a, 10);
+        moveZeroesToEnd_Optimal(a.length, a);
     }
+
+
+    public static int[] moveZeroesToEnd_Optimal(int n, int a[]) {
+        //  1, 2, 3, 4, 0, 0, 5, 6, 7, 8, 9, 0
+        int lastZeroIndex = -1;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == 0) {
+                lastZeroIndex = i;
+                break;
+            }
+        }
+
+        if (lastZeroIndex >= 0) {
+            for (int i = lastZeroIndex + 1; i < a.length; i++) {
+                if (a[i] != 0) {
+                    swapBasedOnIndex(i, lastZeroIndex, a);
+                    lastZeroIndex++;
+                }
+            }
+        }
+
+        return a;
+    }
+
+
+    //OWN // Brute
+    public static int[] moveZeroesToEnd(int n, int a[]) {
+
+        int temp[] = new int[n];
+        int zeroes = 0;
+        int newIndex = 0;
+        for (int i = 0; i < n; i++) {
+
+            if (a[i] != 0) {
+                temp[newIndex] = a[i];
+                newIndex++;
+            } else {
+                zeroes++;
+            }
+        }
+        System.out.println("BB " + Arrays.toString(temp)); // Here the default vlaue that is not assigned is 0, so all the zeroes are moved to end
+        for (int i = temp.length - zeroes; i < temp.length; i++) { // this logic for any type of number
+            temp[i] = 0;
+        }
+
+//        for (int i = 0; i < temp.length; i++) {
+//            a[i] = temp[i];
+//        }
+
+        System.out.println("AA " + Arrays.toString(a));
+
+        return a;
+    }
+
 
     public static void leftRotateElementsByK_Optimal(int nums[], int k) {
 
@@ -216,9 +271,9 @@ public class Common {
         return largest;
     }
 
-    static void swapBasedOnIndex(int minimumValueIndex, int i, int[] array) {
-        int tempValue = array[minimumValueIndex]; // IMP store the value not the index
-        array[minimumValueIndex] = array[i];
+    static void swapBasedOnIndex(int j, int i, int[] array) {
+        int tempValue = array[j]; // IMP store the value not the index
+        array[j] = array[i];
         array[i] = tempValue;
     }
 }
