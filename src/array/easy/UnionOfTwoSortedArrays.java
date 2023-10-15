@@ -13,7 +13,7 @@ public class UnionOfTwoSortedArrays {
         int[] array1 = {1, 2, 2, 3, 5, 6};
         int[] array2 = {2, 3, 4, 4, 7};
         System.out.println("DD " + FindUnion(array1, array2, array1.length, array2.length));
-        System.out.println("DD " + unionArrays_Optimal(array1, array2 ));
+        System.out.println("DD " + unionArrays_Optimal(array1, array2));
     }
 
     static ArrayList<Integer> FindUnion(int arr1[], int arr2[], int n, int m) {
@@ -54,41 +54,32 @@ public class UnionOfTwoSortedArrays {
         int n = arr1.length, m = arr2.length;
         ArrayList<Integer> unionArray = new ArrayList<>(); // Uninon vector
         while (i < n && j < m) {
-            System.out.println("1");
             if (arr1[i] <= arr2[j]) // Case 1 and 2
             {
-                System.out.println("2");
                 if (unionArray.size() == 0 || unionArray.get(unionArray.size() - 1) != arr1[i]) {
                     unionArray.add(arr1[i]);
-                    i++;
                 }
+                i++;
             } else // case 3
-                System.out.println("3");
             {
                 if (unionArray.size() == 0 || unionArray.get(unionArray.size() - 1) != arr2[j]) {
                     unionArray.add(arr2[j]);
-                    j++;
                 }
-            }
-        }
-
-        while (i < n) // IF any element left in arr1
-        {
-            System.out.println("4");
-            if (unionArray.get(unionArray.size() - 1) != arr1[i]) {
-                unionArray.add(arr1[i]);
-                i++;
-            }
-        }
-        while (j < m) // If any elements left in arr2
-        {
-            System.out.println("5");
-            if (unionArray.get(unionArray.size() - 1) != arr2[j]) {
-                unionArray.add(arr2[j]);
                 j++;
             }
         }
-        System.out.println("6");
+        while (i < n) // IF any element left in arr1
+        {
+            if (unionArray.get(unionArray.size() - 1) != arr1[i])
+                unionArray.add(arr1[i]);
+            i++;
+        }
+        while (j < m) // If any elements left in arr2
+        {
+            if (unionArray.get(unionArray.size() - 1) != arr2[j])
+                unionArray.add(arr2[j]);
+            j++;
+        }
         return unionArray;
     }
 
