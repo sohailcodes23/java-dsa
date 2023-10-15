@@ -32,9 +32,10 @@ public class Common {
 
 
     public static int[] moveZeroesToEnd_Optimal(int n, int a[]) {
-        //  1, 2, 3, 4, 0, 0, 5, 6, 7, 8, 9, 0
+        //  1, 0, 2, 3, 4, 0, 0, 5, 6, 7, 8, 9, 0
+        // TS => O(N) , explain below
         int lastZeroIndex = -1;
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < a.length; i++) { // Ts => O(x), x bcz the array breaks when 0 is found so loop runs till x.
             if (a[i] == 0) {
                 lastZeroIndex = i;
                 break;
@@ -42,13 +43,15 @@ public class Common {
         }
 
         if (lastZeroIndex >= 0) {
-            for (int i = lastZeroIndex + 1; i < a.length; i++) {
+            for (int i = lastZeroIndex + 1; i < a.length; i++) { // TS => O(n-x), n-x bcz once x is found the rest of the array left is n-x.
                 if (a[i] != 0) {
                     swapBasedOnIndex(i, lastZeroIndex, a);
                     lastZeroIndex++;
                 }
             }
         }
+
+        // FINAL TS=> O(x) + O(n-x) = O(N)
 
         return a;
     }
