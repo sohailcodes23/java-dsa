@@ -30,18 +30,18 @@ public class Common {
 //        moveZeroesToEnd_Optimal(a.length, a);
     }
 
-    public static int linearSearch(int[] array, int n) {
+    public static int linearSearch(int[] arr, int num) {
 
         // first occurrence
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == n) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == num) {
                 return i;
             }
         }
 
         // last occurrence
-        for (int i = array.length - 1; i >= 0; i--) {
-            if (array[i] == n) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] == num) {
                 return i;
             }
         }
