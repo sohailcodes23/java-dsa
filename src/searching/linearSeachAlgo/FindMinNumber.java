@@ -3,7 +3,7 @@ package searching.linearSeachAlgo;
 public class FindMinNumber {
 
     public static void main(String[] args) {
-        int[] sourceArray = {7, 43, 2, 1, 6, 8, 9,-9};
+        int[] sourceArray = {7, 43, 2, 1, 6, 8, 9, -9};
 
         System.out.println("MIN " + getMinNumber(sourceArray));
     }

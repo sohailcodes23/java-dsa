@@ -1,7 +1,5 @@
 package searching.binarSearclAlgo.leetcode;
 
-import java.util.Arrays;
-
 //https://leetcode.com/problems/find-in-mountain-array/description/O
 public class FindInMountain {
     public static void main(String[] args) {

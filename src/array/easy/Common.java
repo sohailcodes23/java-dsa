@@ -2,7 +2,9 @@ package array.easy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
+import static util.CommonUtility.reverseArray;
+import static util.CommonUtility.swapBasedOnIndex;
 
 public class Common {
 
@@ -112,22 +114,12 @@ public class Common {
 
         if (k > 0) {
             System.out.println("K " + k);
+
             reverseArray(nums, 0, k - 1);
             reverseArray(nums, k, nums.length - 1);
             reverseArray(nums, 0, nums.length - 1);
         }
         System.out.println("AA " + Arrays.toString(nums));
-    }
-
-    public static void reverseArray(int arr[], int start, int end) {
-        while (start <= end) {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-
-            start++;
-            end--;
-        }
     }
 
 
@@ -291,11 +283,5 @@ public class Common {
         }
 
         return largest;
-    }
-
-    static void swapBasedOnIndex(int j, int i, int[] array) {
-        int tempValue = array[j]; // IMP store the value not the index
-        array[j] = array[i];
-        array[i] = tempValue;
     }
 }

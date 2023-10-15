@@ -3,7 +3,7 @@ package searching.binarSearclAlgo;
 public class DescSortedArrayBinarySearch {
 
     public static void main(String[] args) {
-        int[] sortedArray = {98,76,54,43,33,22,11,9,8,7,3,2,1};
+        int[] sortedArray = {98, 76, 54, 43, 33, 22, 11, 9, 8, 7, 3, 2, 1};
         System.out.println("ANS " + binarySearch(sortedArray, 3));
     }
 

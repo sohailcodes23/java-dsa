@@ -20,7 +20,7 @@ public class LargestNumber {
         if (c > max) {
             max = c;
         }
-        System.out.println("MAX "+max);
+        System.out.println("MAX " + max);
 
 
     }

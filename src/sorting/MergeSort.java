@@ -2,7 +2,6 @@ package sorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 // MergeSort =>Divide, Sort and Merge the array
 // TS => O(N x log base of 2 N)
