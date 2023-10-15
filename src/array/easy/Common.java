@@ -12,7 +12,7 @@ public class Common {
 //        int a[] = {3, 4, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8};
 //        int a[] = {2, 5, 8, 8, 1, 1, 4, 6};
 //        int a[] = {1, 2, 3, 4, 0, 0, 5, 6, 7, 8, 9, 0};
-        int a[] = {8, 6, 9};
+        int a[] = {1, 2, 3, 4, 5, 6, 7, 4, 5};
 //        int a[] = {3, 1, 6, 5, 10, 7, 6, 6, 1, 7};
 
 //        System.out.println("ANS " + Arrays.toString(isSorted(a.length, a)));
@@ -26,14 +26,33 @@ public class Common {
 //        System.out.println("ANS " + removeDuplicatesAndCountUniqueElements(arr, 0));
 //        System.out.println("ANS " + leftRotateElementsByN(a, 0));
 //        System.out.println(Arrays.toString(leftRotateElementsByK(a, 3)));
-//        System.out.println(leftRotateElementsByKv2(arr, 21));
-        moveZeroesToEnd_Optimal(a.length, a);
+        System.out.println(linearSearch(a, 9));
+//        moveZeroesToEnd_Optimal(a.length, a);
+    }
+
+    public static int linearSearch(int[] array, int n) {
+
+        // first occurrence
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == n) {
+                return i;
+            }
+        }
+
+        // last occurrence
+        for (int i = array.length - 1; i >= 0; i--) {
+            if (array[i] == n) {
+                return i;
+            }
+        }
+        return -1;
     }
 
 
     public static int[] moveZeroesToEnd_Optimal(int n, int a[]) {
         //  1, 0, 2, 3, 4, 0, 0, 5, 6, 7, 8, 9, 0
         // TS => O(N) , explain below
+        // SC => O(1), we are not using any extra space, just modifying the array
         int lastZeroIndex = -1;
         for (int i = 0; i < a.length; i++) { // Ts => O(x), x bcz the array breaks when 0 is found so loop runs till x.
             if (a[i] == 0) {
