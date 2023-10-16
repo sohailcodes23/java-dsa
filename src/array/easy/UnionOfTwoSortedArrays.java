@@ -12,51 +12,51 @@ public class UnionOfTwoSortedArrays {
 //        int[] array2 = {2, 2, 2, 3, 4, 4, 7};
         int[] array1 = {1, 2, 2, 3, 5, 6};
         int[] array2 = {2, 3, 4, 4, 7};
-        System.out.println("DD " + FindUnion(array1, array2, array1.length, array2.length));
         System.out.println("DD " + unionArrays_Optimal(array1, array2));
+        System.out.println("DD " + unionArrays_Optimalv2(array1, array2));
     }
 
-    static ArrayList<Integer> FindUnion(int arr1[], int arr2[], int n, int m) {
-        int i = 0, j = 0; // pointers
-        ArrayList<Integer> Union = new ArrayList<>(); // Uninon vector
+
+    static ArrayList<Integer> unionArrays_Optimalv2(int arr1[], int arr2[]) {
+
+        int i = 0;
+        int j = 0;
+        int n = arr1.length;
+        int m = arr2.length;
+
+        ArrayList<Integer> unionArray = new ArrayList<>();
         while (i < n && j < m) {
-            if (arr1[i] <= arr2[j]) // Case 1 and 2
-            {
-                if (Union.size() == 0 || Union.get(Union.size() - 1) != arr1[i])
-                    Union.add(arr1[i]);
+
+            if (arr1[i] <= arr2[j]) {
+
+                if (unionArray.size() == 0 || unionArray.get((unionArray.size() - 1)) != arr1[i]) {
+                    unionArray.add(arr1[i]);
+                }
                 i++;
-            } else // case 3
-            {
-                if (Union.size() == 0 || Union.get(Union.size() - 1) != arr2[j])
-                    Union.add(arr2[j]);
+            } else {
+                if (unionArray.size() == 0 || unionArray.get((unionArray.size() - 1)) != arr2[i]) {
+                    unionArray.add(arr2[j]);
+                }
                 j++;
             }
         }
-        while (i < n) // IF any element left in arr1
-        {
-            if (Union.get(Union.size() - 1) != arr1[i])
-                Union.add(arr1[i]);
-            i++;
-        }
-        while (j < m) // If any elements left in arr2
-        {
-            if (Union.get(Union.size() - 1) != arr2[j])
-                Union.add(arr2[j]);
-            j++;
-        }
-        return Union;
+
+        return unionArray;
     }
 
     // Approach when both the arrays are sorted
     static ArrayList<Integer> unionArrays_Optimal(int arr1[], int arr2[]) {
-        int i = 0, j = 0; // pointers
-        // unionArray.get(unionArray.size() - 1) = last value in the index
+//        int[] array1 = {1, 1, 2, 2, 3, 5, 6};
+//        int[] array2 = {2, 2, 2, 3, 4, 4, 7};
+        int i = 0; // pointers for array1
+        int j = 0; // pointers for array2
+
         int n = arr1.length, m = arr2.length;
         ArrayList<Integer> unionArray = new ArrayList<>(); // Uninon vector
         while (i < n && j < m) {
-            if (arr1[i] <= arr2[j]) // Case 1 and 2
+            if (arr1[i] <= arr2[j]) // Case 1 and 2 // we need to add the smaller value in the array, so th elements are unique and sorted
             {
-                if (unionArray.size() == 0 || unionArray.get(unionArray.size() - 1) != arr1[i]) {
+                if (unionArray.size() == 0 || unionArray.get(unionArray.size() - 1) != arr1[i]) { // unionArray.get(unionArray.size() - 1) = last value in the index
                     unionArray.add(arr1[i]);
                 }
                 i++;
