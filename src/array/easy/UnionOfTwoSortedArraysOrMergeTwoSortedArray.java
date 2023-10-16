@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class UnionOfTwoSortedArrays {
+//TS=> O(N1 + N2) , bcz we are iterating through all the elements of array
+// SC => O(N1 + N2), this is worst case scenario if all the elements in both the array are unique
+public class UnionOfTwoSortedArraysOrMergeTwoSortedArray {
 
     public static void main(String[] args) {
 
@@ -17,28 +19,43 @@ public class UnionOfTwoSortedArrays {
     }
 
 
-    static ArrayList<Integer> unionArrays_Optimalv2(int arr1[], int arr2[]) {
+    //Own //tried
+    static ArrayList<Integer> unionArrays_Optimalv2(int a[], int b[]) {
 
         int i = 0;
         int j = 0;
-        int n = arr1.length;
-        int m = arr2.length;
+        int n = a.length;
+        int m = b.length;
 
         ArrayList<Integer> unionArray = new ArrayList<>();
         while (i < n && j < m) {
 
-            if (arr1[i] <= arr2[j]) {
+            if (a[i] <= b[j]) {
 
-                if (unionArray.size() == 0 || unionArray.get((unionArray.size() - 1)) != arr1[i]) {
-                    unionArray.add(arr1[i]);
+                if (unionArray.size() == 0 || unionArray.get((unionArray.size() - 1)) != a[i]) {
+                    unionArray.add(a[i]);
                 }
                 i++;
             } else {
-                if (unionArray.size() == 0 || unionArray.get((unionArray.size() - 1)) != arr2[i]) {
-                    unionArray.add(arr2[j]);
+                if (unionArray.size() == 0 || unionArray.get((unionArray.size() - 1)) != b[j]) {
+                    unionArray.add(b[j]);
                 }
                 j++;
             }
+        }
+
+        while (i < n) {
+            if (unionArray.size() == 0 || unionArray.get((unionArray.size() - 1)) != a[i]) {
+                unionArray.add(a[i]);
+            }
+            i++;
+        }
+
+        while (j < m) {
+            if (unionArray.size() == 0 || unionArray.get((unionArray.size() - 1)) != b[j]) {
+                unionArray.add(b[j]);
+            }
+            j++;
         }
 
         return unionArray;
