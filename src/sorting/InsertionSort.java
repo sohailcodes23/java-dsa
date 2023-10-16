@@ -5,8 +5,8 @@ import java.util.Arrays;
 //https://www.youtube.com/watch?v=HGk_ypEuS24 : 31:30
 //InsertionSort: Take a element from the array and put it in correct order
 
-//TS :
-// Best : O(N) --> Linear TS, if all the elements are already sorted than while loop won't run and this will be best case
+//TC :
+// Best : O(N) --> Linear TC, if all the elements are already sorted than while loop won't run and this will be best case
 //Worst and Average = O(N^2) , when elements are checked it checks till 0, +1,+2,+3... this is like sum of natural number = n*(n+1)/2 so almost ==> O(n^2)
 public class InsertionSort {
 

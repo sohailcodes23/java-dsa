@@ -6,7 +6,7 @@ import java.util.List;
 
 // Remainder should be 0, so use %
 public class PrintAllDivisors {
-    // TS ==> O(N), bcz loop is running till N and the inner calculation is unit calculation, can be avoided for TS
+    // TC ==> O(N), bcz loop is running till N and the inner calculation is unit calculation, can be avoided for TC
     public static void main(String[] args) {
         PrintAllDivisorsOptimisedAndSorted(36);
     }
@@ -29,7 +29,7 @@ public class PrintAllDivisors {
 
         List<Integer> list = new ArrayList<>();
         // n = no of factors
-        // TS=> O(sqrt(n))
+        // TC=> O(sqrt(n))
         for (int i = 1; i <= Math.sqrt(n); i++) {
 
             if (n % i == 0) {
@@ -43,14 +43,14 @@ public class PrintAllDivisors {
             }
         }
         System.out.println("Unsorted " + list);
-        // TS=> O( n * log(n))  // Internal sorting is O(n * log(n))
+        // TC=> O( n * log(n))  // Internal sorting is O(n * log(n))
         Collections.sort(list); // for sorting
         System.out.println("Sorted " + list);
 
-        // if you print your list than the TS ==> O(n)
+        // if you print your list than the TC ==> O(n)
 
-        // so all the TS will be added for final TS
-        // final  TS=> O(sqrt(n)) +  O( n * log(n))
+        // so all the TC will be added for final TC
+        // final  TC=> O(sqrt(n)) +  O( n * log(n))
     }
 
     //Optimised 1

@@ -4,7 +4,7 @@ package recursion.basic;
 // EX=> n= 3, than sum wil be 6 bcz 1+2+3 = 6
 // EX=> n= 4, than sum wil be 10 bcz 1+2+3+4 = 10
 
-//        TS => O(N) , no. of time the loops ran
+//        TC => O(N) , no. of time the loops ran
 //        SC (Space Complexity => Auxillary Space) => O(N), Bcz N function are awaiting to be completed, So each function call will take some space in stack. Ignore the unit functions
 public class SumOfN_Numbers {
     static int sum = 0;
@@ -17,7 +17,7 @@ public class SumOfN_Numbers {
     // Functional way
     // for more info refer sumOfN_Numbers_Functional_Optimised
     static int factorialOfN_Numbers_Functional(int n) {
-//        TS => O(N) , no. of time the loops ran
+//        TC => O(N) , no. of time the loops ran
 //        SC (Space Complexity => Auxillary Space) => O(N), Bcz N function are awaiting to be completed, So each function call will take some space in stack. Ignore the unit functions
 
         //n=4 ==> 24

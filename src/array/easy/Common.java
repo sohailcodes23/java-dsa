@@ -53,7 +53,7 @@ public class Common {
 
     public static int[] moveZeroesToEnd_Optimal(int n, int a[]) {
         //  1, 0, 2, 3, 4, 0, 0, 5, 6, 7, 8, 9, 0
-        // TS => O(N) , explain below
+        // TC => O(N) , explain below
         // SC => O(1), we are not using any extra space, just modifying the array
         int lastZeroIndex = -1;
         for (int i = 0; i < a.length; i++) { // Ts => O(x), x bcz the array breaks when 0 is found so loop runs till x.
@@ -64,7 +64,7 @@ public class Common {
         }
 
         if (lastZeroIndex >= 0) {
-            for (int i = lastZeroIndex + 1; i < a.length; i++) { // TS => O(n-x), n-x bcz once x is found the rest of the array left is n-x.
+            for (int i = lastZeroIndex + 1; i < a.length; i++) { // TC => O(n-x), n-x bcz once x is found the rest of the array left is n-x.
                 if (a[i] != 0) {
                     swapBasedOnIndex(i, lastZeroIndex, a);
                     lastZeroIndex++;
@@ -72,7 +72,7 @@ public class Common {
             }
         }
 
-        // FINAL TS=> O(x) + O(n-x) = O(N)
+        // FINAL TC=> O(x) + O(n-x) = O(N)
 
         return a;
     }
@@ -183,7 +183,7 @@ public class Common {
     //removeDuplicates and give unique elements count
     public static int removeDuplicatesAndCountUniqueElements(ArrayList<Integer> arr, int n) {
         // 2 pointer approach
-//        TS=> O(N)
+//        TC=> O(N)
 //        SC=> O(1) // 1 bcz we are not taking any other space, updating the same array
         int i = 0;
         for (int j = 1; j < arr.size(); j++) {
@@ -210,7 +210,7 @@ public class Common {
     }
 
     public static int isSorted(int n, int[] a) {
-//        TS=> O(N)
+//        TC=> O(N)
         int firstElement = a[0];
         for (int value : a) {
             if (value < firstElement) {
@@ -224,19 +224,19 @@ public class Common {
     }
 
     public static int[] getSecondOrderElements(int n, int[] a) {
-// FOr finding 2nd Largest, if we add 2nd smallest the TS will be more
+// FOr finding 2nd Largest, if we add 2nd smallest the TC will be more
         // #Brute : 1. Sort the array.
         //          2. Since the array is sort we know the last element (n-1) is the largest element, we can run the array from (n-2) and check if the value is larger than a(n-1), if it's same value than ignore the update.
-        //          3. Here TS => N Log N (For sorting) and N (For loop)
-        //          4. Final TS=> O(NLogN + N)
+        //          3. Here TC => N Log N (For sorting) and N (For loop)
+        //          4. Final TC=> O(NLogN + N)
         // #Better :1. Run the loop and compare each element and get largest.
         //          2. Run the loop and compare each element and get sLargest and it shpuld be less than largest.
-        //          3. Here TS => N (For first loop) and N (For 2nd loop)
-        //          3. Final TS => O(N + N) = O(2N)
+        //          3. Here TC => N (For first loop) and N (For 2nd loop)
+        //          3. Final TC => O(N + N) = O(2N)
 
 //        #Optimal Solution
-        int sLargestElement = secondLargest(a); // TS => O(N), single pass of of data and single loop
-        int sSmallestElement = secondSmallest(a); // TS => O(N)
+        int sLargestElement = secondLargest(a); // TC => O(N), single pass of of data and single loop
+        int sSmallestElement = secondSmallest(a); // TC => O(N)
 
         return new int[]{sLargestElement, sSmallestElement};
     }

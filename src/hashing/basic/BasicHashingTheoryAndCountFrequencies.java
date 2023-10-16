@@ -17,15 +17,15 @@ import java.util.Scanner;
 
 // No limitation for hash size for characters, bcz max it can go if you add lower and upper case is 256
 
-// Best and average case TS when HashMap is used=> 0(1) i.e. constant
-// Worst case TS when HashMap is used=> 0(N) i.e. N is number of elements in array, This occurs very rarely.
+// Best and average case TC when HashMap is used=> 0(1) i.e. constant
+// Worst case TC when HashMap is used=> 0(N) i.e. N is number of elements in array, This occurs very rarely.
 
 //Our first priority will be always to use unordered_map(HashMap) and then map. If unordered_map gives a time limit exceeded error(TLE), we will then use the map.
 //The time complexity in the worst case is O(N) because of the internal collision.
 
 //Hashing methods :
 //        1. Division method : In short the values are % by 10 and saved on that key, like 28%10 = 8(28 will be stored in a chain at key 8), 12%10= 2 (12 will be stored in a chain at key 2)
-// Collisions: if multiple(Or all)  values are stored at a single key than collisions happens and then TS is worst case i.e. O(N)
+// Collisions: if multiple(Or all)  values are stored at a single key than collisions happens and then TC is worst case i.e. O(N)
 //        2. Folding method
 //        3. Mid-Square method
 public class BasicHashingTheoryAndCountFrequencies {
@@ -37,7 +37,7 @@ public class BasicHashingTheoryAndCountFrequencies {
         integerHashingUsingMapOptimised();
     }
 
-    // Pre-compute is done in first for loop, but the TS doesn't change much
+    // Pre-compute is done in first for loop, but the TC doesn't change much
     static void integerHashingUsingMapOptimised() {
 
         // take the array length

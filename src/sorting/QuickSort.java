@@ -9,7 +9,7 @@ import java.util.List;
 
 
 // learn and try again
-// TS => N log N
+// TC => N log N
 public class QuickSort {
 
     public static void main(String[] args) {

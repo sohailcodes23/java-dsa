@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-//TS=> O(N1 + N2) , bcz we are iterating through all the elements of array
+//TC=> O(N1 + N2) , bcz we are iterating through all the elements of array
 // SC => O(N1 + N2), this is worst case scenario if all the elements in both the array are unique
 public class UnionOfTwoSortedArraysOrMergeTwoSortedArray {
 

@@ -7,8 +7,8 @@ import java.util.Arrays;
 // Next time check 1st and 2nd element, if 1st element is greater than 2nd, then swap the values.
 // THis goes on till the last values of array is highest value. Once highest values is set at the end of array, don't check the last sorted elements
 
-//TS :
-// Best : O(N) --> Linear TS
+//TC :
+// Best : O(N) --> Linear TC
 //Worst and Average = O(N^2)
 public class BubbleSort {
 
@@ -20,7 +20,7 @@ public class BubbleSort {
     }
 
     static int[] bubbleSortOptimised(int[] array) {
-        // TS => O(N) // Best Case // check 'bubbleSort()' to know worst and average case
+        // TC => O(N) // Best Case // check 'bubbleSort()' to know worst and average case
         // SO if the array is already in ascending order, than we will check in the first run is there any swaps, if in the first lop there are no swaps, than we don't need to run other loops
         //  int[] array = {1,2,4,6,7,9};
         int n = array.length;
@@ -44,7 +44,7 @@ public class BubbleSort {
     }
 
     static int[] bubbleSort(int[] array) {
-        // TS => O(N^2) // Worst or Average Case
+        // TC => O(N^2) // Worst or Average Case
         int n = array.length;
 
 //        Since every call is from 0th index to n-1, 0 to n-2...... till 1;

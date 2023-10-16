@@ -9,7 +9,7 @@ package maths.basic;
 // EX => if there are 2 number
 // a= 9, b= 12, the GCD will be 3. Bcz the greatest number that is dividing both the values is GCD
 // a= 20, b= 40, the GCD will be 20. Bcz the greatest number that is dividing both the values is GCD
-//  TS => O(min(a,b))  // for above example
+//  TC => O(min(a,b))  // for above example
 
 
 // To find GCD we use Euclidean Algorithm
@@ -22,7 +22,7 @@ public class GCDorHCF {
     }
 
     static int EuclideanALgo(int a, int b) {
-// TS=> O(log∅(min(a,b)))
+// TC=> O(log∅(min(a,b)))
 // Here ∅ is Phy, something like this, need to check
         //(a > 0 && b > 0) bcz both the values should be greater than 0 or the gcd is the value that is non-zero
         while (a > 0 && b > 0) {

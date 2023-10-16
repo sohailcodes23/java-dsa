@@ -2,7 +2,7 @@ package searching.binarSearclAlgo.leetcode;
 
 //https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 public class SearchInRotatedDuplicateValuesArray {
-    // TS : O(n/2)
+    // TC : O(n/2)
     public static void main(String[] args) {
         int[] sortedArray = {2, 2, 2, 2, 2, 2, 5, 6, 0, 0, 1, 2};
 //        int[] sortedArray = {3, 3, 1, 3, 3, 3, 3};
