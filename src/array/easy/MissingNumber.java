@@ -1,6 +1,6 @@
 package array.easy;
 
-import java.util.Arrays;
+import util.CommonUtility;
 
 public class MissingNumber {
 
@@ -8,12 +8,13 @@ public class MissingNumber {
         int a[] = {1, 2, 4, 5};
 //        int a[] = {1, 3};
 
-        System.out.println("ANS " + missingNumber_Better(a, a.length));
+        System.out.println("ANS " + findMissingNumber_Optimal1(a));
     }
 
     //OWN
     static int findMissingNumber(int[] nums) {
-
+        // TC ==> O(N)
+        // SC ==> O(1), bcz no extra space is taken
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] - nums[i - 1] != 1) {
                 return nums[i] - 1;
@@ -21,6 +22,31 @@ public class MissingNumber {
         }
 
         return -1;
+    }
+
+    //Optimal 2, didn't understood
+    public static int missingNumber(int[] a, int N) {
+
+        int xor1 = 0, xor2 = 0;
+
+        for (int i = 0; i < N - 1; i++) {
+            xor2 = xor2 ^ a[i]; // XOR of array elements
+            xor1 = xor1 ^ (i + 1); //XOR up to [1...N-1]
+        }
+        xor1 = xor1 ^ N; //XOR up to [1...N]
+
+        return (xor1 ^ xor2); // the missing number
+    }
+
+    //Optimal 1
+    static int findMissingNumber_Optimal1(int[] nums) {
+
+        // TC ==> O(N)
+        // SC ==> O(1), bcz no extra space is taken
+        int sumOfNNaturalNumbers = CommonUtility.sumOfNNaturalNumbers(nums.length + 1); // adding +1 bcz 1 number is missing and we want N number to calculate sumOfNNaturalNumbers
+
+        int arraySum = CommonUtility.sumOfArrayValues(nums);
+        return sumOfNNaturalNumbers - arraySum;
     }
 
     // Better
