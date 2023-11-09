@@ -11,7 +11,7 @@ import java.util.Map;
 // 3. if the count == 0 than assign the next element as the current element and check the rest of the element
 // 4. after the loop is ended. Reiterate the whole loop and check the current element value occurrence in the array
 // 5. if the current element occurence > N/2, than that element is the majority element
-public class MajorityElement {
+public class MajorityElementByTwo_MooresVotingAlgo {
 
     public static void main(String[] args) {
         int array[] = {2, 2, 1, 3, 2, 2, 3, 1, 2};
@@ -58,7 +58,7 @@ public class MajorityElement {
     }
 
     // Better
-    public static int majorityElement_Brute(int[] v) {
+    public static int majorityElement_Better(int[] v) {
 //        TC=> O(N) + O(N)= O(2N), since Hashmap is unordered map, if there is ordered map than the TC=> O(N logN)
 //        SC=> O(N), worst case if all the elements are uniques all the elements will be added in the map, so O(N)
         HashMap<Integer, Integer> hashMap = new HashMap<>();
