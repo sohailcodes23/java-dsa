@@ -15,6 +15,9 @@ public class MajorityElementByThree_MooresVotingAlgo {
     }
 
     public static List<Integer> majorityElement_Optimal(int[] v) {
+
+//        TC=> O(2N)
+        // SC => O(N)
         int count1 = 0;
         int element1 = -1;
         int count2 = 0;
@@ -41,13 +44,12 @@ public class MajorityElementByThree_MooresVotingAlgo {
 
         int eCount1 = 0;
         int eCount2 = 0;
+        // manual count
         for (int i = 0; i < v.length; i++) {
             if (v[i] == element1) {
                 eCount1++;
             }
-        }
 
-        for (int i = 0; i < v.length; i++) {
             if (v[i] == element2) {
                 eCount2++;
             }
