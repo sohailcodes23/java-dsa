@@ -6,9 +6,10 @@ import java.util.HashMap;
 public class TwoSum {
 
     public static void main(String[] args) {
-        int array[] = {2, 6, 5, 8, 11};
+//        int array[] = {2, 6, 5, 8, 11};
+        int array[] = {1, 2, 4, 0, -8, -5};
 
-        System.out.println(Arrays.toString(GetIndexOfTwoSum_Better(array, 15)));
+        System.out.println(Arrays.toString(GetIndexOfTwoSum_Better(array, 3)));
     }
 
     static int[] GetIndexOfTwoSum_Better(int array[], int target) {
@@ -22,11 +23,11 @@ public class TwoSum {
 
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         for (int i = 0; i < array.length; i++) {
-            int pendingValue = target - array[i];
-            if (!hashMap.containsKey(pendingValue)) {
+            int pendingValueKey = target - array[i];
+            if (!hashMap.containsKey(pendingValueKey)) {
                 hashMap.put(array[i], i);
             } else {
-                Integer integer = hashMap.get(pendingValue);
+                Integer integer = hashMap.get(pendingValueKey);
                 return new int[]{i, integer};
             }
         }
