@@ -1,7 +1,7 @@
 package array.medium;
 
 // Negative values are not taken as minimum
-// checked only on the right side of the minium number
+// checked only on the right side of the minimum number
 public class BestTimeToBuyAndSell {
 
     public static void main(String[] args) {
