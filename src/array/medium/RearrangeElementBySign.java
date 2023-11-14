@@ -12,21 +12,42 @@ import java.util.List;
 public class RearrangeElementBySign {
 
     public static void main(String[] args) {
-        int array[] = {-2, -3, 4, 5};
+        int array[] = {-2, -3, 4, 5,-1};
 //        int array[] = {3, 1, -2, -5, 2, -4};
 //        int array[] = {-3, 1, 3, 2, -5, -4};
 
 //        rearrangeElementBySign_Optimal(array);
+        System.out.println("ANS " + Arrays.toString(rearrangeElementBySign_Optimal(array)));
         System.out.println("ANS " + Arrays.toString(rearrangeElementBySign_Optimalv2(array)));
 
         rearrangeElementBySign_Brute(array);
         System.out.println("ANS " + Arrays.toString(array));
     }
 
-
-    static int[] rearrangeElementBySign_Optimalv2(int nums[]) {
+    static int[] rearrangeElementBySign_Optimalv2(int a[]) {
         // Final TC => O(N)
-        // SC +> O(N)
+        // SC => O(N)
+        int positiveIndex = 0;
+        int negativeIndex = 1;
+        int ans[] = new int[a.length];
+        for (int i = 0; i < a.length; i++) {
+
+            if (a[i] > 0) {
+                ans[positiveIndex] = a[i];
+                positiveIndex = (positiveIndex + 2) >= a.length ? positiveIndex + 1 : positiveIndex + 2; // this is added so if the +ves and -ves are not equal it will assign the values at the end f the array
+            } else {
+                ans[negativeIndex] = a[i];
+                negativeIndex = (negativeIndex + 2) >= a.length ? negativeIndex + 1 : negativeIndex + 2;
+            }
+        }
+
+        return ans;
+    }
+
+
+    static int[] rearrangeElementBySign_Optimal(int nums[]) {
+        // Final TC => O(N)
+        // SC => O(N)
         int positiveIndex = 0;
         int negative = positiveIndex + 1;
         int ans[] = new int[nums.length];
