@@ -17,7 +17,8 @@ public class LongestSuccessiveElement {
 
     public static int longestSuccessiveElements(int[] a) {
 
-        Arrays.sort(a);
+//        TC=> O(N)
+        Arrays.sort(a); // Sort SC=> O(N log N)
 
         int n = a.length;
         int lastSmallest = Integer.MIN_VALUE; // to compare it should be the smallest
