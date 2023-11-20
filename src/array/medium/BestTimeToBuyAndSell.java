@@ -6,7 +6,7 @@ public class BestTimeToBuyAndSell {
 
     public static void main(String[] args) {
 
-        int array[] = {8, 1, 5, 4, 3, 6,7};
+        int array[] = {8, 1, 5, 4, 3, 6, 7};
 
         System.out.println("ANS " + findMaxProfit(array));
     }
