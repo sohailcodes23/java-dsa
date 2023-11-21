@@ -10,7 +10,7 @@ public class CountAllSubArrays {
 
     }
 
-//    OWN
+
     public static int findAllSubarraysWithGivenSum(int arr[], int s) {
 
         int count = 0;
