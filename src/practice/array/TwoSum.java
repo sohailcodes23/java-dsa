@@ -51,7 +51,6 @@ public class TwoSum {
                 pairList.add(new Pair(remaining, arr.get(i)));
                 map.put(arr.get(i), -1); // so that this key and value cannot be used next time
             } else {
-
                 map.put(arr.get(i), i);
             }
         }
