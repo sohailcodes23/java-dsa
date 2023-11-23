@@ -50,40 +50,12 @@ public class SuperiorElement {
             boolean leader = true;
             for (int j = i + 1; j < n; j++) {
                 if (a[j] > a[i]) {
-
                     leader = false;
                     break;
                 }
             }
 
-            if (leader == true) {
-                superiorElements.add(a[i]);
-            }
-        }
-
-        Collections.sort(superiorElements);
-        return superiorElements;
-    }
-
-    public static List<Integer> superiorElements(int[] a) {
-
-        int breakPoint = -1;
-        List<Integer> superiorElements = new ArrayList<>();
-        int n = a.length;
-        for (int i = n - 2; i >= 0; i--) {
-
-            if (a[i] < a[i + 1]) {
-                breakPoint = i;
-                break;
-            }
-        }
-
-        if (breakPoint == -1) {
-            return Collections.singletonList(a[a.length - 1]);
-        }
-
-        for (int i = breakPoint + 1; i < a.length; i++) {
-            if (!superiorElements.contains(a[i])) {
+            if (leader) {
                 superiorElements.add(a[i]);
             }
         }
