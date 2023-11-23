@@ -23,19 +23,21 @@ public class LeadersInArrayOrSuperiorElements {
 
     public static ArrayList<Integer> findLeaders_Better(ArrayList<Integer> elements, int n) {
 
+//        Final TC=> O(2N)
+//        SC=> O(N) // for result
 
         ArrayList<Integer> integers = new ArrayList<>();
 
         if (n >= 1) {
             integers.add(elements.get(n - 1));
         }
-        for (int i = n - 2; i >= 0; i--) {
+        for (int i = n - 2; i >= 0; i--) { // TC=> O(N)
 
             if (elements.get(i) > elements.get(i + 1)) {
                 integers.add(elements.get(i));
             }
         }
-        Collections.reverse(integers);
+        Collections.reverse(integers); // TC=> O(N) : to reverse the list
         return integers;
     }
 
