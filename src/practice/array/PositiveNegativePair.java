@@ -10,8 +10,33 @@ public class PositiveNegativePair {
         integers.addAll(Arrays.asList(1, -3, -2, 3, 6, -1)); // -1 1  -3 3
         System.out.println("ANS " + pairs_Brute(integers, integers.size()));
         System.out.println("ANS " + pairs_Better(integers, integers.size()));
+        System.out.println("ANS " + pairs_Optimal(integers, integers.size()));
     }
 
+    // Watched
+    public static ArrayList<ArrayList<Integer>> pairs_Optimal(ArrayList<Integer> arr, int n) {
+//        TC=>O(N)
+//        SC=> O(N)
+        ArrayList<ArrayList<Integer>> arrayLists = new ArrayList<>();
+        Set<Integer> integers = new HashSet<>();
+        for (int i = 0; i < arr.size(); i++) { // TC => O(N)
+            ArrayList<Integer> newPairs = new ArrayList<>();
+            if (integers.contains(-arr.get(i))) {
+                newPairs.add(-Math.abs(arr.get(i)));
+                newPairs.add(Math.abs(arr.get(i)));
+            } else {
+                integers.add(arr.get(i));
+            }
+            if (!newPairs.isEmpty()) {
+                arrayLists.add(newPairs);
+            }
+        }
+
+
+        return arrayLists;
+    }
+
+// Own
     public static ArrayList<ArrayList<Integer>> pairs_Better(ArrayList<Integer> arr, int n) {
 //        TC=>O(2N)
 //        SC=> O(N)
@@ -28,11 +53,10 @@ public class PositiveNegativePair {
                 ArrayList<Integer> newPairs = new ArrayList<>();
                 int positiveValue = entryKey * -1;
 
-                if (hashMap.containsKey(positiveValue) && hashMap.get(positiveValue) != -1) {
+                if (hashMap.containsKey(positiveValue)) {
 
                     newPairs.add(entry.getKey());
                     newPairs.add(positiveValue);
-                    hashMap.put(positiveValue, -1);
                 }
 
                 if (!newPairs.isEmpty()) {
