@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
+//https://www.codingninjas.com/studio/problems/leaders-in-an-array_873144?topList=top-array-coding-interview-questions&leftPanelTabValue=PROBLEM
 public class SuperiorElement {
 
     public static void main(String[] args) {
