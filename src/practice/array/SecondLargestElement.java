@@ -7,9 +7,9 @@ public class SecondLargestElement {
     public static void main(String[] args) {
 
 
-        int array[] = {-10, -40, -25, -12, -25, -10};
+//        int array[] = {-10, -40, -25, -12, -25, -10};
 //        int array[] = {10, 25, -12, -6, 20, 20};
-//        int array[] = {1, 3, 2, 5, 4};
+        int array[] = {1, 3, 2, 5, 4};
 
         System.out.println("ANS " + secondLargestElement(array));
 
@@ -27,7 +27,7 @@ public class SecondLargestElement {
         }
 
 
-        for (int i = n - 2; i >= 0; i--) { // to check the duplicate value, if the highest value is deplicated than we need tot check it
+        for (int i = n - 2; i >= 0; i--) { // to check the duplicate value, if the highest value is duplicated than we need to check it
 
             if (array[i] != array[n - 1]) {
                 return array[i];
