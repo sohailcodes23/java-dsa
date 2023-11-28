@@ -8,7 +8,7 @@ import java.util.List;
 // Can be done using hashing but SC will be O(N)
 // Can be done by sum of n natural numbers
 // Optimal : https://leetcode.com/problems/first-missing-positive/solutions/3765193/cycle-sort-o-n-o-1-easy-java-solution-detailed-explanation-beats-100/
-// https://www.youtube.com/watch?v=-lfHWWMmXXM
+// Reference : https://www.youtube.com/watch?v=-lfHWWMmXXM
 // Cyclic sort : https://emre.me/coding-patterns/cyclic-sort/
 public class FirstMissingPositive {
 
