@@ -1,9 +1,6 @@
 package practice.string;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class EncodeTheMessage {
+public class EncodeString {
 
     public static void main(String[] args) {
 
