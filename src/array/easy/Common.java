@@ -56,7 +56,7 @@ public class Common {
         // TC => O(N) , explain below
         // SC => O(1), we are not using any extra space, just modifying the array
         int lastZeroIndex = -1;
-        for (int i = 0; i < a.length; i++) { // Ts => O(x), x bcz the array breaks when 0 is found so loop runs till x.
+        for (int i = 0; i < a.length; i++) { // TC => O(x), x bcz the array breaks when 0 is found so loop runs till x.
             if (a[i] == 0) {
                 lastZeroIndex = i;
                 break;

@@ -38,8 +38,8 @@ public class FindMinAndMaxELement {
         int min = Integer.MAX_VALUE;
         int max = -1;
         for (int i = 0; i < array.length; i++) {
-            min=Math.min(min,array[i]);
-            max=Math.max(max,array[i]);
+            min = Math.min(min, array[i]);
+            max = Math.max(max, array[i]);
         }
 
 

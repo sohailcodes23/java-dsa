@@ -11,8 +11,8 @@ public class DuplicateInArray {
     public static void main(String[] args) {
 //        int array[] = {1, 2, 4, 3, 4, 5};
         ArrayList<Integer> integers = new ArrayList<>();
-        integers.addAll(Arrays.asList(1,2,4,3,5,4));
-        System.out.println("ANS "+findDuplicate(integers));
+        integers.addAll(Arrays.asList(1, 2, 4, 3, 5, 4));
+        System.out.println("ANS " + findDuplicate(integers));
     }
 
     public static int findDuplicate(ArrayList<Integer> arr) {

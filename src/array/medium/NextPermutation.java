@@ -73,7 +73,7 @@ public class NextPermutation {
             for (int i = 0; i < array.size(); i++) {
                 nums[i] = array.get(i);
             }
-        }else {
+        } else {
 
             for (int i = n - 1; i > breakPoint; i--) {
 

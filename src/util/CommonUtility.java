@@ -49,7 +49,7 @@ public class CommonUtility {
             swapBasedOnIndex(minimumValueIndex, i, array);
         }
 
-        System.out.println("SORTED ARRAY "+ Arrays.toString(array));
+        System.out.println("SORTED ARRAY " + Arrays.toString(array));
         return array;
     }
 

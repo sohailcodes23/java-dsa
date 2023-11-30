@@ -1,8 +1,6 @@
 package practice.array;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 // https://www.youtube.com/watch?v=6KHW7ZQwtCA
 // Can be done using hashing but SC will be O(N)

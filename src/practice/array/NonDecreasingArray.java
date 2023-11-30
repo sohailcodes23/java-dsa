@@ -12,7 +12,7 @@ public class NonDecreasingArray {
 //        int array[]={8,4,6}; // update 0th index with 2
 //        int array[] = {-2, 7, -1, 0, 1, 2}; // update 1st index with -2
 //        int array[] = {8, 4, 2}; // false
-        int array[] = {3,4,2,3}; // false
+        int array[] = {3, 4, 2, 3}; // false
 //        int array[] = {1, 3, 2}; // false
 //        int array[] = {4, 2, 3}; // true
 //        int array[] = {5, 7, 1, 8}; // true
@@ -53,7 +53,7 @@ public class NonDecreasingArray {
         int n = nums.length;
         boolean changed = false;
 
-        for (int i = 0; i < n-1; i++) {
+        for (int i = 0; i < n - 1; i++) {
             if (nums[i] > nums[i + 1]) {
 
                 if (changed) {// this is wihtin the condition, so if it's true that means it has been changed once
@@ -112,9 +112,6 @@ public class NonDecreasingArray {
         }
         return count <= 1;
     }
-
-
-
 
 
     public static boolean checkPossibility_Brute(int[] arr, int n) {

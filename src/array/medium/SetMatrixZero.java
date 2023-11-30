@@ -1,6 +1,5 @@
 package array.medium;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -31,7 +30,6 @@ public class SetMatrixZero {
 
 //        System.out.println("ANS " + Arrays.toString(array));
     }
-
 
 
     // Optimal : need to recheck, didn't understood properly

@@ -46,7 +46,7 @@ public class MaximumSubArraySum_KadaneAlgo {
         }
 
         for (int i = ansStart; i <= ansEnd; i++) { // to print the array
-            System.out.print(arr[i]+", ");
+            System.out.print(arr[i] + ", ");
         }
 
         return Math.max(maxi, 0);

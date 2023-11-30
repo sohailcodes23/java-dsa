@@ -8,6 +8,7 @@ public class MinimumParentheses {
 
         System.out.println("ANS " + minAddToMakeValid(input));
     }
+
     public static int minAddToMakeValid(String s) {
 
         int open = 0;

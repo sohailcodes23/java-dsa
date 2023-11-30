@@ -1,7 +1,5 @@
 package array.medium;
 
-import java.util.Arrays;
-
 public class LongestSubarrayWithSumK {
 
     public static void main(String[] args) {

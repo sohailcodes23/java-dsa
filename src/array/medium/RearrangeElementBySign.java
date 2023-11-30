@@ -76,6 +76,7 @@ public class RearrangeElementBySign {
 
         return a;
     }
+
     static int[] rearrangeElementBySign_Optimal(int nums[]) {
         // Final TC => O(N)
         // SC => O(N)
@@ -119,7 +120,6 @@ public class RearrangeElementBySign {
             array[2 * i + 1] = negatives.get(i);
         }
     }
-
 
 
     // Code studio took the ans but the code doesn't return the required answer

@@ -7,7 +7,7 @@ public class MaximumConsecutiveOnes {
                 0, 1, 1, 0, 0, 1, 1, 1
         };
 
-        System.out.println("ANS " + consecutiveOnes( a));
+        System.out.println("ANS " + consecutiveOnes(a));
     }
 
     public static int consecutiveOnes(int[] nums) {

@@ -13,7 +13,7 @@ public class GetSingleElementFromArray {
     }
 
     // Need to read more about xor
-    public static int getSingleElement_Optimal(int []arr) {
+    public static int getSingleElement_Optimal(int[] arr) {
         //size of the array:
         int n = arr.length;
 
