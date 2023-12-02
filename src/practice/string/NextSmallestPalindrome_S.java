@@ -73,11 +73,11 @@ public class NextSmallestPalindrome_S {
 
         // Compare the reversed left part with the right part
         if (compare(new StringBuilder(left).reverse().toString(), right) == 1) {
-            return left + a.charAt(mid) + new StringBuilder(left).reverse().toString();
+            return left + a.charAt(mid) + new StringBuilder(left).reverse();
         } else {
             left = left + a.charAt(mid);
             left = add1(left); // Add 1 to the left part
-            return left + new StringBuilder(left).reverse().toString().substring(1);
+            return left + new StringBuilder(left).reverse().substring(1);
         }
     }
 
