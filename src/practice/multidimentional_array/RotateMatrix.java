@@ -1,6 +1,6 @@
 package practice.multidimentional_array;
 
-// Inplace rotate matix 90 degree
+// Inplace rotate matrix 90 degree
 public class RotateMatrix {
 
     public static void main(String[] args) {
