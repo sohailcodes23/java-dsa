@@ -9,7 +9,6 @@ public class CountSubArraysHavingSumDivisibleByK {
         int[] array = {4, 5, 0, -2, -3, 1};
 //        int[] array = {5, 0, 2, 3, 1};
 
-
         System.out.println("ANS " + subarraysDivByK(array, 5));
     }
 
