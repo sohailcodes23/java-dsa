@@ -1,4 +1,4 @@
-package practice.map_sets;
+package practice.two_pointers;
 
 import java.util.Arrays;
 
