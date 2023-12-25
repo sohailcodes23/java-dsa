@@ -2,6 +2,8 @@ package practice.basicAlgorithm;
 
 import java.util.Arrays;
 
+// check the current element with the next element, if not sorted swap them
+// TC=> O(N^2)
 public class InsertionSort {
 
     public static void main(String[] args) {
