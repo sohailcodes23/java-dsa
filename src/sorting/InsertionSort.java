@@ -19,7 +19,7 @@ public class InsertionSort {
 
     static int[] insertionSort(int[] array) {
         int n = array.length;
-        for (int i = 0; i < n; i++) { //loop will run till the end of array
+        for (int i = 1; i < n; i++) { //loop will run till the end of array
             int j = i;
             // j>0 bcz when checking the 'j-1' element is checked so it will throw exception when the element is at 0, 0-1 = -1 (This will cause exception)
 //            array[j-1] > array[j] bcz only than you need to swap
