@@ -1,9 +1,6 @@
 package practice.mixedQuestion;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 // How many ans will be there in result, is decided based on n/3.
@@ -15,35 +12,37 @@ public class MajorityElementByThree_Moores_Voting_Algo {
         ArrayList<Integer> integers = new ArrayList<>();
         integers.addAll(Arrays.asList(1, 2, 4, 4, 3, 4));
 
-        int[] arra = {1, 2, 2, 2, 4, 4, 3, 4};
-//        int[] arra = {2, 2};
+//        int[] arra = {1, 2, 2, 2, 4, 4, 3, 4};
+        int[] arra = {2, 2};
 
 //        System.out.printf("ANS " + majorityElementII_Brute(integers));
-        System.out.printf("ANS " + majorityElementII_Betterv2(arra));
+        System.out.printf("ANS " + majorityElementII_Optimal(arra));
+        System.out.printf("ANS " + majorityElementII_Optimall(integers));
     }
 
-    public static ArrayList<Integer> majorityElementII_Optimal(int[] arr) {
+    //leetcode
+    public static List<Integer> majorityElementII_Optimal(int[] v) {
+        int n = v.length;
 
         int count1 = 0, count2 = 0;
         int ele1 = Integer.MIN_VALUE, ele2 = Integer.MIN_VALUE;
         ArrayList<Integer> result = new ArrayList<>();
-        int n = arr.length;
-        int toCheck = (n / 3) + 1; // adding +1 to get the minimum number to be majority
+        int toCheck = (int) (n / 3) + 1; // adding +1 to get the minimum number to be majority
         // NOTE : these count are not actual majority elements, bcz it is calculated based on + and --
         // Actual count is done below
         for (int i = 0; i < n; i++) { // loop to get the elements and element count
 
             if (count1 == 0
-                    && ele2 != arr[i]) { // ele2 != arr[i] to avoid count the same element that is assigned to ele2
-                ele1 = arr[i];
-                count1++;
+                    && ele2 != v[i]) { // ele2 != v[i] to avoid count the same element that is assigned to ele2
+                ele1 = v[i];
+                count1 = 1;
             } else if (count2 == 0
-                    && ele2 != arr[i]) {
-                ele2 = arr[i];
-                count2++;
-            } else if (arr[i] == ele1) {
+                    && ele1 != v[i]) {
+                ele2 = v[i];
+                count2 = 1;
+            } else if (v[i] == ele1) {
                 count1++;
-            } else if (arr[i] == ele2) {
+            } else if (v[i] == ele2) {
                 count2++;
             } else {
                 count1--;
@@ -57,11 +56,11 @@ public class MajorityElementByThree_Moores_Voting_Algo {
         count1 = 0;
         count2 = 0;
         for (int i = 0; i < n; i++) {
-            if (ele1 == arr[i]) {
+            if (ele1 == v[i]) {
                 count1++;
             }
 
-            if (ele2 == arr[i]) {
+            if (ele2 == v[i]) {
                 count2++;
             }
         }
@@ -71,7 +70,66 @@ public class MajorityElementByThree_Moores_Voting_Algo {
         }
 
 
-        if (count2 >= toCheck && ele1!=ele2) { // just to be double to sure && ele1!=ele2, to be sure for {2,2} cases
+        if (count2 >= toCheck) {
+            result.add(ele2);
+        }
+
+        return result;
+    }
+
+
+    //codestudio
+    public static ArrayList<Integer> majorityElementII_Optimall(ArrayList<Integer> v)
+    {
+        int n = v.size();
+
+        int count1 = 0, count2 = 0;
+        int ele1 = Integer.MIN_VALUE, ele2 = Integer.MIN_VALUE;
+        ArrayList<Integer> result = new ArrayList<>();
+        int toCheck = (int) (n / 3) + 1; // adding +1 to get the minimum number to be majority
+        // NOTE : these count are not actual majority elements, bcz it is calculated based on + and --
+        // Actual count is done below
+        for (int i = 0; i < n; i++) { // loop to get the elements and element count
+
+            if (count1 == 0
+                    && ele2 != v.get(i)) { // ele2 != v.get(i) to avoid count the same element that is assigned to ele2
+                ele1 = v.get(i);
+                count1 = 1;
+            } else if (count2 == 0
+                    && ele1 != v.get(i)) {
+                ele2 = v.get(i);
+                count2 = 1;
+            } else if (v.get(i) == ele1) {
+                count1++;
+            } else if (v.get(i) == ele2) {
+                count2++;
+            } else {
+                count1--;
+                count2--;
+            }
+        }
+
+
+        // Actual count of elements
+        //checking the elements
+        count1 = 0;
+        count2 = 0;
+        for (int i = 0; i < n; i++) {
+            if (ele1 == v.get(i)) {
+                count1++;
+            }
+
+            if (ele2 == v.get(i)) {
+                count2++;
+            }
+        }
+
+        if (count1 >= toCheck) {
+            result.add(ele1);
+        }
+
+
+        if (count2 >= toCheck) {
             result.add(ele2);
         }
 
