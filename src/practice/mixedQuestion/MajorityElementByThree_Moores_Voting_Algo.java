@@ -8,18 +8,74 @@ import java.util.Map;
 
 // How many ans will be there in result, is decided based on n/3.
 // So if n=8, 8/3=2, now if elemenst should occur more than 2 time, so if we take 3 elements + 3 elem..+ 3 elem..= it will be more than n i.e. 8
-public class MajorityElementByThree {
+public class MajorityElementByThree_Moores_Voting_Algo {
 
     public static void main(String[] args) {
 
         ArrayList<Integer> integers = new ArrayList<>();
         integers.addAll(Arrays.asList(1, 2, 4, 4, 3, 4));
 
-//        int[] arra = {1, 2, 4, 4, 3, 4};
-        int[] arra = {2, 2};
+        int[] arra = {1, 2, 2, 2, 4, 4, 3, 4};
+//        int[] arra = {2, 2};
 
 //        System.out.printf("ANS " + majorityElementII_Brute(integers));
         System.out.printf("ANS " + majorityElementII_Betterv2(arra));
+    }
+
+    public static ArrayList<Integer> majorityElementII_Optimal(int[] arr) {
+
+        int count1 = 0, count2 = 0;
+        int ele1 = Integer.MIN_VALUE, ele2 = Integer.MIN_VALUE;
+        ArrayList<Integer> result = new ArrayList<>();
+        int n = arr.length;
+        int toCheck = (n / 3) + 1; // adding +1 to get the minimum number to be majority
+        // NOTE : these count are not actual majority elements, bcz it is calculated based on + and --
+        // Actual count is done below
+        for (int i = 0; i < n; i++) { // loop to get the elements and element count
+
+            if (count1 == 0
+                    && ele2 != arr[i]) { // ele2 != arr[i] to avoid count the same element that is assigned to ele2
+                ele1 = arr[i];
+                count1++;
+            } else if (count2 == 0
+                    && ele2 != arr[i]) {
+                ele2 = arr[i];
+                count2++;
+            } else if (arr[i] == ele1) {
+                count1++;
+            } else if (arr[i] == ele2) {
+                count2++;
+            } else {
+                count1--;
+                count2--;
+            }
+        }
+
+
+        // Actual count of elements
+        //checking the elements
+        count1 = 0;
+        count2 = 0;
+        for (int i = 0; i < n; i++) {
+            if (ele1 == arr[i]) {
+                count1++;
+            }
+
+            if (ele2 == arr[i]) {
+                count2++;
+            }
+        }
+
+        if (count1 >= toCheck) {
+            result.add(ele1);
+        }
+
+
+        if (count2 >= toCheck && ele1!=ele2) { // just to be double to sure && ele1!=ele2, to be sure for {2,2} cases
+            result.add(ele2);
+        }
+
+        return result;
     }
 
     public static ArrayList<Integer> majorityElementII_Betterv2(int[] arr) {
