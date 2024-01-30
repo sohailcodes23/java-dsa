@@ -1,5 +1,6 @@
 package util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CommonUtility {
@@ -20,6 +21,12 @@ public class CommonUtility {
         int tempValue = array[j]; // IMP store the value not the index
         array[j] = array[i];
         array[i] = tempValue;
+    }
+
+    public static void swapBasedOnIndexArrayList(int j, int i, ArrayList<Integer> array) {
+        int tempValue = array.get(j); // IMP store the value not the index
+        array.set(j, array.get(i));
+        array.set(i, tempValue);
     }
 
     public static void reverseArray(int arr[], int start, int end) {

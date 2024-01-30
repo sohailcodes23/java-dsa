@@ -5,20 +5,27 @@ public class Palindrome {
 
     public static void main(String[] args) {
 
-        System.out.println(isPalindrome(121));
+        System.out.println(isPalindrome(-121));
     }
 
     public static boolean isPalindrome(int x) {
-        int finalNumber = 0;
-        int tempX = x;
-        // here for negative number it won't be usefull to use loop bcz -121 will be 121-, which doesn't make sense
-
-        while (tempX > 0) {
-            int lastDigit = tempX % 10;
-            tempX = tempX / 10;
-            finalNumber = finalNumber * 10 + lastDigit;
+        if (x < 0) { // to handle negative no. case
+            return false;
         }
-        return finalNumber == x;
+        long finalNum = 0;
+        int tempX = x;
+        while (x != 0) {
+            int lastDig = x % 10;
+            finalNum = finalNum * 10 + lastDig;
+            x = x / 10;
+        }
+        if (finalNum > Integer.MAX_VALUE || finalNum < Integer.MIN_VALUE) {
+            return false;
+        }
+        if (tempX == finalNum) {
+            return true;
+        }
+        return false;
     }
 
 
