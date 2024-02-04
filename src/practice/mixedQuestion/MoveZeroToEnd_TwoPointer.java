@@ -5,7 +5,7 @@ import util.CommonUtility;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MoveZeroToEnd {
+public class MoveZeroToEnd_TwoPointer {
     public static void main(String[] args) {
         ArrayList<Integer> integers = new ArrayList<>();
         integers.addAll(Arrays.asList(2, 0, 4, 1, 3, 0, 28));
