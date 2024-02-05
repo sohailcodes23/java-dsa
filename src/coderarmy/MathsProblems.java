@@ -112,4 +112,29 @@ public class MathsProblems {
         return ans;
     }
 
+    static boolean armstrong(int n) {
+
+        int count = 0;
+        int tempN = n;
+        while (tempN > 0) {
+            tempN = tempN / 10;
+            count++;
+        }
+        System.out.println("C " + count);
+        int ans = 0;
+        tempN = n;
+        int mul = 0;
+        while (n > 0) {
+            int rem = n % 10;
+            n = n / 10;
+
+            ans = (int) Math.pow(rem, count) + ans;
+        }
+
+        if (ans == tempN) {
+            return true;
+        }
+
+        return false;
+    }
 }
