@@ -3,6 +3,8 @@ package coderarmy;
 public class MathsProblems {
 
     public static void main(String[] args) {
+//        System.out.println(mySqrt(8));
+//        System.out.println(armstrong(153));
     }
 
     public int addDigits(int num) {
@@ -69,18 +71,45 @@ public class MathsProblems {
 
     public boolean isPowerOfTwo(int n) {
 
-        if(n<1){
+        if (n < 1) {
             return false;
         }
 
-        while(n!=1){// n!=1 bcz when we are dividing n, the quotient should go only till 1
+        while (n != 1) {// n!=1 bcz when we are dividing n, the quotient should go only till 1
 
-            if(n % 2!=0){// if n is not even
+            if (n % 2 != 0) {// if n is not even
                 return false;
             }
-            n=n/2;
+            n = n / 2;
         }
 
         return true; // is power of 2
     }
+
+    // works for most case, not all like : 2147395600
+    public static int mySqrt(int x) {
+        int i = 0;
+        int value = 0;
+        while (value < x) {
+            i++;
+            value = i * i;
+        }
+        if ((i * i) > x) {
+            return i - 1;
+        }
+
+        return i;
+    }
+
+    static Long squaresInChessBoard(Long N) {
+        // code here
+        long ans = 0;
+        while (N > 0) {
+            ans = (N * N) + ans;
+            N--;
+        }
+
+        return ans;
+    }
+
 }

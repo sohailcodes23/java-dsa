@@ -10,11 +10,12 @@ public class BinaryToDecimalToOctal {
 
 
         toDecimal(1101);//1101
-        toBinary(13);// 13
+//        toBinary(13);// 13
+//        ComplementOfBinaryToDecimal(27);// 13==>2,27==>4
 
     }
 
-     static void toDecimal(int N) {
+    static void toDecimal(int N) {
         //Write your code here
 
         int rem = 0;
@@ -50,4 +51,29 @@ public class BinaryToDecimalToOctal {
         System.out.print(ans);
 
     }
+
+    public int bitwiseComplement(int N) {
+        if (N == 0) {
+            return 1;
+        }
+        int rem = 0;
+        int ans = 0, mul = 1;
+
+        while (N > 0) {
+
+            rem = N % 2; // mod
+            if (rem == 1) {
+                rem = 0;
+            } else {
+                rem = 1;
+            }
+            N = N / 2;
+            ans = rem * mul + ans; // add the ans
+            mul = mul * 2; // to add raise to power : 2 ^ i
+        }
+
+        return ans;
+    }
+
+
 }
