@@ -4,7 +4,8 @@ public class MathsProblems {
 
     public static void main(String[] args) {
 //        System.out.println(mySqrt(8));
-//        System.out.println(armstrong(153));
+//        System.out.println(findTrailingZeroInFactorial(148));
+        System.out.println(totalMovesForBishop(3, 4));
     }
 
     public int addDigits(int num) {
@@ -136,5 +137,31 @@ public class MathsProblems {
         }
 
         return false;
+    }
+
+    static int findTrailingZeroInFactorial(int n) {
+        // 6! ==>720, so ans is 1
+        // 25! ==>15511210043330985984000000, so ans is =6
+        int ans = 0;
+
+        while (n >= 5) {// only till 5 bcz 0 will only be found from the factorial of 5 and so on
+
+            ans = ans + (n / 5);
+            n = n / 5;// to keep diving and decreasing the number
+        }
+        return ans;
+    }
+
+    public static int totalMovesForBishop(int A, int B) {
+// think like you are in the middle of the chess board
+        // bishop only goes diagonally
+        int count = 0;
+
+        count = count + Math.min(8 - A, B - 1);//left bottom//
+        count = count + Math.min(A - 1, 8 - B);//right bottom
+        count = count + Math.min(8 - A, 8 - B);//right top //
+        count = count + Math.min(A - 1, B - 1);//left top//
+
+        return count;
     }
 }
