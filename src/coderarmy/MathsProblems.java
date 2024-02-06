@@ -164,4 +164,16 @@ public class MathsProblems {
 
         return count;
     }
+
+    //NIM GAME : if the remaining number can be divided by 4, than you can win. Rule you can only say three number, not more than that
+    // EX : n=9: Person1 : told 1, now the pending is 8, you can say 2,3,4, now P1: 5,6, YOU: 7,8.... You will only go till the multiplier of 4
+    // EX : n=9: Person1 : told 1,2,3, now the pending is 5, you can say 4, Now rest of the numbers can be multiplied by 4, now P1: 5,6, YOU: 7,8.... You will only go till the multiplier of 4
+    public boolean canWinNim(int n) {
+
+        if(n%4!=0){
+            return true;
+        }else return false;
+    }
+
+
 }
