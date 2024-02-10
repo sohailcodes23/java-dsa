@@ -1,4 +1,4 @@
-package coderarmy;
+package coderarmy.array;
 
 import java.util.Arrays;
 
