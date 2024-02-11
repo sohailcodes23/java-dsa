@@ -9,8 +9,9 @@ public class Sorting {
     public static void main(String[] args) {
 
         int array[] = {4, 6, 2, 58, 69, 3, 65};
+//        int array[] = {5, 3, 4, 2, 1};
 //        selectionSortv2(array);
-        selectionSortv2(array);
+        bubbleSort(array);
 
 //        int largest = 0;
 //        for (int j = 0; j < array.length; j++) {
@@ -23,7 +24,24 @@ public class Sorting {
         System.out.println(" ANS " + Arrays.toString(array));
     }
 
-    // swapping smallest element at the start
+    public static void bubbleSort(int[] array) {
+
+        int n = array.length;
+        boolean swapped = false;// to check the best case
+        for (int i = n - 2; i >= 0; i--) {// n-1, bcz we need till 2nd last
+            for (int j = 0; j <= i; j++) {
+                if (array[j] > array[j + 1]) {
+                    CommonUtility.swapBasedOnIndex(j, j + 1, array);
+                    swapped = true;
+                }
+            }
+
+            if (swapped == false) {
+                break;
+            }
+        }
+    }
+
     public static void selectionSort(int[] array) {
         // TC=> O(N^2)
         // SC=> O(1): constant
