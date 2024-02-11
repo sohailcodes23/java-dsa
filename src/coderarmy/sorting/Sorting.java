@@ -1,4 +1,4 @@
-package coderarmy.array;
+package coderarmy.sorting;
 
 import util.CommonUtility;
 

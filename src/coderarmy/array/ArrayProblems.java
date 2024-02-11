@@ -1,14 +1,109 @@
 package coderarmy.array;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ArrayProblems {
 
     public static void main(String[] args) {
+        int arr[] = {1, 5, 3, 4, 3, 5, 6};
+//        int arr[] = {1, 2, 3, 2};
 //        int arr[] = {1, 2, 3, 5};
 //        int arr[] = {1};
 //        System.out.println(missingNumber(arr, 5));
-        System.out.println(fibonacciNumberTillN(7));
+        System.out.println(firstRepeatedElement(arr, arr.length));
+    }
+
+    public static int firstRepeatedElement(int[] arr, int n) {
+
+//        TC=> O(N)
+//        SC=> O(N)
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+
+            int count = hashMap.getOrDefault(arr[i], 0);
+            hashMap.put(arr[i], count + 1);
+        }
+
+        for (int i = 0; i < n; i++) {
+
+            if (hashMap.get(arr[i]) > 1) {
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+
+    public static int firstRepeatedElement_Brute(int[] arr, int n) {
+        // TC=> O(N^2)
+        // SC=> O(1)
+        boolean repeated = false;
+        int index = -1;
+        for (int i = 0; i < n; i++) {
+
+            for (int j = 0; j < n; j++) {
+
+                if (arr[i] == arr[j] && i != j) {
+                    repeated = true;
+                }
+            }
+
+            if (repeated) {
+                index = i;
+
+                return index + 1;
+            }
+
+        }
+        return index;
+    }
+
+    public static int sumOfUnique(int[] nums) {
+
+//        TC=> O(N)
+//        SC=> O(N)
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+
+        for (int i : nums) {
+            hashMap.put(i, hashMap.getOrDefault(i, 0) + 1);
+        }
+
+        int sum = 0;
+        for (Map.Entry<Integer, Integer> integerIntegerEntry : hashMap.entrySet()) {
+
+            if (integerIntegerEntry.getValue() == 1) {
+                sum = sum + integerIntegerEntry.getKey();
+            }
+        }
+
+        return sum;
+    }
+
+    public static int sumOfUnique_Brute(int[] nums) {
+
+//        TC=> O(N^2)
+//        SC=> O(1)
+        int n = nums.length;
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            int currentCurrent = nums[i];
+
+            boolean unique = true;
+            for (int j = 0; j < n; j++) {
+                if (currentCurrent == nums[j]
+                        && i != j) {
+                    unique = false;
+                }
+            }
+            if (unique) {
+                sum = currentCurrent + sum;
+            }
+
+        }
+
+        return sum;
     }
 
     static int fibonacciNumberTillN(int n) {
