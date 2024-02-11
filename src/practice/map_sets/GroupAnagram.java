@@ -11,7 +11,7 @@ public class GroupAnagram {
 
 //        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
 //        System.out.println("ANS " + groupAnagrams(strs));
-        System.out.println("ANS " + getGroupedAnagrams(strs,strs.size()));
+        System.out.println("ANS " + getGroupedAnagrams(strs, strs.size()));
     }
 
     // optimal leetcode
@@ -45,7 +45,7 @@ public class GroupAnagram {
 //            result.add(entry.getValue());
 //        }
 
-        for (List<String> strings: finalAnagramMap.values()) { // this loop is just to return the ans in required datatype
+        for (List<String> strings : finalAnagramMap.values()) { // this loop is just to return the ans in required datatype
 
             result.add(strings);
         }
@@ -76,14 +76,14 @@ public class GroupAnagram {
                 newList.add(s); // adding current string
                 finalAnagramMap.put(characterFrequency, newList); //adding in the list
             } else {
-                ArrayList<String> strings= new ArrayList<>();
+                ArrayList<String> strings = new ArrayList<>();
                 strings.add(s);
                 finalAnagramMap.put(characterFrequency, strings); // for adding first time if that character doesn't exist
             }
         }
 
 
-        for (ArrayList<String> strings: finalAnagramMap.values()) { // this loop is just to return the ans in required datatype
+        for (ArrayList<String> strings : finalAnagramMap.values()) { // this loop is just to return the ans in required datatype
 
             result.add(strings);
         }

@@ -8,27 +8,6 @@ public class MathsProblems {
         System.out.println(totalMovesForBishop(3, 4));
     }
 
-    public int addDigits(int num) {
-
-        int lastDigit = 0;
-        int ans = 0;
-        int mul = 1;
-
-        while (num > 9) {// to run the loop until tha ans is one digit
-
-            ans = 0;
-            while (num != 0) {
-
-                lastDigit = num % 10;
-                num = num / 10;
-                ans = lastDigit + ans;
-            }
-            num = ans;
-        }
-        return ans;
-
-    }
-
     static int isLeap(int N) {
         //code here
         if (N % 400 == 0) {
@@ -38,53 +17,6 @@ public class MathsProblems {
         } else {
             return 0;
         }
-    }
-
-    public int reverse(int x) {
-
-        int rem = 0;
-        int ans = 0;
-        int mul = 1;
-        boolean done = false;
-        if (x < 0) {
-            x = x * -1;
-            done = true;
-        }
-        while (x > 0) {
-            rem = x % 10;
-            x = x / 10;
-            //In  : ans*10 cause major changes in number and rem is always between 0-9
-            // NOW if ans*10 > Integer.MAX_Value, so /n => ans > Int.Max_Value/10
-            // NOW if ans*10 < Integer.MIN_Value, so /n => ans < Int.Max_Value/10
-            if (ans > (Integer.MAX_VALUE / 10) || ans < (Integer.MIN_VALUE / 10)) {
-                return 0;
-            }
-            ans = ans * 10 + rem;
-        }
-
-        if (done) {
-            ans = ans * -1;
-        }
-
-
-        return ans;
-    }
-
-    public boolean isPowerOfTwo(int n) {
-
-        if (n < 1) {
-            return false;
-        }
-
-        while (n != 1) {// n!=1 bcz when we are dividing n, the quotient should go only till 1
-
-            if (n % 2 != 0) {// if n is not even
-                return false;
-            }
-            n = n / 2;
-        }
-
-        return true; // is power of 2
     }
 
     // works for most case, not all like : 2147395600
@@ -165,14 +97,82 @@ public class MathsProblems {
         return count;
     }
 
+    public static int addDigits(int num) {
+
+        int lastDigit = 0;
+        int ans = 0;
+        int mul = 1;
+
+        while (num > 9) {// to run the loop until tha ans is one digit
+
+            ans = 0;
+            while (num != 0) {
+
+                lastDigit = num % 10;
+                num = num / 10;
+                ans = lastDigit + ans;
+            }
+            num = ans;
+        }
+        return ans;
+
+    }
+
+    public int reverse(int x) {
+
+        int rem = 0;
+        int ans = 0;
+        int mul = 1;
+        boolean done = false;
+        if (x < 0) {
+            x = x * -1;
+            done = true;
+        }
+        while (x > 0) {
+            rem = x % 10;
+            x = x / 10;
+            //In  : ans*10 cause major changes in number and rem is always between 0-9
+            // NOW if ans*10 > Integer.MAX_Value, so /n => ans > Int.Max_Value/10
+            // NOW if ans*10 < Integer.MIN_Value, so /n => ans < Int.Max_Value/10
+            if (ans > (Integer.MAX_VALUE / 10) || ans < (Integer.MIN_VALUE / 10)) {
+                return 0;
+            }
+            ans = ans * 10 + rem;
+        }
+
+        if (done) {
+            ans = ans * -1;
+        }
+
+
+        return ans;
+    }
+
+    public boolean isPowerOfTwo(int n) {
+
+        if (n < 1) {
+            return false;
+        }
+
+        while (n != 1) {// n!=1 bcz when we are dividing n, the quotient should go only till 1
+
+            if (n % 2 != 0) {// if n is not even
+                return false;
+            }
+            n = n / 2;
+        }
+
+        return true; // is power of 2
+    }
+
     //NIM GAME : if the remaining number can be divided by 4, than you can win. Rule you can only say three number, not more than that
     // EX : n=9: Person1 : told 1, now the pending is 8, you can say 2,3,4, now P1: 5,6, YOU: 7,8.... You will only go till the multiplier of 4
     // EX : n=9: Person1 : told 1,2,3, now the pending is 5, you can say 4, Now rest of the numbers can be multiplied by 4, now P1: 5,6, YOU: 7,8.... You will only go till the multiplier of 4
     public boolean canWinNim(int n) {
 
-        if(n%4!=0){
+        if (n % 4 != 0) {
             return true;
-        }else return false;
+        } else return false;
     }
 
 

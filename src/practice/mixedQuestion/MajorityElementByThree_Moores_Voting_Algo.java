@@ -79,8 +79,7 @@ public class MajorityElementByThree_Moores_Voting_Algo {
 
 
     //codestudio
-    public static ArrayList<Integer> majorityElementII_Optimall(ArrayList<Integer> v)
-    {
+    public static ArrayList<Integer> majorityElementII_Optimall(ArrayList<Integer> v) {
         int n = v.size();
 
         int count1 = 0, count2 = 0;

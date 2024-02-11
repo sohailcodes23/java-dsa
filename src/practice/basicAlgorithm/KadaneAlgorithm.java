@@ -10,27 +10,6 @@ public class KadaneAlgorithm {
         System.out.printf("ANS " + maxSubarraySum(array, array.length));
     }
 
-    //leetcode
-    public int maxSubArray(int[] arr) {
-        int n= arr.length;
-        long maxi = Integer.MIN_VALUE;// to compare we are taking minimum value
-        long sum = 0;
-        for (int i = 0; i < n; i++) {
-
-            sum = sum + arr[i];
-
-            if (sum > maxi) {
-                maxi = sum;
-            }
-
-            if (sum < 0) {// so that fresh calculation can be done
-                sum = 0;
-            }
-        }
-        return (int)maxi;
-
-    }
-
     public static long maxSubarraySum(int[] arr, int n) {
 
         long maxi = Integer.MIN_VALUE;// to compare we are taking minimum value
@@ -49,5 +28,26 @@ public class KadaneAlgorithm {
         }
 
         return Math.max(maxi, 0); // if the max value is <0 so return 0;
+    }
+
+    //leetcode
+    public int maxSubArray(int[] arr) {
+        int n = arr.length;
+        long maxi = Integer.MIN_VALUE;// to compare we are taking minimum value
+        long sum = 0;
+        for (int i = 0; i < n; i++) {
+
+            sum = sum + arr[i];
+
+            if (sum > maxi) {
+                maxi = sum;
+            }
+
+            if (sum < 0) {// so that fresh calculation can be done
+                sum = 0;
+            }
+        }
+        return (int) maxi;
+
     }
 }

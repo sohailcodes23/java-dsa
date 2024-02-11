@@ -22,7 +22,7 @@ public class CountSort_Algo {
         for (int i = 0; i < n; i++) {
             if (arr[i] > max) {
                 max = arr[i];
-            }else if (arr[i] < min) {
+            } else if (arr[i] < min) {
                 min = arr[i];
             }
         }

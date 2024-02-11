@@ -11,7 +11,7 @@ public class BubbleSort {
     public static void main(String[] args) {
 
 //        int array[] = {6, 2, 8, 4, 10};
-        int array[] = {2,0,2,1,1,0};
+        int array[] = {2, 0, 2, 1, 1, 0};
         bubbleSort_MoreOptimised(array, array.length);
         System.out.printf("ANS " + Arrays.toString(array));
     }

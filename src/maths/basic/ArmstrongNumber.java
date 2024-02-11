@@ -4,7 +4,7 @@ package maths.basic;
 //n=> n is number of digits like in 371 it is 3 and in 1634 it is 4
 // if a number is distributed and each number is ^n, and the sum of all number are equal to n, than it is armstrong
 // x=371 ==> 3^n + 7^n + 1^n = 371. Hence it is a armstrong number.
-public class  ArmstrongNumber {
+public class ArmstrongNumber {
 
     public static void main(String[] args) {
         //371
