@@ -8,10 +8,11 @@ public class Sorting {
 
     public static void main(String[] args) {
 
-        int array[] = {4, 6, 2, 58, 69, 3, 65};
+//        int array[] = {4, 6, 2, 58, 69, 3, 65};
+        int array[] = {7, 4, 8, 5, 3};
 //        int array[] = {5, 3, 4, 2, 1};
 //        selectionSortv2(array);
-        bubbleSort(array);
+        bubbleSortV2(array);
 
 //        int largest = 0;
 //        for (int j = 0; j < array.length; j++) {
@@ -24,6 +25,7 @@ public class Sorting {
         System.out.println(" ANS " + Arrays.toString(array));
     }
 
+    // CHECK ELEMENTS FROM START
     public static void bubbleSort(int[] array) {
 
         int n = array.length;
@@ -32,6 +34,26 @@ public class Sorting {
             for (int j = 0; j <= i; j++) {
                 if (array[j] > array[j + 1]) {
                     CommonUtility.swapBasedOnIndex(j, j + 1, array);
+                    swapped = true;
+                }
+            }
+
+            if (swapped == false) {
+                break;
+            }
+        }
+    }
+
+    //CHECK ELEMENTS FROM BACK
+    public static void bubbleSortV2(int[] array) {
+
+        int n = array.length;
+        boolean swapped = false;// to check the best case
+//        for (int i = n - 2; i >= 0; i--) {// n-1, bcz we need till 2nd last // this will also work
+        for (int i = 0; i < n; i++) { // in reverse : we can use any loop
+            for (int j = n - 1; j >= 1; j--) {
+                if (array[j] < array[j - 1]) {
+                    CommonUtility.swapBasedOnIndex(j, j - 1, array);
                     swapped = true;
                 }
             }
