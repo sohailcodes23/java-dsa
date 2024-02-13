@@ -12,7 +12,7 @@ public class Sorting {
         int array[] = {7, 4, 8, 5, 3};
 //        int array[] = {5, 3, 4, 2, 1};
 //        selectionSortv2(array);
-        bubbleSortV2(array);
+        insertionSort(array);
 
 //        int largest = 0;
 //        for (int j = 0; j < array.length; j++) {
@@ -26,6 +26,17 @@ public class Sorting {
     }
 
     // CHECK ELEMENTS FROM START
+    public static void insertionSort(int[] array) {
+        int n = array.length;
+        for (int i = 2; i < n; i++) {
+            for (int j = i; j > 0; j--) {
+                if (array[j] < array[j - 1]) {
+                    swapBasedOnIndex(j, j - 1, array);
+                }
+            }
+        }
+    }
+
     public static void bubbleSort(int[] array) {
 
         int n = array.length;
@@ -83,8 +94,6 @@ public class Sorting {
     }
 
     //swapping largest element at the end
-
-
     public static void selectionSortv2(int[] array) {
         // TC=> O(N^2)
         // SC=> O(1): constant
