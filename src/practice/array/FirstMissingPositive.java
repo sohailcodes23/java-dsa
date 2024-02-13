@@ -29,7 +29,7 @@ public class FirstMissingPositive {
 
         for (int i = 0; i < n; i++) {  // TC => O(N)
 
-            int correctPositionOfElement = nums[i] - 1; // correct postion bcz loop started from 0, so the values will be n-1
+            int correctPositionOfElement = nums[i] - 1; // correct position bcz loop started from 0, so the values will be n-1
             // Keep swapping elements until the current element is at its correct position
             while (
                     nums[i] > 0   // so that only positive elements are swapped

@@ -7,12 +7,15 @@ import java.util.Map;
 public class ArrayProblems {
 
     public static void main(String[] args) {
-        int arr[] = {1, 5, 3, 4, 3, 5, 6};
-//        int arr[] = {1, 2, 3, 2};
-//        int arr[] = {1, 2, 3, 5};
+//        int arr[] = {1, 5, 3, 4, 3, 5, 6};
+        int arr[] = {1, -2, 2, -4, 3, -5, 2};
+//        int arr[] = {1, 2, 3, 4, 5};
+//        int arr[] = {16, 19, 3, 14, 11, 7, 20, 2, 17, 6, 18, 11, 20, 4};
 //        int arr[] = {1};
-//        System.out.println(missingNumber(arr, 5));
-        System.out.println(firstRepeatedElement(arr, arr.length));
+//        System.out.println(getCountBetween2Element(arr, arr.length, 3, 20));
+//        System.out.println(firstRepeatedElement(arr, arr.length));
+
+        moveAllNegativeElementsToRight(arr, arr.length);
     }
 
     public static int firstRepeatedElement(int[] arr, int n) {
@@ -129,6 +132,7 @@ public class ArrayProblems {
             sumOfAllValues = array[i] + sumOfAllValues;
         }
 
+        System.out.println(sumOfNaturalValues + " " + sumOfAllValues);
         return sumOfNaturalValues - sumOfAllValues;
     }
 
@@ -190,5 +194,59 @@ public class ArrayProblems {
         return -1;
     }
 
+
+    static int getCountBetween2Element(int arr[], int n, int num1, int num2) {
+        // Complete the function
+
+        int start = 0;
+        int end = 0;
+        int flag = 0;
+        for (int i = 0; i < n; i++) {
+
+            if (arr[i] == num1 && flag == 0) { // flag ==0 means index is not yet found
+
+                start = i;
+                flag = 1;
+            }
+
+            if (arr[i] == num2) { // Didn't checked flag bcz at the end, etreme right index will be assigned to end
+                end = i;
+            }
+        }
+        int ans = (end - start - 1);
+        return Math.max(ans, 0);
+    }
+
+    public static void moveAllNegativeElementsToRight(int arr[], int n) {
+
+    }
+    public static void moveAllNegativeElementsToRight_Brute(int arr[], int n) {
+        int tempArray[] = new int[arr.length];
+
+        // Assigning positive number at start
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > 0) {
+                tempArray[index] = arr[i];
+                index++;
+            }
+        }
+
+
+        // Assigning negative number at end
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < 0) {
+                tempArray[index] = arr[i];
+                index++;
+            }
+        }
+
+        // reassigning all elements to original array
+        for (int i = 0; i < tempArray.length; i++) {
+            arr[i] = tempArray[i];
+        }
+
+        System.out.println(Arrays.toString(arr));
+    }
 
 }
