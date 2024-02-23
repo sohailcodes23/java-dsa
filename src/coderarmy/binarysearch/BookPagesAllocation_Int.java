@@ -27,7 +27,7 @@ public class BookPagesAllocation_Int {
 
     public static int findPages(int[] arr, int N, int M) {
 
-//        FINAL TC=> O(N * Log N)
+//        FINAL TC=> O(N+N * Log N) ==> O(N* logN), bcz when N* logN is calculated the N+ is negligible, so we don't consider it
 //        SC=>O(1)
 
 
@@ -36,7 +36,7 @@ public class BookPagesAllocation_Int {
         }
         int start = 0; // max no. in array
         int end = 0;// sum of all elements
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < N; i++) {// TC=> O(N)
             if (arr[i] > start) {
                 start = arr[i];
             }
