@@ -1,4 +1,7 @@
-package coderarmy.binarysearch;
+package coderarmy.binarysearch.interview;
+
+// Same Problem : CapacityToShipPackagesInDays, PainterAllocation, Split Array Largest Sum
+// Max sum of all the sub array and than the minimum in all the max ans min (max ans of all sub -array)
 
 // contiguous order means take elements side by side, not random
 
@@ -21,10 +24,12 @@ public class BookPagesAllocation_Int {
 
     public static void main(String[] args) {
 
+//        int array[] = {5, 10, 30, 20, 15};
         int array[] = {12, 34, 67, 90};
-        System.out.println("ANS " + findPages(array, array.length, 2));
+        System.out.println("ANS " + findPagesv2(array, array.length, 2));
     }
 
+    // Minimum no. of pages if we need to allocate pages to every student
     public static int findPages(int[] arr, int N, int M) {
 
 //        FINAL TC=> O(N+N * Log N) ==> O(N* logN), bcz when N* logN is calculated the N+ is negligible, so we don't consider it
@@ -42,7 +47,6 @@ public class BookPagesAllocation_Int {
             }
             end = end + arr[i];
         }
-
         int ans = 0;
         while (start <= end) {
             int mid = start + (end - start) / 2;
@@ -63,7 +67,7 @@ public class BookPagesAllocation_Int {
 
     private static int getPersonCount(int[] arr, int N, int mid) {
         int page = 0;
-        int personCount = 1;// default 1 bcz we are assiging it to 1st person
+        int personCount = 1;// default 1 bcz we are assigning it to 1st person
         for (int i = 0; i < N; i++) {
 
             page = page + arr[i];
@@ -73,5 +77,44 @@ public class BookPagesAllocation_Int {
             }
         }
         return personCount;
+    }
+
+
+    // we don't have this condition that we need to allocate to every students. Now we want max pages that can be allocated
+    // Below code is not needed, bcz ans will always be the sum of all elements
+    public static int findPagesv2(int[] arr, int N, int M) {
+
+//        FINAL TC=> O(N+N * Log N) ==> O(N* logN), bcz when N* logN is calculated the N+ is negligible, so we don't consider it
+//        SC=>O(1)
+
+
+        if (M > N) {// if peoples (M) are more than array elements than how can you divided between all M
+            return -1;
+        }
+        int start = 0; // max no. in array
+        int end = 0;// sum of all elements
+        for (int i = 0; i < N; i++) {// TC=> O(N)
+            if (arr[i] > start) {
+                start = arr[i];
+            }
+            end = end + arr[i];
+        }
+        int ans = 0;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            int personCount = getPersonCount(arr, N, mid);// TC=> N
+            //IMP
+            // go right
+            if (personCount <= M) {// so if the personCount < M that means everyone(M) didn't received the pages, so we need to more divide and get the mid that will give pages to all M persons
+                // Here = is also checked to assign the ans, so if personCount== M, than we want the mid value to be assigned in the ans
+                ans = mid;// always assign in right bcz we want the max no. of pages
+                start = mid + 1;
+
+            } else {//move left
+                end = mid - 1;
+            }
+        }
+
+        return ans;
     }
 }
