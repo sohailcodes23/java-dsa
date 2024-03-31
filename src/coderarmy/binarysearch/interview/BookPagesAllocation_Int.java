@@ -1,6 +1,7 @@
 package coderarmy.binarysearch.interview;
 
 // Same Problem : CapacityToShipPackagesInDays, PainterAllocation, Split Array Largest Sum
+// MIN of all the max values
 // Max sum of all the sub array and than the minimum in all the max ans min (max ans of all sub -array)
 
 // contiguous order means take elements side by side, not random
