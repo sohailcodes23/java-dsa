@@ -7,10 +7,10 @@ public class DivideArrayInTwoSubArray {
 
         int[] array = {3, 4, -2, 5, 8, 20, -10, 8};// true
 
-        System.out.println("ANS " + canBeDivided_Brutev3(array));
+        System.out.println("ANS " + canBeDivided_Optimised(array));
     }
 
-    public static boolean canBeDivided_Brutev3(int[] array) {
+    public static boolean canBeDivided_Optimised(int[] array) {
 
 //        TC=> O(2N) == O(N)
 //        SC=> O(1)
