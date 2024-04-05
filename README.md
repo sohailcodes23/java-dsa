@@ -1,17 +1,26 @@
 [![Leetcode Stats](https://leetcard.jacoblin.cool/sohailcodes23)](https://leetcode.com/sohailcodes23/)
 
+# Read:
 
-# READ:
 https://leetcode.com/problems/minimum-window-substring/solutions/26808/Here-is-a-10-line-template-that-can-solve-most-'substring'-problems/
 
-
-# HACKS(It might not apply in all situations): 
+# Tips(It might not apply in all situations):
 
 ## Array solving technique:
+
 Brute : linear search / Depends on the question \
 Better : Hashing techniques \
 Optimal : 2 pointers
 
-## Any type of counting is to check use Hashmap
+## Kadane Algo:
+
+While calculating sum, If sum < 0 than sum =0; And continue to calculate the sum till n-1
+
+#### WHY: Accd to Kadane Algo, it just makes the whole sum a smaller value than the current sum, so we just make it 0
+
+To find LargestSumContiguousSubArray : Check LargestSumContiguousSubArray_KadaneAlgo
+
+## Any type of counting in Array: use Hashmap
+
 TC=> For Hashmap = O(1)\
 TC=> When unordered map O(N), if there is ordered map than the TC=> O(N logN)
