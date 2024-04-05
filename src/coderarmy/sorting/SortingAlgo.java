@@ -4,7 +4,7 @@ import util.CommonUtility;
 
 import java.util.Arrays;
 
-public class Sorting {
+public class SortingAlgo {
 
     public static void main(String[] args) {
 
