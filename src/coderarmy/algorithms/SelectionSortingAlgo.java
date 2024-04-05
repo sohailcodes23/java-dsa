@@ -12,8 +12,8 @@ public class SelectionSortingAlgo {
 //        int array[] = {7, 4, 8, 5, 3};
         int array[] = {24, 18, 38, 43, 14, 40, 1, 54};
 //        int array[] = {5, 3, 4, 2, 1};
-//        selectionSortv2(array);
-        insertionSortv2(array);
+        selectionSort(array);
+//        insertionSortv2(array);
 
 //        int largest = 0;
 //        for (int j = 0; j < array.length; j++) {
