@@ -8,10 +8,10 @@ https://leetcode.com/problems/minimum-window-substring/solutions/26808/Here-is-a
 # HACKS(It might not apply in all situations): 
 
 ## Array solving technique:
-Brute : linear search / Depends on the question
-Better : Hashing techniques
+Brute : linear search / Depends on the question \
+Better : Hashing techniques \
 Optimal : 2 pointers
 
 ## Any type of counting is to check use Hashmap
-TC=> For Hashmap = O(1)
+TC=> For Hashmap = O(1)\
 TC=> When unordered map O(N), if there is ordered map than the TC=> O(N logN)
