@@ -1,4 +1,4 @@
-package coderarmy;
+package coderarmy.general;
 
 public class General {
 

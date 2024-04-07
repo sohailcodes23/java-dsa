@@ -1,4 +1,4 @@
-package coderarmy;
+package coderarmy.array;
 
 //maximum-difference-between-two-elements
 public class DivideArrayInTwoSubArray {

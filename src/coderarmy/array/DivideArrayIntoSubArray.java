@@ -1,4 +1,4 @@
-package coderarmy;
+package coderarmy.array;
 
 public class DivideArrayIntoSubArray {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package coderarmy;
+package coderarmy.general;
 
 // same can be used for Octal just use 8 in place of 2 or 10
 //Binary base:2
