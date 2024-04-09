@@ -12,6 +12,8 @@ Brute : linear search / Depends on the question \
 Better : Hashing techniques \
 Optimal : 2 pointers
 
+### When we want to find 2 values in a single array traverse, we use 2 pointers approach
+
 ## Kadane Algo:
 
 While calculating sum, If sum < 0 than sum =0; And continue to calculate the sum till n-1
