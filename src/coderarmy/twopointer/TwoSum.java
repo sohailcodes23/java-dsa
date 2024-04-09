@@ -3,11 +3,12 @@ package coderarmy.twopointer;
 import java.util.Arrays;
 
 //https://www.youtube.com/watch?v=KKPjlsLSs5w&list=PLQEaRBV9gAFu4ovJ41PywklqI7IyXwr01&index=29
+//#interview
 public class TwoSum {
 
     public static void main(String[] args) {
 
-        int arr[] = {2, 7, 11, 15,25};
+        int arr[] = {2, 7, 11, 15, 25};
 
         System.out.println(Arrays.toString(twoSum(arr, 22)));
 
@@ -27,9 +28,9 @@ public class TwoSum {
             int sum = numbers[start] + numbers[end];
             if (sum == target) {
                 return new int[]{start, end};
-            } else if (sum > target) {// bcz if sum>target that means the required value is at left side
+            } else if (sum > target) {// bcz if sum>target that means the required value is at left side, we want to decrease the sum value so we move left
                 end--;
-            } else {// if sum< target than we need to move right
+            } else {// if sum< target than we need to move right, we want to increase the sum value
                 start++;
             }
 

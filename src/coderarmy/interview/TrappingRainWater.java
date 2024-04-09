@@ -56,7 +56,7 @@ public class TrappingRainWater {
             }
         }
 
-        //Note : while calculating left and right sides we have skipped the maxHeigth bar, bcz since it's max heighted bar, it won't be able to store any water, so by default it's value is 0 and we don't need to add it in final water unit
+        //Note : while calculating left and right sides we have skipped the maxHeight bar, bcz since it's max heighted bar, it won't be able to store any water, so by default it's value is 0 and we don't need to add it in final water unit
 
         return water;
     }
