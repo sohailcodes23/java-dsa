@@ -22,8 +22,8 @@ public class ThreeSum {
         Arrays.sort(array);// IMP 2 sums work in sorted array
         int n = array.length;
 
-        // TC ==> O(N)
-        for (int i = 0; i <= n - 3; i++) { // loop till n-3, bcz start will go till n-2 and end will go till n-1 and we want start<end
+        // TC ==> O(N^2)
+        for (int i = 0; i <= n - 3; i++) {  // TC ==> O(N) // loop till n-3, bcz start will go till n-2 and end will go till n-1 and we want start<end
             //array[i] : is the 1st value, rest 2 values will be found by 2 sum
             int pendingTarget = target - array[i];// pendingTarget is the pending sum of 2 values that we need to find using 2 sum
             int start = i + 1;// start of rest of the array
