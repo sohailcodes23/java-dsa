@@ -16,7 +16,8 @@ public class FourSum {
 
 //        int array[] = {1, 0, -1, 0, -2, 2}; //0
 //        int array[] = {1, 0, -1, 0, -2, 2}; //0
-        int array[] = {1, 0, -1, 0, -2, 2}; //0
+//        int array[] = {1, 0, -1, 0, -2, 2}; //0
+        int array[] = {-3, -2, -1, 0, 0, 1, 2, 3}; //0// special case
 //        int array[] = {2, 2, 2, 2, 2}; //8
 //        int array[] = {1, 2, 3, 4, 5, 9}; //14
 
@@ -159,7 +160,7 @@ public class FourSum {
 
                 while (k < l) {
 
-                    int sum = nums[i];
+                    long sum = nums[i]; // imp use long
                     sum += nums[j];
                     sum += nums[k];
                     sum += nums[l];
