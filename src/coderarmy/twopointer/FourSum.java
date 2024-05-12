@@ -65,8 +65,8 @@ public class FourSum {
     }
 
 
-    // Partial OWN
-    public static List<List<Integer>> fourSum(int[] nums, int target) {
+    // Partial OWN: didn't worked for :    int array[] = {-3, -2, -1, 0, 0, 1, 2, 3}; //0// special case
+    public static List<List<Integer>> fourSumv2(int[] nums, int target) {
 
 //        TC=> O(N^3) + O(N logN) ==> O(N^3)
         List<List<Integer>> lists = new ArrayList<>();
@@ -134,7 +134,7 @@ public class FourSum {
     }
 
 
-    public static List<List<Integer>> fourSumv2(int[] nums, int target) {
+    public static List<List<Integer>> fourSum(int[] nums, int target) {
 //        TC=> O(N^3) + O(N logN) ==> O(N^3)
         List<List<Integer>> lists = new ArrayList<>();
         int n = nums.length;
