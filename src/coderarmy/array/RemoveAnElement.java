@@ -1,0 +1,65 @@
+package coderarmy.array;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class RemoveAnElement {
+
+    public static void main(String[] args) {
+//        ArrayList<Integer> a = new ArrayList<>();
+//        int array[] = {3, 2, 2, 3};//3
+//        int array[] = {0, 1, 2, 2, 3, 0, 4, 2};//2
+        int array[] = {3, 3};//5
+//
+//        a.addAll(Arrays.asList(2, 0, 1, 2, 0, 3, 2, 2, 2, 1, 0, 0, 0, 1, 0, 0, 2, 2, 2, 3, 2, 3, 1, 2, 1, 2, 2, 3, 2, 3, 0, 3, 0, 2, 1, 2, 0, 0, 3, 2, 3, 0, 3, 0, 2, 3, 2, 2, 3, 1, 3, 3, 0, 3, 3, 0, 3, 3, 2, 0, 0, 0, 0, 1, 3, 0, 3, 1, 3, 1, 0, 2, 3, 3, 3, 2, 3, 3, 2, 2, 3, 3, 3, 1, 3, 2, 1, 0, 0, 0, 1, 0, 3, 2, 1, 0, 2, 3, 0, 2, 1, 1, 3, 2, 0, 1, 1, 3, 3, 0, 1, 2, 1, 2, 2, 3, 1, 1, 3, 0, 2, 2, 2, 2, 1, 0, 2, 2, 2, 1, 3, 1, 3, 1, 1, 0, 2, 2, 0, 2, 3, 0, 1, 2, 1, 1, 3, 0, 2, 3, 2, 3, 2, 0, 2, 2, 3, 2, 2, 0, 2, 1, 3, 0, 2, 0, 2, 1, 3, 1, 1, 0, 0, 3, 0, 1, 2, 2, 1, 2, 0, 1, 0, 0, 0, 1, 1, 0, 3, 2, 3, 0, 1, 3, 0, 0, 1, 0, 1, 0, 0, 0, 0, 3, 2, 2, 0, 0, 1, 2, 0, 3, 0, 3, 3, 3, 0, 3, 3, 1, 0, 1, 2, 1, 0, 0, 2, 3, 1, 1, 3, 2)); //2
+//        a.addAll(Arrays.asList(4, 1, 1, 2, 1, 3)); //1
+        System.out.println("ANS " + removeElement(array, 2));
+    }
+
+    public static int removeElement(int[] nums, int val) {
+
+        int n = nums.length;
+        if (n < 1) {
+            return n;
+        }
+        if (n == 1 && nums[0] == val) {
+            return 0;
+        } else if (n == 1) {
+            return n;
+        }
+
+        int count = 0;
+
+        int start = 0;
+        int end = n - 1;
+        while (start < end) {
+
+            if (nums[end] == val) {
+                end--;
+            }
+
+            if (nums[start] == val) {
+                swap(start, end, nums);
+                count++;
+            }
+            start++;
+
+        }
+
+        System.out.println("AA " + Arrays.toString(nums));
+        System.out.println("AA " + count);
+
+        if (count == 0) {
+            return n;
+        }
+
+        return n - count - 1;
+    }
+
+    private static void swap(int a, int b, int array[]) {
+        int temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
+    }
+
+}
