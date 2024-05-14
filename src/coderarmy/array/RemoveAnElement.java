@@ -16,50 +16,25 @@ public class RemoveAnElement {
         System.out.println("ANS " + removeElement(array, 2));
     }
 
-    public static int removeElement(int[] nums, int val) {
 
+    public static int removeElement(int[] nums, int val) {
         int n = nums.length;
         if (n < 1) {
             return n;
         }
-        if (n == 1 && nums[0] == val) {
-            return 0;
-        } else if (n == 1) {
-            return n;
-        }
 
-        int count = 0;
+        // this will move all the values to forward, bcz we want to get the non value counter
 
-        int start = 0;
-        int end = n - 1;
-        while (start < end) {
-
-            if (nums[end] == val) {
-                end--;
+        int j = 0;//  target counter
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != val) {
+                nums[j] = nums[i]; // update the value of the j
+                j++;
             }
-
-            if (nums[start] == val) {
-                swap(start, end, nums);
-                count++;
-            }
-            start++;
-
         }
 
-        System.out.println("AA " + Arrays.toString(nums));
-        System.out.println("AA " + count);
-
-        if (count == 0) {
-            return n;
-        }
-
-        return n - count - 1;
+        return j;
     }
-
-    private static void swap(int a, int b, int array[]) {
-        int temp = array[a];
-        array[a] = array[b];
-        array[b] = temp;
-    }
+}
 
 }
