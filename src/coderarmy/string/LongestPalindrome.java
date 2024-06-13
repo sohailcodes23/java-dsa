@@ -8,7 +8,8 @@ public class LongestPalindrome {
     }
 
     public static int longestPalindrome(String s) {
-
+        // TC= O(N)
+        // SC =O(1)
         int[] lower = new int[26];
         int[] upper = new int[26];
 
@@ -39,7 +40,7 @@ public class LongestPalindrome {
 
             //Upper
             if (upper[i] % 2 == 0) {// if the count is even
-                count+= upper[i];
+                count += upper[i];
             } else {
 
                 count += upper[i] - 1;//lower[i] - 1 , bcz we can only add even alpha on both the side, EX if 'AAAb' than we can do AbA, only 2 is required from the 'A' count
