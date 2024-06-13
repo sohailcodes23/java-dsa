@@ -1,8 +1,5 @@
 package coderarmy.array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class RemoveAnElement {
 
     public static void main(String[] args) {

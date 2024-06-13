@@ -1,7 +1,5 @@
 package coderarmy.string;
 
-import java.util.Arrays;
-
 public class CheckStringIsRotated {
 
     public static void main(String[] args) {

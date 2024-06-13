@@ -6,7 +6,7 @@ public class PeakElementInMountainArray {
 
         int array[] = {18, 29, 38, 59, 98, 100, 99, 98, 90};
 //        int array[] = {2,1};
-        System.out.println("ANS "+peakIndexInMountainArray(array));
+        System.out.println("ANS " + peakIndexInMountainArray(array));
     }
 
     public static int peakIndexInMountainArray(int[] arr) {
