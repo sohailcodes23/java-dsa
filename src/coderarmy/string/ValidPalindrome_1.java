@@ -1,6 +1,6 @@
 package coderarmy.string;
 
-public class ValidPalindrome {
+public class ValidPalindrome_1 {
 
     public static void main(String[] args) {
 //        String s = "A man, a plan, a canal: Panama";
