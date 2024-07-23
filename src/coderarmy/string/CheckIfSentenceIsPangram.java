@@ -1,6 +1,6 @@
 package coderarmy.string;
 
-public class CheckIdSentenceIsPangram {
+public class CheckIfSentenceIsPangram {
 
     public boolean checkIfPangram(String sentence) {
 // TC=O(N)
