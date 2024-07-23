@@ -7,7 +7,7 @@ public class CapacityToShipPackagesInDays {
     public static void main(String[] args) {
 
         int[] array = {3, 6, 7, 11};
-        System.out.println("ANS "+shipWithinDays(array,8));
+        System.out.println("ANS " + shipWithinDays(array, 8));
     }
 
     public static int shipWithinDays(int[] weights, int days) {

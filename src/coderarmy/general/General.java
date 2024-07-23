@@ -13,7 +13,7 @@ public class General {
         if (name >= 'a' && name <= 'z') {
             return (char) (name - 32); // to convert to Capital
         }
-        
+
         return name;
     }
 

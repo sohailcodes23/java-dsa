@@ -33,7 +33,7 @@ public class FindFirstAndLastOccurrenceOfElement {
     static int findIndexUsingBinaySearch(int nums[], int target, boolean firstIndex) {
         int mid;
         int start = 0;
-        int end = nums.length-1;
+        int end = nums.length - 1;
         int index = -1;
         while (start <= end) {
             mid = start + (end - start) / 2;
