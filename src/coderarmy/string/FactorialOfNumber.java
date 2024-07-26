@@ -10,11 +10,12 @@ public class FactorialOfNumber {
     }
 
     static ArrayList<Integer> factorial(int N) {
-
+        // FINAL TC=> O(N^2)
+        // FINAL SC=>O(N logN), worst case it take up to N! space, which is approximately log10(N!). However, we can approximate this to N * log10(N) for simplicity
         ArrayList<Integer> ans = new ArrayList<>();
         ans.add(1);
         // TC=> O(N)
-        while (N > 1) { //N>1, bcz we dont want to multiply by 1
+        while (N > 1) { //N>1, bcz we don't want to multiply by 1
 
             int carry = 0;
             int result = 0;
@@ -32,7 +33,6 @@ public class FactorialOfNumber {
                 // 2nd loop: than 2 in the ans ...
                 carry = carry / 10; // after setting the last digit, it will remove that digit from carry
             }
-
             N--;
         }
 
