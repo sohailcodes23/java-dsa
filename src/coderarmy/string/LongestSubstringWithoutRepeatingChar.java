@@ -1,5 +1,6 @@
 package coderarmy.string;
 
+// Using: Sliding Window Protocol
 public class LongestSubstringWithoutRepeatingChar {
 
     public static void main(String[] args) {
@@ -9,6 +10,11 @@ public class LongestSubstringWithoutRepeatingChar {
         System.out.println("ANS " + lengthOfLongestSubstring(s));
 
     }
+
+    // Brute: create all the substrings and than check which is the substring with unique values and it's length (TC=> N^3)
+    // Better: 2 pointer approach(TC=> O(N^2)), take 2 pointer from 0 ith, check from 0-(n-1) ith, if there are repeated value (Also save the value of unique chars substring), increment the loop
+    // Now check with 1 - (n-1) ith, if there are repeated value (Also save the value of unique chars substring), increment the loop
+    // Go on till you are on the n-1 ith, save and compare the max length of unqiue char substring
 
     public static int lengthOfLongestSubstring(String s) {
 //        FINAL TC=> O(N), internal while loop is negligible
