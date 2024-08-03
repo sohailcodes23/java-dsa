@@ -1,4 +1,4 @@
-package coderarmy.string;
+package coderarmy.slidingwindow;
 
 // Using: Sliding Window Protocol
 public class LongestSubstringWithoutRepeatingChar {

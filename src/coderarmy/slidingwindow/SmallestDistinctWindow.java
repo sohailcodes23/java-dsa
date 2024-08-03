@@ -1,4 +1,4 @@
-package coderarmy.string;
+package coderarmy.slidingwindow;
 
 //SmallestDistinctWindow: https://www.geeksforgeeks.org/problems/smallest-distant-window3132/1?page=1&difficulty%5B%5D=1&category%5B%5D=Strings&sortBy=submissions
 //findSubStringWindowContaining012: https://www.geeksforgeeks.org/problems/smallest-window-containing-0-1-and-2--170637/1
