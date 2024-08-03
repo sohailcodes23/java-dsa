@@ -1,4 +1,5 @@
 package coderarmy.string;
+
 //https://www.geeksforgeeks.org/problems/check-if-string-is-rotated-by-two-places-1587115620/1?utm_source=geeksforgeeks&utm_medium=article_practice_tab&utm_campaign=article_practice_tab
 public class CheckStringIsRotated {
 

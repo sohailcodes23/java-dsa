@@ -24,7 +24,7 @@ public class ValidPalindrome_1 {
                 stringBuilder.append(s.charAt(i));
             }
         }
-        System.out.println("JJ "+stringBuilder.toString());
+        System.out.println("JJ " + stringBuilder.toString());
         if (stringBuilder.toString().length() <= 1) {
             return true;
         }
