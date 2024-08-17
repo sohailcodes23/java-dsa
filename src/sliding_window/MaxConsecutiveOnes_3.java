@@ -6,10 +6,10 @@ public class MaxConsecutiveOnes_3 {
         int[] nums = {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0};//, k = 2 // 6
         System.out.println("FF " + longestOnes_Brute(nums, 2));
         System.out.println("FF " + longestOnes_Better(nums, 2));
+        System.out.println("FF " + longestOnes_Optimal(nums, 2));
     }
 
-    // [1,1,1,0,0,0,1,1,1,1,0], k = 2 ==> so 0 to 4 ith is a sub array, bcz it has only k zeroes
-    public static int longestOnes_Better(int[] nums, int k) {
+    public static int longestOnes_Optimal(int[] nums, int k) {
         // TC=>O(N)
         // SC==>O(1)
         int n = nums.length;
@@ -22,7 +22,39 @@ public class MaxConsecutiveOnes_3 {
                 zeroes++;
             }
 
-            if (zeroes <= k) {// till the time zeroes <=k we should calculate maxLen, bcz we haven't found the 
+            if (zeroes > k) {// now we need to move left
+                if (nums[left] == 0) { //while moving if we find a 0, than decrement the zeroes
+                    zeroes--;
+                }
+                left++;// just keep on moving the left if(zeroes>k)
+            }
+
+            if (zeroes <= k) {// till the time zeroes <=k we should calculate maxLen, bcz we haven't found the
+                maxLen = Math.max(maxLen, right - left + 1);
+            }
+
+            right++;
+        }
+
+        return maxLen;
+    }
+
+
+    // [1,1,1,0,0,0,1,1,1,1,0], k = 2 ==> so 0 to 4 ith is a sub array, bcz it has only k zeroes
+    public static int longestOnes_Better(int[] nums, int k) {
+        // TC=>O(2N)
+        // SC==>O(1)
+        int n = nums.length;
+        int left = 0, right = 0, maxLen = 0;
+        int zeroes = 0;
+
+        while (right < n) {
+
+            if (nums[right] == 0) {// if you find 0, increment zeroes
+                zeroes++;
+            }
+
+            if (zeroes <= k) {// till the time zeroes <=k we should calculate maxLen, bcz we haven't found the
                 maxLen = Math.max(maxLen, right - left + 1);
             }
 
