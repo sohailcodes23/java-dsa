@@ -1,6 +1,7 @@
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
+!**/src/revision/**
 !**/src/test/**/out/
 
 ### Eclipse ###
@@ -27,3 +28,4 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/src/revision/
