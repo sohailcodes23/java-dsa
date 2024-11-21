@@ -1,5 +1,5 @@
-package dsa_buddies;
-
+package dsa_buddies.array;
+//https://leetcode.com/problems/reverse-string/solutions/6053158/0-ms-runtime-beats-100-user-confirm-step-by-steps-solution-beginner-friendly/
 public class ReverseAnArray {
 
     public static void main(String[] args) {
