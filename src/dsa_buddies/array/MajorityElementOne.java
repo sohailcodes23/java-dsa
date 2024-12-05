@@ -1,5 +1,6 @@
 package dsa_buddies.array;
 
+//Moore's Voting Algorithm
 public class MajorityElementOne {
 
     public static void main(String[] args) {
