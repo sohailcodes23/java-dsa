@@ -3,7 +3,7 @@ package array.medium;
 import java.util.*;
 
 
-// MajorityElement means the element occurences in the array should be more than N/2
+// MajorityElement means the element occurrences in the array should be more than N/2
 //Moore's Voting Algorithm : Check description in MajorityElementByTwo_MooresVotingAlgo
 public class MajorityElementByThree_MooresVotingAlgo {
 
