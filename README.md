@@ -7,6 +7,9 @@ https://leetcode.com/problems/minimum-window-substring/solutions/26808/Here-is-a
 # Tips(It might not apply in all situations):
 
 ## Hashmap TC==> O(N) : worst case scenario
+
+
+## Matrix: Since it's a matrix min TC==> O(N^2) : worst case scenario
 ## Array solving technique:
 
 Brute : linear search / Depends on the question \
