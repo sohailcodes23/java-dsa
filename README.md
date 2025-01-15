@@ -10,6 +10,8 @@ https://leetcode.com/problems/minimum-window-substring/solutions/26808/Here-is-a
 
 
 ## Matrix: Since it's a matrix min TC==> O(N^2) : worst case scenario
+
+## Two Pointers: Don't use 2 pointers when we have negative no. in array (check constraint as well)
 ## Array solving technique:
 
 Brute : linear search / Depends on the question \
