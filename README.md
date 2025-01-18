@@ -8,6 +8,8 @@ https://leetcode.com/problems/minimum-window-substring/solutions/26808/Here-is-a
 
 ## Hashmap TC==> O(N) : worst case scenario
 
+## Constraint Tips:
+If it's said don't modify the array that means, you can't sort it or change the values
 
 ## Matrix: Since it's a matrix min TC==> O(N^2) : worst case scenario
 
