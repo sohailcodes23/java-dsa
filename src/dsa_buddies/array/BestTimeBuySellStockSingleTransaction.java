@@ -1,6 +1,6 @@
 package dsa_buddies.array;
 
-public class BestTimeBuySellStock {
+public class BestTimeBuySellStockSingleTransaction {
 
     public static void main(String[] args) {
 //        int[] a = {7, 1, 5, 3, 6, 4};
