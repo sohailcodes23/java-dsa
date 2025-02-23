@@ -8,7 +8,7 @@ public class MultiplyMatrix {
 
     static void MultipleTwoArray() {
         // Multiply row * column, and keep sum
-
+        // HERE n* n
         int a[][] = new int[][]{
                 {1, 2, 3},
                 {4, 5, 6},

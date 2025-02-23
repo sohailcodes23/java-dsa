@@ -13,6 +13,10 @@ Brute : linear search / Depends on the question \
 Better : Hashing techniques \
 Optimal : 2 pointers
 
+## Matrix / Multi-dimensional solving technique:
+# If we want to rotate the elements/ change its position: 1. Do Transpose(Row becomes columns and vice versa) 2. Reverse/Change the position somehow to desired location 
+# Transpose: {1,2},{4,5} ==> {1,4}.{2,5}
+
 ### When we want to find 2 values in a single array traverse, we use 2 pointers approach
 
 ## Kadane Algo:
