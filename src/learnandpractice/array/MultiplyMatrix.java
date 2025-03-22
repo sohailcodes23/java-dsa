@@ -1,4 +1,4 @@
-package learnyard.array;
+package learnandpractice.array;
 
 public class MultiplyMatrix {
 
