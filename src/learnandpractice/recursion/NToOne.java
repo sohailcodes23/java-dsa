@@ -1,4 +1,4 @@
-package learnandpractice.array.recursion;
+package learnandpractice.recursion;
 
 public class NToOne {
 
