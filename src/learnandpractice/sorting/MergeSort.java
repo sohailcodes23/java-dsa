@@ -9,23 +9,24 @@ public class MergeSort {
 
     public static void main(String[] args) {
         int arr[] = {3, 2, 4, 1, 3};
-        mergeSort(arr, 0, arr.length - 1);
+        int[] arr1 = mergeSort(arr, 0, arr.length - 1);
+        System.out.println("AA "+ Arrays.toString(arr1));
     }
 
-    static void mergeSort(int arr[], int low, int high) {
+    static int[] mergeSort(int arr[], int low, int high) {
         // base case
-        if (low >= high) {
-            return;
-        }
-        int mid = (low + high) / 2;
-        mergeSort(arr, low, mid);
-        mergeSort(arr, mid + 1, high);
-        mergeSortedArrays(arr, low, mid, high);
+        if (low < high) {
 
-        System.out.println("LOW " + low + " MID " + mid + " HIGH " + high + " ARRAY " + Arrays.toString(arr));
+            int mid = (low + high) / 2;
+            mergeSort(arr, low, mid);
+            mergeSort(arr, mid + 1, high);
+            mergeSortedArrays(arr, low, mid, high);
+        }
+//        System.out.println("LOW " + low + " MID " + mid + " HIGH " + high + " ARRAY " + Arrays.toString(arr));
+        return arr;
     }
 
-    static int[] mergeSortedArrays(int arr[], int low, int mid, int high) {
+    static void mergeSortedArrays(int arr[], int low, int mid, int high) {
         //1 2 3  // 2 4
         int left = low;
         int right = mid + 1;
@@ -49,7 +50,6 @@ public class MergeSort {
             tempSorted.add(arr[right]);
             right++;
         }
-        System.out.println("TEMP " + tempSorted);
         // Copy sorted temp array back to original array at correct position
         for (int i = 0; i < tempSorted.size(); i++) {
             arr[low + i] = tempSorted.get(i);// if low is at 3 than we need to update at 3 not at i=0, that's why low+i, it will change based on current low
@@ -78,7 +78,5 @@ public class MergeSort {
             //arr[0 + 3] = 3  →  arr[3] = 3
             //arr[0 + 4] = 4  →  arr[4] = 4
         }
-
-        return arr;
     }
 }
