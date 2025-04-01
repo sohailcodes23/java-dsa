@@ -3,7 +3,7 @@ package learnandpractice.array;
 public class LongestRepetitions {
 
     public static void main(String[] args) {
-        System.out.println("JJ "+repetitions());
+        System.out.println("JJ " + repetitions());
     }
 
     public static int repetitions() {

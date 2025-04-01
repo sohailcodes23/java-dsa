@@ -10,7 +10,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int arr[] = {3, 2, 4, 1, 3};
         int[] arr1 = mergeSort(arr, 0, arr.length - 1);
-        System.out.println("AA "+ Arrays.toString(arr1));
+        System.out.println("AA " + Arrays.toString(arr1));
     }
 
     static int[] mergeSort(int arr[], int low, int high) {

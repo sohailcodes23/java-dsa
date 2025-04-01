@@ -1,5 +1,6 @@
 package dsa_buddies.array;
 //https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1
+
 import javafx.util.Pair;
 
 public class MaxAndMinArray {
