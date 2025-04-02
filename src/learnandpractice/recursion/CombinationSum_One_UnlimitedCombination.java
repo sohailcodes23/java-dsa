@@ -3,7 +3,7 @@ package learnandpractice.recursion;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CombinationSum {
+public class CombinationSum_One_UnlimitedCombination {
 
     public static void main(String[] args) {
         int a[] = {2, 3, 6, 7};// working' : T : 7
@@ -29,7 +29,7 @@ public class CombinationSum {
     private static void recursiveFunctionToCheckTheSum(int i, int n, int arr[], int target, List<List<Integer>> results, List<Integer> currentSubsequenceList) {
 
         if (i >= n) {
-            if (target == 0) { //we have met the target, so this is the currentSubsequenceList which has the sum
+            if (target == 0) { //we have met the target, so this is the currentSubsequenceList which has the sum, target = 0, bcz we are deducting the target with current element
                 results.add(new ArrayList<>(currentSubsequenceList));
             }
             return;
