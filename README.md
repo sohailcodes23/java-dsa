@@ -8,6 +8,8 @@ https://leetcode.com/problems/minimum-window-substring/solutions/26808/Here-is-a
 
 ## Hashmap TC==> O(N) : worst case scenario
 
+## Recursion: In finding all subsequences/subsets TC==> O(2^N) : worst case scenario. Generally TC is not asked for recursive questions, we can say TC is Exponential if asked more this can be derived
+
 ## Constraint Tips:
 
 If it's said don't modify the array that means, you can't sort it or change the values
