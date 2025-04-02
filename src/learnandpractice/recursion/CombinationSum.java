@@ -14,10 +14,10 @@ public class CombinationSum {
 
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         // TC is not O(2^n): bcz here it has unlimited combinations, if the QQ was that 1 index should only be used once this migth be the case
-        // TC==> O(2^t x k): t is the no. of times the same index is called to take or not take & k is based on assumption that the average length of the combination sum is k
+        // TC==> O(2^t * k): t is the no. of times the same index is called to take or not take & k is based on assumption that the average length of the combination sum is k
         // EX: arr={1}, k= 10, this will take 0th index 10 times to get the k sum
 
-        // SC==> Cannot predict the SC, it depends on the no. of combinations
+        // SC==> O(k * x) , K is average length of space, x = no. of combinations : Cannot predict the SC, it depends on the no. of combinations
 
         int n = candidates.length;
         List<List<Integer>> results = new ArrayList<>();
