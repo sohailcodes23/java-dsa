@@ -42,3 +42,30 @@ To find LargestSumContiguousSubArray : Check LargestSumContiguousSubArray_Kadane
 
 TC=> For Hashmap = O(1)\
 TC=> When unordered map O(N), if there is ordered map than the TC=> O(N logN)
+
+# SHORTCUTS
+
+## Recursion:
+
+RF: Recursive Function \
+BB: Base case
+
+# PATTERNS
+
+## Recursion: Options Concept: where at a index we take the index element and at the same index we don't take it, we call 2 RF functions, once after adding element in list and one after removing element from the list
+
+## **Pseudocode:**
+
+```java
+void recursiveFunctionToGetSubsequence(int i, int arr[], List<Integer> list) {
+    if (i >= n) { // Base case
+        subsequenceList.add(new ArrayList<>(list));
+        return;
+    }
+
+    list.add(arr[i]); // Add to the list
+    recursiveFunctionToGetSubsequence(i + 1, arr, list); // RF1: Take the element
+
+    list.remove(list.size() - 1); // Remove last element to backtrack
+    recursiveFunctionToGetSubsequence(i + 1, arr, list); // RF2: Don't take the element
+}

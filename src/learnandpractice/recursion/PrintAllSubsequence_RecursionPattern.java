@@ -15,20 +15,20 @@ public class PrintAllSubsequence_RecursionPattern {
 
     public static void printAllSubsequence(int[] nums) {
         n = nums.length;
-        helper(0, nums, new ArrayList<>());
+        recursiveFunction(0, nums, new ArrayList<>());
     }
 
-    static void helper(int index, int ds[], List<Integer> list) {
+    static void recursiveFunction(int index, int dataStructure[], List<Integer> list) {
 
         if (index >= n) {
             System.out.println(list);
             return;
         }
 
-        list.add(ds[index]);
-        helper(index + 1, ds, list);// Take the element
+        list.add(dataStructure[index]);
+        recursiveFunction(index + 1, dataStructure, list);// Take the element // RF1
         list.remove(list.size() - 1);
-        helper(index + 1, ds, list);// Don't take the current index element
+        recursiveFunction(index + 1, dataStructure, list);// Don't take the current index element // RF2
     }
 
 }
