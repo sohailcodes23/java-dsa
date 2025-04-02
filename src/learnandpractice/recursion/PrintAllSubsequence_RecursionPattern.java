@@ -11,9 +11,11 @@ public class PrintAllSubsequence_RecursionPattern {
         printAllSubsequence(a);
     }
 
-    static int n = 3;
+    static int n = 0;
 
     public static void printAllSubsequence(int[] nums) {
+        // TC ==> O(2^n) : Almost : Every index always has 2 options and the no. of division is almost till 2^n
+        // SC ==> O(N): Auxiliary space: Depth is always till n size so O(N)
         n = nums.length;
         recursiveFunction(0, nums, new ArrayList<>());
     }
