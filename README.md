@@ -59,7 +59,7 @@ BB: Base case
 ```java
 void recursiveFunctionToGetSubsequence(int i, int arr[], List<Integer> list) {
     if (i >= n) { // Base case
-        subsequenceList.add(new ArrayList<>(list));
+        subsequenceList.add(new ArrayList<>(list));// Add in list or print all the subsequence
         return;
     }
 
