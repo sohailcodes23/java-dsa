@@ -1,5 +1,7 @@
 package util;
 
+import learnandpractice.linkedlist.Node;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -58,6 +60,15 @@ public class CommonUtility {
 
         System.out.println("SORTED ARRAY " + Arrays.toString(array));
         return array;
+    }
+
+    public static void traverseAndPrintLL(Node head) {
+        System.out.println("Whole LINKED LIST: ");
+        Node traverseNode = head;
+        while (traverseNode != null) {
+            System.out.println(traverseNode.data);
+            traverseNode = traverseNode.next;
+        }
     }
 
 }

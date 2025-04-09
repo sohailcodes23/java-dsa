@@ -1,8 +1,8 @@
 package learnandpractice.linkedlist;
 
-class Node {
-    int data;
-    Node next;
+public class Node {
+    public int data;
+    public Node next;
 
     Node(int d) {
         this.data = d;
