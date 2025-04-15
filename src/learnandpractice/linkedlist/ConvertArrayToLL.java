@@ -7,7 +7,6 @@ public class ConvertArrayToLL {
         int a[] = {4, 2, 1, 54, 6};
         Node head = convertArrayToLLv2(a);
         System.out.println("SEARCHED " + searchAElement(head, 6));
-        ;
     }
 
     static Node convertArrayToLL(int a[]) {

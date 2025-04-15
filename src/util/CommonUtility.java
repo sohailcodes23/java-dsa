@@ -1,5 +1,6 @@
 package util;
 
+import learnandpractice.linkedlist.DNode;
 import learnandpractice.linkedlist.Node;
 
 import java.util.ArrayList;
@@ -69,6 +70,49 @@ public class CommonUtility {
             System.out.println(traverseNode.data);
             traverseNode = traverseNode.next;
         }
+    }
+
+    public static void traverseAndPrintDLL(DNode head) {
+        System.out.println("Whole DOUBLY LINKED LIST: ");
+        DNode traverseNode = head;
+        while (traverseNode != null) {
+            System.out.println(traverseNode.data);
+            traverseNode = traverseNode.next;
+        }
+    }
+
+
+    public static Node convertArrayToLL(int a[]) {
+        Node head = new Node(a[0]);
+        Node mover = head;// Created another node for logic bcz we always try to avoid updating head
+        // If head is updated we will forget the starting point of the LL
+
+        for (int i = 1; i < a.length; i++) {
+            Node temp = new Node(a[i]);
+            mover.next = temp;// linking mover to the next element, but after this we need to move mover to next node to link it to next node(elements)
+            mover = temp;//move mover to next node(temp) place, in next loop temp will be at next index and we can keep moving mover after linking it to temp
+        }
+
+        return head;
+    }
+
+
+    public static DNode convertArrayToDLL(int a[]) {
+        DNode head = new DNode(a[0]);
+        DNode prev = head;
+
+        for (int i = 1; i < a.length; i++) {// i=1 so it will assign next element of prev/head
+            DNode nxtTemp = new DNode(a[i]);
+            nxtTemp.back = prev;// linking back to prev
+            prev.next = nxtTemp;// linking prev to nxtTemp(front)
+            // Now there is 2 way communication between DNode
+
+            //We need to move prev to next for the upcoming nodes
+            prev = nxtTemp;
+        }
+
+//        CommonUtility.traverseAndPrintDLL(head);
+        return head;
     }
 
 }
