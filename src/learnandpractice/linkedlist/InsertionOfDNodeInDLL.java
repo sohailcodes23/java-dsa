@@ -15,16 +15,17 @@ public class InsertionOfDNodeInDLL {
             return;
         }
 
-//        head = insertionOfBeforeHead(head, 9);
-//        head = insertionOfBeforeTail(head, 9);
-//        head = insertionOfBeforeKthElement(head, 9, 5);
-        head = insertionOfBeforeDNodeBeforeValue(head, 9, 4);
+//        head = insertionOfNodeBeforeHead(head, 9);
+//        head = insertionOfNodeBeforeTail(head, 9);
+//        head = insertionOfNodeBeforeKthElement(head, 9, 5);
+//        head = insertionOfNodeBeforeDNodeBeforeValue(head, 9, 4);
+        head = insertionOfNodeAtTheEndOfDLL(head, 9);
 
 
         CommonUtility.traverseAndPrintDLL(head);
     }
 
-    static DNode insertionOfBeforeHead(DNode head, int a) {
+    static DNode insertionOfNodeBeforeHead(DNode head, int a) {
         DNode newHead = new DNode(a);
 
         newHead.next = head;
@@ -34,12 +35,12 @@ public class InsertionOfDNodeInDLL {
         return newHead;
     }
 
-    static DNode insertionOfBeforeTail(DNode head, int a) {
+    static DNode insertionOfNodeBeforeTail(DNode head, int a) {
         DNode newTail = new DNode(a);
         DNode temp = head;
         //Edge case
         if (temp.next == null) {// temp is at head and no other element in DLL
-            return insertionOfBeforeHead(head, a);
+            return insertionOfNodeBeforeHead(head, a);
         }
 
         // 1 2 3 4
@@ -57,7 +58,7 @@ public class InsertionOfDNodeInDLL {
         return head;
     }
 
-    static DNode insertionOfBeforeKthElement(DNode head, int a, int k) { //k = index of 1
+    static DNode insertionOfNodeBeforeKthElement(DNode head, int a, int k) { //k = index of 1
 
         DNode newDNode = new DNode(a);
         DNode temp = head;
@@ -73,7 +74,7 @@ public class InsertionOfDNodeInDLL {
                 DNode prevKNode = temp.prev;
                 DNode frontKNode = temp;
                 if (prevKNode == null) {//prev of k is null so temp is head : k=1
-                    return insertionOfBeforeHead(head, a);
+                    return insertionOfNodeBeforeHead(head, a);
                 } else {// handle tail condition as well
                     prevKNode.next = newDNode;
                     newDNode.next = frontKNode;
@@ -88,7 +89,7 @@ public class InsertionOfDNodeInDLL {
         return head;
     }
 
-    static DNode insertionOfBeforeDNodeBeforeValue(DNode head, int a, int kValue) {
+    static DNode insertionOfNodeBeforeDNodeBeforeValue(DNode head, int a, int kValue) {
         DNode newDNode = new DNode(a);
         DNode temp = head;
 
@@ -98,7 +99,7 @@ public class InsertionOfDNodeInDLL {
                 DNode prevKNode = temp.prev;
                 DNode frontKNode = temp;
                 if (prevKNode == null) {//prev of kValue is null so temp is head : kValue=1
-                    return insertionOfBeforeHead(head, a);
+                    return insertionOfNodeBeforeHead(head, a);
                 } else {// handle tail condition as well
                     prevKNode.next = newDNode;
                     newDNode.next = frontKNode;
@@ -114,13 +115,19 @@ public class InsertionOfDNodeInDLL {
     }
 
 
-    public static void traverseAndPrintLL(DNode head) {
-        System.out.println("Whole LINKED LIST: ");
-        DNode traverseDNode = head;
-        while (traverseDNode != null) {
-            System.out.println(traverseDNode.data);
-            traverseDNode = traverseDNode.next;
+    public static DNode insertionOfNodeAtTheEndOfDLL(DNode head, int a) {
+        DNode temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
         }
+        DNode newTail = new DNode(a);
+
+        temp.next = newTail;
+        newTail.prev = temp;
+        newTail.next = null;// be default will be null
+
+        return head;
     }
 
 }
