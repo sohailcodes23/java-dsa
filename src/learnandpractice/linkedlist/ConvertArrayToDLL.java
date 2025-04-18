@@ -19,7 +19,7 @@ public class ConvertArrayToDLL {
 
         for (int i = 1; i < a.length; i++) {// i=1 so it will assign next element of prev/head
             DNode nxtTemp = new DNode(a[i]);
-            nxtTemp.back = prev;// linking back to prev
+            nxtTemp.prev = prev;// linking prev to prev
             prev.next = nxtTemp;// linking prev to nxtTemp(front)
             // Now there is 2 way communication between DNode
 

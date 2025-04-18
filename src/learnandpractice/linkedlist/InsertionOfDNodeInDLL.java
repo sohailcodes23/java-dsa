@@ -28,7 +28,7 @@ public class InsertionOfDNodeInDLL {
         DNode newHead = new DNode(a);
 
         newHead.next = head;
-        head.back = newHead;
+        head.prev = newHead;
 
 
         return newHead;
@@ -52,8 +52,8 @@ public class InsertionOfDNodeInDLL {
         temp.next = newTail;
         newTail.next = lastNode;
 
-        lastNode.back = newTail;
-        newTail.back = temp;
+        lastNode.prev = newTail;
+        newTail.prev = temp;
         return head;
     }
 
@@ -70,7 +70,7 @@ public class InsertionOfDNodeInDLL {
                 return head;
             }
             if (count == k) {
-                DNode prevKNode = temp.back;
+                DNode prevKNode = temp.prev;
                 DNode frontKNode = temp;
                 if (prevKNode == null) {//prev of k is null so temp is head : k=1
                     return insertionOfBeforeHead(head, a);
@@ -78,8 +78,8 @@ public class InsertionOfDNodeInDLL {
                     prevKNode.next = newDNode;
                     newDNode.next = frontKNode;
 
-                    frontKNode.back = newDNode;
-                    newDNode.back = prevKNode;
+                    frontKNode.prev = newDNode;
+                    newDNode.prev = prevKNode;
                 }
                 return head;
             }
@@ -95,7 +95,7 @@ public class InsertionOfDNodeInDLL {
         while (temp != null) {
             int value = temp.data;
             if (value == kValue) {
-                DNode prevKNode = temp.back;
+                DNode prevKNode = temp.prev;
                 DNode frontKNode = temp;
                 if (prevKNode == null) {//prev of kValue is null so temp is head : kValue=1
                     return insertionOfBeforeHead(head, a);
@@ -103,8 +103,8 @@ public class InsertionOfDNodeInDLL {
                     prevKNode.next = newDNode;
                     newDNode.next = frontKNode;
 
-                    frontKNode.back = newDNode;
-                    newDNode.back = prevKNode;
+                    frontKNode.prev = newDNode;
+                    newDNode.prev = prevKNode;
                 }
                 return head;
             }

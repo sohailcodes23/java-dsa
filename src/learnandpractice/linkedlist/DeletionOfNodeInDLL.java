@@ -2,7 +2,7 @@ package learnandpractice.linkedlist;
 
 import util.CommonUtility;
 
-/// IMP: Always update both next and back
+/// IMP: Always update both next and prev
 public class DeletionOfNodeInDLL {
 
     public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class DeletionOfNodeInDLL {
     static DNode deletionOfHead(DNode head) {
 //        DNode temp = head;
         head = head.next;///MIS Note which would be at left or right, if we want to overide we will pass the next value to the head
-        head.back = null;// if we want to update the value of the current node, we will keep the value at right
+        head.prev = null;// if we want to update the value of the current node, we will keep the value at right
 
         return head;
     }
@@ -40,7 +40,7 @@ public class DeletionOfNodeInDLL {
         }
         DNode lastNode = secondLastNode.next;
         secondLastNode.next = null;// delete the last node
-        lastNode.back = null;// IMP if not done, it would still be linked with back
+        lastNode.prev = null;// IMP if not done, it would still be linked with prev
         return head;
     }
 
@@ -55,7 +55,7 @@ public class DeletionOfNodeInDLL {
             }
             if (count == k) {
                 DNode frontOfKNode = temp.next;
-                DNode prevOfKNode = temp.back;
+                DNode prevOfKNode = temp.prev;
 
                 //EDGE cases
                 if (prevOfKNode == null && frontOfKNode == null) {// that means it's a single node DLL
@@ -63,20 +63,20 @@ public class DeletionOfNodeInDLL {
                     return null;
                 } else if (prevOfKNode == null) {// if only prev is nul, than temp is the  head of DLL
                     head = head.next;// moved the head
-                    head.back = null;//delink the back as nulll of new head
+                    head.prev = null;//delink the prev as nulll of new head
                     break;// OR return head
                 } else if (frontOfKNode == null) {//if front is null temp is at tail of DLL
-                    temp.back = null;
+                    temp.prev = null;
                     prevOfKNode.next = null;// unlink the temp(tail)
                     break;// OR return head
                 }
 
                 //Normal case
                 prevOfKNode.next = frontOfKNode;//prev next is connecting with front of K
-                frontOfKNode.back = prevOfKNode;//front back is connecting with prev of K
+                frontOfKNode.prev = prevOfKNode;//front prev is connecting with prev of K
                 //IMP need to update current temp so that it is removed from memory
                 temp.next = null;
-                temp.back = null;
+                temp.prev = null;
                 break;
             }
             temp = temp.next;
@@ -91,7 +91,7 @@ public class DeletionOfNodeInDLL {
             int value = temp.data;
             if (value == k) {
                 DNode frontOfKNode = temp.next;
-                DNode prevOfKNode = temp.back;
+                DNode prevOfKNode = temp.prev;
 
                 //EDGE cases
                 if (prevOfKNode == null && frontOfKNode == null) {// that means it's a single node DLL
@@ -99,20 +99,20 @@ public class DeletionOfNodeInDLL {
                     return null;
                 } else if (prevOfKNode == null) {// if only prev is nul, than temp is the  head of DLL
                     head = head.next;// moved the head
-                    head.back = null;//delink the back as nulll of new head
+                    head.prev = null;//delink the prev as nulll of new head
                     break;// OR return head
                 } else if (frontOfKNode == null) {//if front is null temp is at tail of DLL
-                    temp.back = null;
+                    temp.prev = null;
                     prevOfKNode.next = null;// unlink the temp(tail)
                     break;// OR return head
                 }
 
                 //Normal case
                 prevOfKNode.next = frontOfKNode;//prev next is connecting with front of K
-                frontOfKNode.back = prevOfKNode;//front back is connecting with prev of K
+                frontOfKNode.prev = prevOfKNode;//front prev is connecting with prev of K
                 //IMP need to update current temp so that it is removed from memory
                 temp.next = null;
-                temp.back = null;
+                temp.prev = null;
                 break;
             }
             temp = temp.next;

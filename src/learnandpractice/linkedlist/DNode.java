@@ -3,7 +3,7 @@ package learnandpractice.linkedlist;
 public class DNode {
     public int data;
     public DNode next;
-    public DNode back;
+    public DNode prev;
 
     public DNode(int d) {
         this.data = d;
@@ -25,11 +25,11 @@ public class DNode {
         this.next = next;
     }
 
-    public DNode getBack() {
-        return back;
+    public DNode getPrev() {
+        return prev;
     }
 
-    public void setBack(DNode back) {
-        this.back = back;
+    public void setPrev(DNode prev) {
+        this.prev = prev;
     }
 }
