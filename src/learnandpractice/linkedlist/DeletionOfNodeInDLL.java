@@ -14,9 +14,9 @@ public class DeletionOfNodeInDLL {
             return;
         }
 //        head = deletionOfHead(head);
-        head = deletionOfTail(head);
-//        deletionOfKthElement(head, 6);
-//        deletionOfValue(head, 7);
+//        head = deletionOfTail(head);
+//        head = deletionOfKthElement(head, 1);
+        head = deletionOfValue(head, 1);
 
 
         CommonUtility.traverseAndPrintDLL(head);
@@ -40,19 +40,83 @@ public class DeletionOfNodeInDLL {
         }
         DNode lastNode = secondLastNode.next;
         secondLastNode.next = null;// delete the last node
-        lastNode.back = null;// IMP if not done, it would still be liknked with back
+        lastNode.back = null;// IMP if not done, it would still be linked with back
         return head;
     }
 
     static DNode deletionOfKthElement(DNode head, int k) { //k = index of 1
         DNode temp = head;
+        int count = 0;
+        while (temp != null) {
 
+            count++;
+            if (count > k) {//kth element is not present in LL
+                break;
+            }
+            if (count == k) {
+                DNode frontOfKNode = temp.next;
+                DNode prevOfKNode = temp.back;
+
+                //EDGE cases
+                if (prevOfKNode == null && frontOfKNode == null) {// that means it's a single node DLL
+                    head = null;// delete the single node
+                    return null;
+                } else if (prevOfKNode == null) {// if only prev is nul, than temp is the  head of DLL
+                    head = head.next;// moved the head
+                    head.back = null;//delink the back as nulll of new head
+                    break;// OR return head
+                } else if (frontOfKNode == null) {//if front is null temp is at tail of DLL
+                    temp.back = null;
+                    prevOfKNode.next = null;// unlink the temp(tail)
+                    break;// OR return head
+                }
+
+                //Normal case
+                prevOfKNode.next = frontOfKNode;//prev next is connecting with front of K
+                frontOfKNode.back = prevOfKNode;//front back is connecting with prev of K
+                //IMP need to update current temp so that it is removed from memory
+                temp.next = null;
+                temp.back = null;
+                break;
+            }
+            temp = temp.next;
+        }
         return head;
     }
 
+    // head can never be the value
     static DNode deletionOfValue(DNode head, int k) {
         DNode temp = head;
+        while (temp != null) {
+            int value = temp.data;
+            if (value == k) {
+                DNode frontOfKNode = temp.next;
+                DNode prevOfKNode = temp.back;
 
+                //EDGE cases
+                if (prevOfKNode == null && frontOfKNode == null) {// that means it's a single node DLL
+                    head = null;// delete the single node
+                    return null;
+                } else if (prevOfKNode == null) {// if only prev is nul, than temp is the  head of DLL
+                    head = head.next;// moved the head
+                    head.back = null;//delink the back as nulll of new head
+                    break;// OR return head
+                } else if (frontOfKNode == null) {//if front is null temp is at tail of DLL
+                    temp.back = null;
+                    prevOfKNode.next = null;// unlink the temp(tail)
+                    break;// OR return head
+                }
+
+                //Normal case
+                prevOfKNode.next = frontOfKNode;//prev next is connecting with front of K
+                frontOfKNode.back = prevOfKNode;//front back is connecting with prev of K
+                //IMP need to update current temp so that it is removed from memory
+                temp.next = null;
+                temp.back = null;
+                break;
+            }
+            temp = temp.next;
+        }
         return head;
     }
 
