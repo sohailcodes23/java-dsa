@@ -1,4 +1,4 @@
-package learnandpractice.stack;
+package learnandpractice.stackAndQueue;
 
 //{ Driver Code Starts
 
