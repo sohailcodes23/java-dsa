@@ -18,6 +18,9 @@ If it's said don't modify the array that means, you can't sort it or change the 
 
 ## Two Pointers: Don't use 2 pointers when we have negative no. in array (check constraint as well)
 
+## Sliding Window: 
+1. Whenever the character frequency is greater than 1, we don’t know how many duplicates are present. So we use a loop to keep shrinking until the character count drops to 1. 
+
 ## Array solving technique:
 
 Brute : linear search / Depends on the question \
